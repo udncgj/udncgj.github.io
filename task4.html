@@ -48,7 +48,7 @@
 	width:40px;
 	border:none;
 	cursor:pointer;
-	background:url(https://github.com/udncgj/jnshuTask/blob/master/jnshuTask/img/return.png?raw=true);/*img/return.png*/
+	background: url(img/return.png);/*img/return.png*/
 	float:left;
 }
 .player{
@@ -282,10 +282,10 @@
   <div class="mes-top player"><span>玩家配比</span></div>
   <div class="mes player">
     <div>
-      <img src="https://github.com/udncgj/jnshuTask/blob/master/jnshuTask/img/%E6%9D%80%E6%89%8B.png?raw=true" /><span>杀手</span><span class="killer"></span><span>人</span>
+      <img src="img/杀手.png" /><span>杀手</span><span class="killer"></span><span>人</span>
     </div>
     <div>
-      <img src="https://github.com/udncgj/jnshuTask/blob/master/jnshuTask/img/%E5%B9%B3%E6%B0%91.png?raw=true" /><span>平民</span><span class="civilian"></span><span>人</span>
+      <img src="img/平民.png" /><span>平民</span><span class="civilian"></span><span>人</span>
     </div>
   </div>
   <div class="num-player player">
@@ -436,7 +436,7 @@ function pageShow(obj){
 }
 function identity(){
 	if(spanChack[2].innerHTML == "号身份"){
-		mesSrc.src = 'https://github.com/udncgj/jnshuTask/blob/master/jnshuTask/img/wow.png?raw=true';
+		mesSrc.src = 'img/wow.png';
 		if(aNum[numSelect-1] == 0){
 			mesIdentity.innerHTML = '杀手';
 		}else{
@@ -453,7 +453,7 @@ function identity(){
 			spanChack[2].innerHTML = "号";
 		}
 	}else if(spanChack[2].innerHTML == "号"){
-		mesSrc.src = 'https://github.com/udncgj/jnshuTask/blob/master/jnshuTask/img/cue.png?raw=true';
+		mesSrc.src = 'img/cue.png';
 		spanChack[0].innerHTML = "查看";
 		spanChack[1].innerHTML = numSelect;
 		spanChack[2].innerHTML = "号身份";
