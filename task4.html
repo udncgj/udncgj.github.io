@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>无标题文档</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>任务4</title>
 <style type="text/css">
-*{margin:0px; padding:0px;font-family:"微软雅黑";}
-.body-size{width:400px; height:600px;}
+*{margin:0px; padding:0px;}
+.body-size{height:100vh;}
+html{font-size:62.5%;}  
+body {font:normal 100% Arial,sans-serif;font-size:14px; font-size:1.4rem;}  
 .top{
 	width:100%;
-	height:50px;
+	height:8vh;
 	background-color:#46c5e4;
 	text-align:center;
 	border-bottom:2px solid #60cde9;
@@ -25,17 +28,17 @@
 }
 .game-last{
 	display:block;
-	height:60px;
-	line-height:60px;
+	height:10vh;
+	line-height:10vh;
 	text-align:center;
-	margin-top:20px;
-	font-size:20px;
+	margin-top:4vh;
+	font-size:2.2rem;
 	cursor:pointer;
 	background:#fefefe url(img/%E5%8F%B3%E7%AE%AD%E5%A4%B4.png) no-repeat right;
 }
 .game-change{
-	height:430px;
-	margin-top:30px;
+	height:71vh;
+	margin-top:5vh;
 }
 /*****************************************/
 .page2{
@@ -44,11 +47,11 @@
 }
 .return{
 	display:block;
-	height:50px;
-	width:40px;
+	height:8vh;
+	width:8vh;
 	border:none;
 	cursor:pointer;
-	background: url(img/return.png);/*img/return.png*/
+	background: url(img/return.png) no-repeat center;/*img/return.png*/
 	float:left;
 }
 .player{
@@ -57,13 +60,13 @@
 	text-align:center;
 }
 .mes-top{
-	height:40px;
-	line-height:44px;
+	height:8vh;
+	line-height:9vh;
 	border-bottom:2px #999 solid;
 }
 .mes{
-	padding-top:20px;
-	height:250px;
+	padding-top:4vh;
+	height:40vh;
 	border-bottom:1px #999 solid;
 }
 .mes div{
@@ -74,34 +77,34 @@
 	display:inline-block;
 }
 .killer,.civilian{
-	width:20px;
+	width:2rem;
 }
 .num-player{
-	height:150px;
-	line-height:180px;
+	height:25vh;
+	line-height:26vh;
 }
 .num-size{
-	font-size:18px;
+	font-size:1.8rem;
 }
 .num{
 	display:inline-block;
-	margin:10px;
-	width:35px;
+	margin:1rem;
+	width:3.5rem;
 	color:#f8bd4a;
-	font-size:18px;
+	font-size:1.8rem;
 }
 .num-limit{
-	font-size:12px;
+	font-size:1.2rem;
 	color:#f8bd4a;
 }
 .num-ok{
 	display:block;
 	width:96%;
-	height:50px;
-	line-height:50px;
+	height:9vh;
+	line-height:9vh;
 	background-color:#f8bd4a;
 	color:#fff;
-	font-size:28px;
+	font-size:2.8rem;
 	border:none;
 	border-radius:5px;
 	cursor:pointer;
@@ -113,55 +116,59 @@
 }
 .top-mes{
 	color:#fff;
-	line-height:50px;
-	font-size:24px;
+	line-height:9vh;
+	font-size:2.4rem;
 	margin-right:30px;
 }
 .mes-pic{
-	height:410px;
+	height:70vh;
 }
 .mes-box{
-	height:350px;
+	height:60vh;
 	width:65%;
 	background:#fdf0cc;
 	border:3px solid #fff;
-	margin:40px auto;
+	margin:8vh auto;
 }
 .mes-box img{
 	display:block;
 	margin:0 auto;
-	margin-top:80px;
+	margin-top:13vh;
 }
 .mes-identity{
 	display:block;
 	margin:0 auto;
-	margin-top:20px;
+	margin-top:4vh;
 	text-align:center;
 	color:#47c4e4;
-	font-size:24px;
+	font-size:2.4rem;
+}
+.mes-num-box{
+	width:100%;
+	position:absolute;
+	top:13vh;
 }
 .mes-num{
-	position:absolute;
-	top:70px;
-	left:178px;
-	width:40px;
-	height:40px;
-	border-radius:20px;
+	margin:0 auto;
+	display:block;
+	width:6vh;
+	height:6vh;
+	border-radius:6vh;
 	background:#fff;
 	border:2px solid #fdf0cc;
 	color:#e28691;
-	font-size:26px;
+	font-size:2.6rem;
 	text-align:center;
-	line-height:34px;
+	line-height:6vh;
 }
 .btn-div{
 	text-align:center;
 	width:80%;
-	height:50px;
-	line-height:50px;
+	height:8vh;
+	line-height:8vh;
 	background-color:#f8bd4a;
 	color:#fff;
-	font-size:28px;
+	font-size:2.8rem;
 	border:none;
 	border-radius:5px;
 	cursor:pointer;
@@ -172,25 +179,26 @@
 	background-color:#46c4e5;
 }
 .identity-box{
-	height:450px;
-	margin-top:20px;
+	height:72vh;
+	margin-top:4vh;
+	margin-bottom:4vh;overflow :auto;
 }
 .identity-all{
 	width:64px;
 	height:50px;
 	padding-top:14px;
 	float:left;
-	margin:15px;
+	margin:3vh;
 	border:3px solid #fff;
 	background:#f4d085;
 	text-align:center;
 	cursor:pointer;
 }
 .identity-num{
-	margin-top:9px;
+	margin-top:11px;
 	background:#92b7a5;
 	color:#fff;
-	font-size:14px;
+	font-size:1.4rem;
 	height:20px;
 }
 
@@ -200,61 +208,69 @@
 	display:none;
 }
 .game-day{
-	height:460px;
+	height:76vh;
 	background:#f3f3f3;
-	padding-top:5px;
+	padding-top:1vh;
 }
 .day{
 	width:98%;
-	margin:5px auto;
+	margin:1vh auto;
 	background:#fff;
 	border:1px solid #d6d6d6;
 	color:#3db0ce;
-	font-size:18px;
+	font-size:1.8rem;
 	text-align:center;
-	height:40px;
-	line-height:40px;
+	height:6vh;
+	line-height:6vh;
 }
 .day-mes{
-	padding-top:20px;
-	padding-bottom:20px;
+	padding-top:3vh;
+	padding-bottom:3vh;
 	width:98%;
 	background:#fff;
 	border:1px solid #d6d6d6;
 	margin:0 auto;
 }
+.day-mes-box{
+	width:80%;
+	margin:0 auto;
+}
 .day-mes-style{
-	width:70%;
+	width:99%;
 	display:block;
 	background:#3db0ce;
-	height:35px;
-	margin:15px 0 15px 90px;
+	height:6vh;
+	margin:2vh 0 2vh 3vh;
 	text-align:center;
-	line-height:35px;
+	line-height:6vh;
 	color:#FFF;
-	font-size:18px;
+	font-size:1.8rem;
 }
 .test{
 	float:left;
 	width: 0;
     height: 0;
-    border-right:20px solid #3db0ce;
-    border-top:10px solid transparent;
-    border-bottom:10px solid transparent;
-	margin-top:7px;
-	margin-left:70px;
+    border-right:3vh solid #3db0ce;
+    border-top:1.5vh solid transparent;
+    border-bottom:1.5vh solid transparent;
+	margin-top:1.5vh;
+	margin-left:1px;
+}
+.day-mes-happen{
+	margin-left:3vh;
+	font-size:1.5rem;
 }
 .btn-small{
 	text-align:center;
-	width:40%;
-	height:50px;
-	line-height:50px;
+	width:40vw;
+	height:8vh;
+	line-height:8vh;
 	background-color:#f8bd4a;
 	color:#fff;
-	font-size:28px;
+	font-size:2.8rem;
 	border-radius:5px;
 	cursor:pointer;
-	margin:20px 20px;
+	margin:4vh 3vw 0 3vw;
 }
 .game-over{
 	float:left;
@@ -296,13 +312,14 @@
 
 <div class="page3 body-size">
   <div class="top"><input type="button" class="return-page2 return" /><span class="top-mes">查看身份</span></div>
-  <div class="mes-pic"><div class="mes-box"><img class="mes-src" /><span class="mes-identity"></span></div><div class="mes-num">1</div></div>
+  <div class="mes-pic"><div class="mes-box"><img class="mes-src" /><span class="mes-identity"></span></div><div class="mes-num-box"><span class="mes-num">1</span></div></div>
   <div class="btn-chack btn-div"><span>查看</span><span>1</span><span>号身份</span><!--<input type="button" class="chack-enter" value="查看1号身份" />--></div>
 </div>
 
 <div class="page4 body-size">
   <div class="top"><input type="button" class="return-page3 return" /><span class="top-mes">法官日记</span></div>
   <div class="identity-box">
+    <!--<div class="identity-all">iden<div class="identity-num">j号</div></div>;-->
   </div>
   <div class="game-start btn-div">开始游戏</div>
 </div>
@@ -312,11 +329,11 @@
   <div class="game-day">
     <div class="day">第一天</div>
     <div class="day-mes">
-      <div><div class="test"></div><div class="day-mes1 day-mes-style">杀手杀人</div></div>
-      <div>3号被杀死</div>
-      <div><div class="test"></div><div class="day-mes2 day-mes-style">亡灵发表遗言</div></div>
-      <div><div class="test"></div><div class="day-mes3 day-mes-style">玩家依次发言</div></div>
-      <div><div class="test"></div><div class="day-mes4 day-mes-style">全民投票</div></div>
+      <div class="day-mes-box"><div class="test"></div><div class="day-mes1 day-mes-style">杀手杀人</div>
+      <div class="day-mes-happen">3号被杀死</div></div>
+      <div class="day-mes-box"><div class="test"></div><div class="day-mes2 day-mes-style">亡灵发表遗言</div><div class="day-mes-happen">3号被杀死</div></div>
+      <div class="day-mes-box"><div class="test"></div><div class="day-mes3 day-mes-style">玩家依次发言</div><div class="day-mes-happen">3号被杀死</div></div>
+      <div class="day-mes-box"><div class="test"></div><div class="day-mes4 day-mes-style">全民投票</div><div class="day-mes-happen">3号被杀死</div></div>
     </div>
   </div>
   <div class="game-over btn-small">结束游戏</div>
@@ -501,7 +518,7 @@ var gameState = false;
 	
 
 
-aNum = [0,1,1,0,0,0,1]
+aNum = [0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0]
 identityBox.innerHTML = '';
 for(var i=0; i<aNum.length; i++){
 	var j = i+1;
@@ -516,15 +533,20 @@ $returnPage4.click(function(){
 	pageShow(page4);
 })
 $gameStart.click(function(){
-	gameState = true;
-	$aIdentityOut.click(function(){
-		var i = $aIdentityOut.index(this);
-		console.log(i);
-		aOut[i] = -1;
-		console.log(aOut);
-		$aIdentityOut.eq(i).css('background-color','#92b7a5');
-	})
-	pageShow(page5);
+	if(gameState){
+		
+	}else{
+		gameState = true;
+		$(this).html('确定');
+		$aIdentityOut.click(function(){
+			var i = $aIdentityOut.index(this);
+			console.log(i);
+			aOut[i] = -1;
+			console.log(aOut);
+			$aIdentityOut.eq(i).css('background-color','#92b7a5');
+		})
+		pageShow(page5);
+	}
 })
 $gameOver.click(function(){
 	gameState = false;
