@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -8,17 +7,16 @@
 *{margin:0px; padding:0px;}
 .body-size{height:100vh;}
 html{font-size:62.5%;}  
-body {font:normal 100% Arial,sans-serif;font-size:14px; font-size:1.4rem;}  
+body {font:normal 100% Arial,sans-serif;font-size:14px; font-size:1.4rem;}
 .top{
 	width:100%;
-	height:8vh;
+	height:8%;
 	background-color:#46c5e4;
 	text-align:center;
 	border-bottom:2px solid #60cde9;
 }
 .page1{
 	background-color:#f2f3f3;
-	display:none;
 }
 .game{
 	width:96%;
@@ -51,7 +49,7 @@ body {font:normal 100% Arial,sans-serif;font-size:14px; font-size:1.4rem;}
 	width:8vh;
 	border:none;
 	cursor:pointer;
-	background: url(img/return.png) no-repeat center;/*img/return.png*/
+	background: url(img/return.png) no-repeat center;
 	float:left;
 }
 .player{
@@ -177,22 +175,57 @@ body {font:normal 100% Arial,sans-serif;font-size:14px; font-size:1.4rem;}
 /********************************************/
 .page4{
 	background-color:#46c4e5;
+	display:none;
 }
 .identity-box{
 	height:72vh;
-	margin-top:4vh;
 	margin-bottom:4vh;overflow :auto;
+	padding-top:4%;
+}
+.game-prompt{
+	width:100%;
+	height:6vh;
+	background:#c5ebf7;
+	font-size:1.8rem;
+	line-height:6vh;
+}
+.game-prompt span{
+	margin-left:3vh;
+}
+.prompt-triangle{
+	width: 0;
+    height: 0;
+    border-top:2vh solid #c5ebf7;
+    border-left:1vh solid transparent;
+    border-right:1vh solid transparent;
+	margin-left:4vh;
+}
+.play-prompt{
+	margin-left:3vh;
+	color:#fff;
+	margin-bottom:2vh;
 }
 .identity-all{
 	width:64px;
 	height:50px;
 	padding-top:14px;
 	float:left;
-	margin:3vh;
+	margin:0 3vh 40px 3vh;
 	border:3px solid #fff;
-	background:#f4d085;
 	text-align:center;
 	cursor:pointer;
+	background:#f4d085;
+}
+.identity-out{
+	width:64px;
+	height:50px;
+	padding-top:14px;
+	float:left;
+	margin:0 3vh 40px 3vh;
+	border:3px solid #fff;
+	text-align:center;
+	cursor:pointer;
+	background:#92b7a5;
 }
 .identity-num{
 	margin-top:11px;
@@ -211,10 +244,11 @@ body {font:normal 100% Arial,sans-serif;font-size:14px; font-size:1.4rem;}
 	height:76vh;
 	background:#f3f3f3;
 	padding-top:1vh;
+	overflow:scroll;
 }
 .day{
 	width:98%;
-	margin:1vh auto;
+	margin:1vh auto 0;
 	background:#fff;
 	border:1px solid #d6d6d6;
 	color:#3db0ce;
@@ -223,6 +257,15 @@ body {font:normal 100% Arial,sans-serif;font-size:14px; font-size:1.4rem;}
 	height:6vh;
 	line-height:6vh;
 }
+.day-trapezoid{
+	width: 2vh;
+    height: 0;
+    border-bottom:2vh solid #fff;
+    border-left:2vh solid transparent;
+    border-right:2vh solid transparent;
+	margin:-1px auto -1px;
+	position:relative;
+}
 .day-mes{
 	padding-top:3vh;
 	padding-bottom:3vh;
@@ -230,6 +273,7 @@ body {font:normal 100% Arial,sans-serif;font-size:14px; font-size:1.4rem;}
 	background:#fff;
 	border:1px solid #d6d6d6;
 	margin:0 auto;
+	cursor:pointer;
 }
 .day-mes-box{
 	width:80%;
@@ -246,6 +290,9 @@ body {font:normal 100% Arial,sans-serif;font-size:14px; font-size:1.4rem;}
 	color:#FFF;
 	font-size:1.8rem;
 }
+.day-mes-change{
+	background:#92b7a5;
+}
 .test{
 	float:left;
 	width: 0;
@@ -255,6 +302,9 @@ body {font:normal 100% Arial,sans-serif;font-size:14px; font-size:1.4rem;}
     border-bottom:1.5vh solid transparent;
 	margin-top:1.5vh;
 	margin-left:1px;
+}
+.test-change{
+	border-right:3vh solid #92b7a5;
 }
 .day-mes-happen{
 	margin-left:3vh;
@@ -282,6 +332,48 @@ body {font:normal 100% Arial,sans-serif;font-size:14px; font-size:1.4rem;}
 .page6{
 	background-color:#46c4e5;
 	display:none;
+}
+.journal-pic{
+	height:25vh;
+}
+.journal-overplus{
+	width:70%;
+	margin:0 auto;
+	font-size:2rem;
+	color:#fff;
+}
+.journal-civilian{
+	margin-top:10px;
+	float:left;
+}
+.num0,.num1{
+	display:inline-block;
+	width:18px;
+}
+.journal-killer{
+	margin-top:10px;
+	margin-left:120px;
+}
+.journal-text{
+	width:98%;
+	height:42%;
+	margin:0 auto;
+	margin-top:2vh;
+	background:#fff;
+	overflow-y:scroll;
+}
+.text{
+	color:#bbb;
+	padding-left:15%;
+	border-bottom:2px solid #bbb;
+}
+.text div{
+	margin-top:0.3rem;
+	margin-bottom:0.3rem;
+	font-size:1.8rem;
+}
+.game-next{
+	margin-top:2vh;
 }
 </style>
 </head>
@@ -317,9 +409,9 @@ body {font:normal 100% Arial,sans-serif;font-size:14px; font-size:1.4rem;}
 </div>
 
 <div class="page4 body-size">
-  <div class="top"><input type="button" class="return-page3 return" /><span class="top-mes">法官日记</span></div>
+  <div class="top"><span class="top-mes">法官日记</span></div>
   <div class="identity-box">
-    <!--<div class="identity-all">iden<div class="identity-num">j号</div></div>;-->
+    <!--<div class="identity-all">平民<div class="identity-num">2号</div></div>;-->
   </div>
   <div class="game-start btn-div">开始游戏</div>
 </div>
@@ -327,24 +419,29 @@ body {font:normal 100% Arial,sans-serif;font-size:14px; font-size:1.4rem;}
 <div class="page5 body-size">
   <div class="top"><input type="button" class="return-page4 return" /><span class="top-mes">法官台本</span></div>
   <div class="game-day">
-    <div class="day">第一天</div>
+    <!--<div class="day">第一天</div>
+    <div class="day-trapezoid"></div>
     <div class="day-mes">
-      <div class="day-mes-box"><div class="test"></div><div class="day-mes1 day-mes-style">杀手杀人</div>
-      <div class="day-mes-happen">3号被杀死</div></div>
-      <div class="day-mes-box"><div class="test"></div><div class="day-mes2 day-mes-style">亡灵发表遗言</div><div class="day-mes-happen">3号被杀死</div></div>
-      <div class="day-mes-box"><div class="test"></div><div class="day-mes3 day-mes-style">玩家依次发言</div><div class="day-mes-happen">3号被杀死</div></div>
-      <div class="day-mes-box"><div class="test"></div><div class="day-mes4 day-mes-style">全民投票</div><div class="day-mes-happen">3号被杀死</div></div>
-    </div>
+      <div class="day-mes-box"><div class="test"></div><div class="day-mes1 day-mes-style">杀手杀人</div></div>
+      <div class="day-mes-box"><div class="test"></div><div class="day-mes2 day-mes-style">亡灵发表遗言</div></div>
+      <div class="day-mes-box"><div class="test"></div><div class="day-mes3 day-mes-style">玩家依次发言</div></div>
+      <div class="day-mes-box"><div class="test"></div><div class="day-mes4 day-mes-style">全民投票</div></div>
+    </div>-->
   </div>
   <div class="game-over btn-small">结束游戏</div>
   <div class="game-mes btn-small">法官日志</div>
 </div>
 
 <div class="page6 body-size">
-  <div class="top"><input type="button" class="return-page5 return" /><span class="top-mes">法官日志</span></div>
-  <div class="identity-box">
+  <div class="top"><input type="button" class="return-page6 return" /><span class="top-mes">法官日志</span></div>
+  <div class="journal-pic"><img src="" /></div>
+  <div class="journal-overplus">剩余玩家：<br/>
+    <div class="journal-civilian"><span>杀手</span><span class="num0"></span><span>人</span></div>
+    <div class="journal-killer"><span>平民</span><span class="num1"></span><span>人</span></div>
   </div>
-  <div class="game-start btn-div">开始游戏</div>
+  <div class="journal-text">
+  </div>
+  <div class="game-next btn-small">再来一次</div>
 </div>
 
 <script src="开发jquery-3.1.1.js"></script>
@@ -352,13 +449,13 @@ body {font:normal 100% Arial,sans-serif;font-size:14px; font-size:1.4rem;}
 var gameChange = document.getElementsByClassName('game-last')[0];
     returnPage1 = document.getElementsByClassName('return-page1')[0],
     returnPage2 = document.getElementsByClassName('return-page2')[0],
-    returnPage3 = document.getElementsByClassName('return-page3')[0],
 	returnPage4 = document.getElementsByClassName('return-page4')[0],
     page1 = document.getElementsByClassName('page1')[0],
     page2 = document.getElementsByClassName('page2')[0],
     page3 = document.getElementsByClassName('page3')[0],
 	page4 = document.getElementsByClassName('page4')[0],
 	page5 = document.getElementsByClassName('page5')[0],
+	page6 = document.getElementsByClassName('page6')[0],
     numInput = document.getElementsByClassName('num')[0],
     numKiller = document.getElementsByClassName('killer')[0],
     numCivilian = document.getElementsByClassName('civilian')[0],
@@ -376,6 +473,35 @@ var aNum = [];
 var gameOk = false;
 var numSelect = 1;
 var pageNum = 6;
+
+var $aDayMesStyle = $('.day-mes-style'),
+    $gameStart = $('.game-start:first'),
+	$gameOver = $('.game-over:first'),
+	$gameMes = $('.game-mes'),
+	$returnPage4 = $('.return-page4'),
+	$dayMesBox = $('.day-mes-box'),
+	$gameDay = $('.game-day:first'),
+	$journalText = $('.journal-text');
+	
+var $aIdentityOut;
+var $aIdentityImg;
+var $aIdentityAll;
+var $dayTrapezoid;
+var $gamePrompt;
+var $promptTriangle;
+var $playPrompt;
+var $dayMes;
+	
+var identityBoxHtml;
+var gameState = false;
+var aJournalBlack = ['','','','','',''];
+var aJournalWhite = ['','','','','',''];
+var aDayMes = [0,0,0,0,0,0];
+var dayNow = 0;
+var num0,num1;
+var canKill = false;
+
+
 gameChange.onclick = function(){
 	pageShow(page2);
 }
@@ -384,9 +510,6 @@ returnPage1.onclick = function(){
 }
 returnPage2.onclick = function(){
 	pageShow(page2);
-}
-returnPage3.onclick = function(){
-	pageShow(page3);
 }
 numOk.onclick = function(){
 	if(gameOk == true){
@@ -402,14 +525,7 @@ numOk.onclick = function(){
 btnChack.onclick = function(){
 	identity();
 }
-/*document.onkeydown = function(event){
-	var e = event || window.event || arguments.callee.caller.arguments[0];
-	if(e&&e.keyCode == 13){
-		if(document.activeElement.className == 'num'){
-			numChack();
-		}
-	}
-}*/
+
 numInput.onchange = function(){
 	numChack();
 }
@@ -482,78 +598,222 @@ function identity(){
 		for(var i=0; i<aNum.length; i++){
 			var j = i+1;
 			var iden = aNum[i] == 0? '杀手':'平民';
-			identityBox.innerHTML += '<div class="identity-all">' + iden + '<div class="identity-num">' + j + '号</div></div>';
+			identityBox.innerHTML += '<div class="identity-all">' + iden + '<div class="identity-num">' + j + '号</div><img src="" style="margin:8px" /></div>';
 	    }
-		aIdentityOut = identityBox.getElementsByClassName('identity-all');
-		$identityOut = $('.identity-all');
-		/*for(var i=0; i<aIdentityOut.length; i++){
-		    aIdentityOut[i].index = i;
-            aIdentityOut[i].onclick = function() {
-				if(gameState = true){
-				aOut[this.index] = -1;
-				this.style.background = '#92b7a5';
-                console.log(aOut);}
-            };
-		}*/
-		console.log(aIdentityOut);
+		$aIdentityAll = $('.identity-all');
+        $aIdentityImg = $('.identity-all>img');
+	    $gameStart.html('开始游戏');
 	}
 }
 
 //任务4  使用jq库
 
-/*var aDayMesStyle = document.getElementsByClassName('day-mes-style'),
-	gameStart = document.getElementsByClassName('game-start')[0],
-	gameOver = document.getElementsByClassName('game-over')[0],
-    aIdentityOut = [];//出局者*/
-	
-var $aDayMesStyle = $('.day-mes-style'),
-    $gameStart = $('.game-start:first'),
-	$gameOver = $('.game-over:first'),
-	$returnPage4 = $('.return-page4');
-	
-var $aIdentityOut;
-	
-var gameState = false;
-    aOut = [];
-	
-
-
-aNum = [0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0]
+/*function page4Start(){
+//aNum = [0,1,1,0,0,0,1,0,0];
+var aIdentityState = new Array(aNum.length),
+    aOut = new Array(aNum.length);
 identityBox.innerHTML = '';
 for(var i=0; i<aNum.length; i++){
 	var j = i+1;
 	var iden = aNum[i] == 0? '杀手':'平民';
-	identityBox.innerHTML += '<div class="identity-all">' + iden + '<div class="identity-num">' + j + '号</div></div>';
+	identityBox.innerHTML += '<div class="identity-all">' + iden + '<div class="identity-num">' + j + '号</div><img src="" style="margin:8px" /></div>';
 }
-$aIdentityOut = $('.identity-all');
+$aIdentityAll = $('.identity-all');
+$aIdentityImg = $('.identity-all>img');
+}
+page4Start();*/
 
-
-	
 $returnPage4.click(function(){
 	pageShow(page4);
 })
+
+//开始游戏或确定按键点击效果
 $gameStart.click(function(){
-	if(gameState){
+	if(gameState && canKill){
+		for(var i=0; i<$aIdentityAll.length; i++){
+			if($aIdentityImg[i].src.indexOf('img/knife.jpg')>=0){
+				$aIdentityImg.eq(i).attr('src','');
+				$aIdentityAll.eq(i).addClass('identity-out');
+				$aIdentityAll.eq(i).unbind('click');
+				var j = $('.identity-box:first>div').index($aIdentityAll.eq(i)) - 2;
+				console.log(j);
+				$aIdentityAll.eq(i).removeClass('identity-all');
+		        $aIdentityAll = $('.identity-all');
+				
+				canKill = false;
+				
+				num0 = 0;
+				num1 = 0;
+				for(var i=0; i<$aIdentityAll.length; i++){
+					num0 = $aIdentityAll.eq(i).html().indexOf('杀手') == -1?num0:num0+1;
+					num1 = $aIdentityAll.eq(i).html().indexOf('平民') == -1?num1:num1+1;
+				}
+				console.log(num0);
+				console.log(num1);
+				
+				dayMesChange(dayNow,aDayMes[dayNow],j);
+			}
+			$aIdentityImg.eq(i).attr('src','');
+		}
 		
-	}else{
+        $aIdentityImg = $('.identity-all>img');
+
+	}else if(gameState == false){
+		aJournalBlack = ['','','','','',''];
+		aJournalWhite = ['','','','','',''];
+		aDayMes = [0,0,0,0,0,0];
+		dayNow = 0;
 		gameState = true;
 		$(this).html('确定');
-		$aIdentityOut.click(function(){
-			var i = $aIdentityOut.index(this);
-			console.log(i);
-			aOut[i] = -1;
-			console.log(aOut);
-			$aIdentityOut.eq(i).css('background-color','#92b7a5');
+		$gameDay.html('<div class="day">第一天</div><div class="day-trapezoid"></div><div class="day-mes"><div class="day-mes-box"><div class="test"></div><div class="day-mes1 day-mes-style">杀手杀人</div></div><div class="day-mes-box"><div class="test"></div><div class="day-mes2 day-mes-style">亡灵发表遗言</div></div><div class="day-mes-box"><div class="test"></div><div class="day-mes3 day-mes-style">玩家依次发言</div></div><div class="day-mes-box"><div class="test"></div><div class="day-mes4 day-mes-style">全民投票</div></div></div>');
+		$dayTrapezoid = $('.day-trapezoid');
+		$dayMes = $('.day-mes');
+		dayMesClick();
+		
+		identityBox.innerHTML = '<div class="game-prompt"><span></span></div>	<div class="prompt-triangle"></div><div class="play-prompt"></div>' + identityBox.innerHTML;
+		$gamePrompt = $('.game-prompt:first');
+		$promptTriangle = $('.prompt-triangle:first');
+		$playPrompt = $('.play-prompt:first');
+		$gamePrompt.css('display','none');
+		$promptTriangle.css('display','none');
+		$playPrompt.css('display','none');
+		$aIdentityAll = $('.identity-all');
+        $aIdentityImg = $('.identity-all>img');
+		$aIdentityAll.click(function(){
+			var i = $aIdentityAll.index(this);
+			for(var j=0; j<aNum.length; j++){
+				$aIdentityImg.eq(j).attr('src','');
+			}
+			$aIdentityImg.eq(i).attr('src','img/knife.jpg');
 		})
-		pageShow(page5);
+		
+		num0 = 0;
+		num1 = 0;
+		for(var i=0; i<$aIdentityAll.length; i++){
+			num0 = $aIdentityAll.eq(i).html().indexOf('杀手') == -1?num0:num0+1;
+			num1 = $aIdentityAll.eq(i).html().indexOf('平民') == -1?num1:num1+1;
+		}
 	}
+	if(!canKill){
+		pageShow(page5);
+	}else{alert('请确定一个目标');}
 })
+
+//***********page5
+
+//当天的步骤状态转换
+function dayMesChange(day,step,num){
+	step += day*4-1;
+	$('.day-mes-style').eq(step).addClass('day-mes-change');
+	$('.test').eq(step).addClass('test-change');	
+	$gamePrompt.css('display','none');
+	$promptTriangle.css('display','none');
+	$playPrompt.css('display','none');
+	if(step +1-day*4 ==1){
+	    var str = aNum[num-1] ==0?'杀手':'平民';
+		$('.day-mes-box').eq(step).html($('.day-mes-box').eq(step).html()+'<div class="day-mes-happen">'+num+'号被杀手杀死，真实身份是'+str+'</div>');
+		aJournalBlack[day] = num+'号被杀死了，真实身份是'+str;
+		
+	}else if(step +1-day*4 ==4){
+	    var str = aNum[num-1] ==0?'杀手':'平民';
+		$('.day-mes-box').eq(step).html($('.day-mes-box').eq(step).html()+'<div class="day-mes-happen">'+num+'号被大家投死，真实身份是'+str+'</div>');
+		aJournalWhite[day] = num+'号被投死了，真实身份是'+str;
+		
+		setTimeout(function(){
+			$dayTrapezoid.eq(day).slideToggle(1000);
+			$dayMes.eq(day).slideToggle(1000);
+		},1000);
+		dayMesUnbind();
+		
+		var i = ['一','二','三','四','五','六','七'];
+		dayNow++;
+		$gameDay.html($gameDay.html()+'<div class="day">第'+i[dayNow]+'天</div><div class="day-trapezoid"></div><div class="day-mes"><div class="day-mes-box"><div class="test"></div><div class="day-mes1 day-mes-style">杀手杀人</div></div><div class="day-mes-box"><div class="test"></div><div class="day-mes2 day-mes-style">亡灵发表遗言</div></div><div class="day-mes-box"><div class="test"></div><div class="day-mes3 day-mes-style">玩家依次发言</div></div><div class="day-mes-box"><div class="test"></div><div class="day-mes4 day-mes-style">全民投票</div></div></div>');
+		
+		$dayTrapezoid = $('.day-trapezoid');
+		$dayMes = $('.day-mes');
+		
+		if(num0>=num1 || !num0){
+			alert('游戏结束');
+			dayMesUnbind();
+		}else{
+			dayMesClick();
+		}
+		
+	}
+}
+
+//游戏结束按键点击事件
 $gameOver.click(function(){
 	gameState = false;
-	$aIdentityOut.unbind();
-	/*$aIdentityOut.each(function(index, element) {
-        $aIdentityOut.eq(index).css('background-color','#f4d085');
-    });*/
+	$aIdentityAll.unbind();
+    canKill = false;
+	journalOut();
+})
+
+//日志输出
+function journalOut(){
+	pageShow(page6);
+	$('.num0').html(num0);
+	$('.num1').html(num1);
+	$journalText.html('');
+	for(var i=0; i<dayNow+1; i++){
+		var j = i+1;
+		$journalText.html($journalText.html()+'<div class="text"><div>第'+j+'天</div><div>黑夜：'+aJournalBlack[i]+'</div><div>白天：'+aJournalWhite[i]+'</div></div>');
+	}
+}
+$gameMes.click(function(){
+	journalOut();
+})
+$('.return-page6:first').click(function(){pageShow(page5)});
+
+//步骤块点击事件绑定
+function dayMesClick(){
+	$dayMes.click(function(){
+		if(gameState){
+			if(aDayMes[dayNow] == 0){
+				pageShow(page4);
+				canKill = true;
+				$gamePrompt.css('display','block');
+				$gamePrompt.html('杀手请睁眼，杀手请选择要杀的对象');
+				$promptTriangle.css('display','block');
+				$playPrompt.css('display','block');
+				$playPrompt.html('点击下方玩家头像，对被杀的玩家进行标记');
+			}
+			if(aDayMes[dayNow] == 1){
+				dayMesChange(dayNow,aDayMes[dayNow]+1);
+				if(confirm('请死者亮明身份并且发表遗言')){
+				}else{}
+			}
+			if(aDayMes[dayNow] == 2){
+				dayMesChange(dayNow,aDayMes[dayNow]+1);
+				if(confirm('请依次发言')){
+				}else{}
+			}
+			if(aDayMes[dayNow] == 3){
+				pageShow(page4);
+				canKill = true;
+				$gamePrompt.css('display','block');
+				$gamePrompt.html('发言讨论结束，大家请投票');
+				$promptTriangle.css('display','block');
+				$playPrompt.css('display','block');
+				$playPrompt.html('点击得票数最多的人的头像');
+			}
+			aDayMes[dayNow]++;
+		}
+	})
+}
+
+//步骤块点击事件消除
+function dayMesUnbind(){
+	$dayMes.unbind('click');
+}
+
+$('.game-next').click(function(){
+	if(!gameState){
+		pageShow(page2);
+	}else{
+		alert('正在游戏');
+	}
 })
 </script>
 </body>
