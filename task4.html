@@ -207,8 +207,7 @@ body {font:normal 100% Arial,sans-serif;font-size:14px; font-size:1.4rem;}
 }
 .identity-all{
 	width:64px;
-	height:50px;
-	padding-top:14px;
+	height:64px;
 	float:left;
 	margin:0 3vh 40px 3vh;
 	border:3px solid #fff;
@@ -216,23 +215,29 @@ body {font:normal 100% Arial,sans-serif;font-size:14px; font-size:1.4rem;}
 	cursor:pointer;
 	background:#f4d085;
 }
+.identity-all p{
+	height:44px;
+	line-height:44px;
+}
 .identity-out{
 	width:64px;
-	height:50px;
-	padding-top:14px;
+	height:64px;
 	float:left;
 	margin:0 3vh 40px 3vh;
 	border:3px solid #fff;
 	text-align:center;
-	cursor:pointer;
 	background:#92b7a5;
 }
+.identity-out p{
+	height:44px;
+	line-height:44px;
+}
 .identity-num{
-	margin-top:11px;
 	background:#92b7a5;
 	color:#fff;
 	font-size:1.4rem;
 	height:20px;
+	line-height:20px;
 }
 
 /*****************************************************/
@@ -411,7 +416,9 @@ body {font:normal 100% Arial,sans-serif;font-size:14px; font-size:1.4rem;}
 <div class="page4 body-size">
   <div class="top"><span class="top-mes">法官日记</span></div>
   <div class="identity-box">
-    <!--<div class="identity-all">平民<div class="identity-num">2号</div></div>;-->
+    <!--<div class="identity-all"><p>平民</p><div class="identity-num">2号</div></div>;
+    <div class="identity-all"><p>平民</p><div class="identity-num">2号</div></div>;
+    <div class="identity-all"><p>平民</p><div class="identity-num">2号</div></div>;-->
   </div>
   <div class="game-start btn-div">开始游戏</div>
 </div>
@@ -598,7 +605,7 @@ function identity(){
 		for(var i=0; i<aNum.length; i++){
 			var j = i+1;
 			var iden = aNum[i] == 0? '杀手':'平民';
-			identityBox.innerHTML += '<div class="identity-all">' + iden + '<div class="identity-num">' + j + '号</div><img src="" style="margin:8px" /></div>';
+			identityBox.innerHTML += '<div class="identity-all"><p>' + iden + '</p><div class="identity-num">' + j + '号</div><img src="" style="margin:8px" /></div>';
 	    }
 		$aIdentityAll = $('.identity-all');
         $aIdentityImg = $('.identity-all>img');
