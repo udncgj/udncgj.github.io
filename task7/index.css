@@ -15,12 +15,13 @@ body{font:normal 100% Arial,sans-serif;font-size:14px; font-size:1.4rem;}
 	margin-top:25vh;
 	margin-left:25%;
 	width:50%;
-	height:50vh;
+	padding-top:3vh;
+	padding-bottom:3vh;
 }
 .box h1{
-	height:14vh;
+	padding-top:2vh;
+	padding-bottom:2vh;
 	text-align:center;
-	line-height:14vh;
 	color:#03a9f4;
 }
 .box-mes{
@@ -30,6 +31,7 @@ body{font:normal 100% Arial,sans-serif;font-size:14px; font-size:1.4rem;}
 .box-form{	
 	margin-bottom:2vh;
 	height:8vh;
+	min-height:30px;
 	width:100%;
 	border:1px solid #000;
 	background-color:#fff;
@@ -66,7 +68,8 @@ body{font:normal 100% Arial,sans-serif;font-size:14px; font-size:1.4rem;}
 input:focus{outline:0;}
 input:-webkit-autofill {-webkit-box-shadow: 0 0 0px 1000px white inset;}
 .warning{
-	height:10%;
+	height:5vh;
+	min-height:18px;
 	margin-left:10%;
 	color:#F00;
 }
@@ -74,6 +77,7 @@ input:-webkit-autofill {-webkit-box-shadow: 0 0 0px 1000px white inset;}
 	width:80%;
 	margin:0 auto;
 	height:8vh;
+	min-height:30px;
 	line-height:8vh;
 	color:#fff;
 	text-align:center;
