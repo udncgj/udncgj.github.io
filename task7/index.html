@@ -18,13 +18,13 @@
   <div class="box-mes">
     <form class="box-form">
       <input type="button" class="img1-input" readonly="readonly" />
-      <input id="user-input" class="box-input" type="text" value="用户名" ng-model="user" />
+      <input id="user-input" class="box-input" type="text" placeholder="用户名" ng-model="user" />
     </form>
   </div>
   <div class="box-mes">
     <form class="box-form">
       <input type="button" class="img2-input" readonly="readonly" />
-      <input id="password-input" class="box-input" type="text" value="密码" ng-model="password" />
+      <input id="password-input" class="box-input" type="text" placeholder="密码" ng-model="password" />
     </form>
   </div>
   <div class="warning"></div>
@@ -34,8 +34,6 @@
 <script>
 var app = angular.module('myApp',[]);
 app.controller('personCtrl',function($scope,$http){
-	$scope.user = '用户名';
-	$scope.password = '密码';
 	$scope.logon = function(){
 		var promise = $http({
 			method:'post',

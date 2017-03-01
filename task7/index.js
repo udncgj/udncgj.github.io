@@ -1,6 +1,6 @@
 // JavaScript Document
 $(window).on('load',function(){
-	var user = '',
+	/*var user = '',
 	    password = '';
 	var jqXHR = new XMLHttpRequest();
 	$('#user-input').focus(function(){
@@ -26,7 +26,7 @@ $(window).on('load',function(){
 	})
 	$('#password-input').blur(function(){
 		if(password == ''){$(this).val('密码');}
-	})
+	})*/
 	/*$('.logon:first').click(function(){
 		$.ajax({ 
 		    type: "POST",
