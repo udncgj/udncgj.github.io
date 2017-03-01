@@ -27,7 +27,7 @@ $(window).on('load',function(){
 	$('#password-input').blur(function(){
 		if(password == ''){$(this).val('密码');}
 	})
-	$('.logon:first').click(function(){
+	/*$('.logon:first').click(function(){
 		$.ajax({ 
 		    type: "POST",
 			url:"/carrots-admin-ajax/a/login/",//
@@ -49,7 +49,7 @@ $(window).on('load',function(){
 			   $('.warning:first').html("发生错误：" + jqXHR.status);
 			},
 		});
-	})
+	})*/
 })
 /*
 function jsonSave(json){
