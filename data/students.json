@@ -1,0 +1,59 @@
+[
+  {
+    "id": 1,
+    "name": "Frank Li",
+    "sex": "male",
+    "age": "30",
+    "courses": [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Java",
+      "PHP",
+      "MySQL",
+      "Ubuntu",
+      "MongoDB",
+      "NodeJS",
+      "AngularJS",
+      "Photoshop",
+      "LESS",
+      "Bootstrap"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Cherry",
+    "sex": "female",
+    "age": "27",
+    "courses": [
+      "Anderson's Fairy Tales",
+      "Pride and Prejudice",
+      "Vanity Fair",
+      "Oliver Twist"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "John Liu",
+    "sex": "male",
+    "age": "29",
+    "courses": [
+      "iology and medical science",
+      "pplied biology",
+      "medicine",
+      "cell biology"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Lucy Mu",
+    "sex": "female",
+    "age": "22",
+    "courses": [
+      "Introduction to ART ",
+      "sketch",
+      "Composition",
+      "sculpture"
+    ]
+  }
+]

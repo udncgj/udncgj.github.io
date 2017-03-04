@@ -1,0 +1,61 @@
+<table cellspacing="0">
+    <tr>
+        <td class="title">ID</td>
+        <td>{{student.id}}</td>
+    </tr>
+    <tr>
+        <td class="title">Name</td>
+        <td>{{student.name}}</td>
+    </tr>
+    <tr>
+        <td class="title">Sex</td>
+        <td>{{student.sex}}</td>
+    </tr>
+    <tr>
+        <td class="title">Age</td>
+        <td>{{student.age}}</td>
+    </tr>
+    <tr>
+        <td class="title">Courses</td>
+        <td>
+            <ul>
+                <li ng-repeat="course in student.courses">{{course}}</li>
+            </ul>
+        </td>
+    </tr>
+</table>
+<style type="text/css">
+    table {
+        border: solid 1px #000000;
+        margin: 0px auto;
+    }
+
+    td {
+        padding: 10px 10px 10px 20px;
+        margin: 0px;
+        border: solid 1px #000000;
+    }
+
+    tr {
+        margin: 0px;
+        padding: 0px;
+
+    }
+
+    .title {
+        background-color: #207ef0;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    li {
+        float: left;
+        margin: 10px;
+    }
+</style>

@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>无标题文档</title>
+<link href="index.css" rel="stylesheet" type="text/css" />
+<script src="开发jquery-3.1.1.js"></script>
+<script src="index.js"></script>
+<script src="https://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script> 
+</head>
+
+<body>
+<div style="position:absolute; left:0; top:0; width:100%; height:100%;z-index:-1"><img src="img/背景.png" width="100%" height="100%" /></div>
+<!--<div class="box-under box"></div>-->
+<div class="box" ng-app="myApp" ng-controller="personCtrl">
+  <h1>喝我水站后台登录</h1>
+  <div class="box-mes">
+    <form class="box-form">
+      <input type="button" class="img1-input" readonly="readonly" />
+      <input id="user-input" class="box-input" type="text" placeholder="用户名" ng-model="user" />
+    </form>
+  </div>
+  <div class="box-mes">
+    <form class="box-form">
+      <input type="button" class="img2-input" readonly="readonly" />
+      <input id="password-input" class="box-input" type="text" placeholder="密码" ng-model="password" />
+    </form>
+  </div>
+  <div class="warning"></div>
+  <div class="logon" ng-click="logon()">登录</div>
+</div>
+
+<script>
+var app = angular.module('myApp',[]);
+app.controller('personCtrl',function($scope,$http){
+	$scope.logon = function(){
+		var promise = $http({
+			method:'post',
+			url:"/carrots-admin-ajax/a/login/",
+			params:{"name":$scope.user,"pwd":$scope.password},
+		})
+		.success(function(data){
+			if(data.message == 'success'){
+				$('.warning:first').html(data.message);
+				location.href = 'page/list.html';
+			}else{
+				$('.warning:first').html(data.message);
+				location.href = 'page/list.html';
+			}
+		})
+		.error(function(data){$('.warning:first').html(data.message);})
+	}
+});
+</script>
+</body>
+</html>
