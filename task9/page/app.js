@@ -1,20 +1,9 @@
 // JavaScript Document
-
-/*var myApp = angular.module('angularJS',['ngRoute']);
-myApp.config(['$routeProvider', function($routeProvider){
-	$routeProvider
-	.when('/page1',{templateUrl:'page1.html'})
-	.when('/page2',{templateUrl:'page2.html'})
-	.when('/page3',{templateUrl:'page3.html'})
-	.otherwise({redirectTo:'/page1'});
-}]);*/
-
 var app = angular.module('angularJS',['ui.router']);//,'tm.pagination'
 var aMes;
 var mesLength;
-var pageUrl;
-var urlPath;
 var aSelect;
+var fileReady = false;
 
 function pageNum(num,arr){
 	arr = arr.slice(10*(num-1),10*num);
@@ -33,7 +22,7 @@ function myFilter(item,str,num){
 }
 
 app.config(function ($stateProvider, $urlRouterProvider) {
-     $urlRouterProvider.when("", "/admin/page1");
+     $urlRouterProvider.when("", "/admin/page2");
      $stateProvider
         .state("page1", {
             url: "/admin/page1",
@@ -68,11 +57,6 @@ app.controller('personCtrl',function($scope,$http,$location){
 		}
 	}
 	
-	
-	$scope.listPage = true;
-	console.log($location.path());
-	//$location.path('/abcd/sefgc');
-	urlPath = $location.path();
 	//数据读取
 	var promise = $http({
 		method:'get',
@@ -118,22 +102,39 @@ app.controller('personCtrl',function($scope,$http,$location){
 		$scope.listMes = [];
 		$location.hash('');
 		$location.search({"type":$scope.type,"talent":$scope.talent,"level":$scope.level});
-		var urlSearch = $location.search();
-		$scope.type = urlSearch.type >=1?parseInt(urlSearch.type):null;
-		$scope.talent = urlSearch.talent >=1?parseInt(urlSearch.talent):null;
-		$scope.level = urlSearch.level >=1?parseInt(urlSearch.level):null;
 		$scope.mesSelect();
 	}
-/*	$scope.myFilter1 = function(item){
-		if($scope.type == null){return item;console.log('null')}
-		else{return item.type == $scope.type;}
+	
+	//图片显示
+	$scope.reader = new FileReader();
+	$scope.imgUpload = function(files){
+		fileReady = false;
+		$scope.reader.readAsDataURL(files[0]);
+		$scope.reader.onload = function(){
+			$('.selectPic:first').attr('src',$scope.reader.result);
+			fileReady = true;
+		}
 	}
-	$scope.myFilter2 = function(item){
-		if($scope.talent == null){return item}
-		else{return item.talent == $scope.talent;}
+	//上传
+	$scope.upload = function(){
+		if(fileReady){
+			var data = new FormData();
+			data.append('file',$('#selectFile')[0].files[0]);
+			$http({
+				method:'post',
+				url:"/carrots-admin-ajax/a/u/img/test",
+				data:data,
+				cache: false,
+				headers: {'Content-Type': undefined},
+				//transformRequest: angular.identity
+			})
+			.success(function(data){
+				$('#picLink').html(data.data.url);
+				$('.uploadPic:first').attr('src',$scope.reader.result);
+			})
+			.error(function(data){alert(data.message);})
+		}else{
+			alert('请先选择一张图片');
+		}
 	}
-	$scope.myFilter3 = function(item){
-		if($scope.level == null){return item}
-		else{return item.level == $scope.level;}
-	}*/
 });
