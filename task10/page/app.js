@@ -246,6 +246,7 @@ app.controller('personCtrl',function($scope,$http,$location){
 		.success(function(data){
 			if(data.code == 200){
 				alert(data.message);
+				if(!submitState){window.history.back();}
 				promise();
 			}else{
 				alert(data.message);
@@ -253,7 +254,8 @@ app.controller('personCtrl',function($scope,$http,$location){
 		})
 		.error(function(){alert('失败')})
 	}
-	
+	$scope.lisCancel = function(){
+		window.history.back();}
 });
 /*app.directive('newPage1',function(){
 	return function(scope,ele,attrs,location,http){
