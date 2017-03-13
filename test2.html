@@ -1,35 +1,69 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ 
+ 
 <head>
-    <meta charset="utf-8">
-    <title></title>
+    <title>hello</title>
+     
+    <style type="text/css">
+        #mainDiv
+        {
+            float:left;
+            position:relative;
+            z-index:1;
+            margin:-4px 4px 0;
+        }
+        #mainDiv .subDiv
+        {
+            border:2px;
+            border-color:Black;
+            height:25px;
+            cursor:pointer;
+        }
+         
+        #mainDiv:hover .subDiv
+        {
+            position:relative;
+            z-index:2;
+        }
+         
+        #mainDiv dl
+        {
+            position:absolute;
+            margin-top:-2px;
+            width:290px;
+            padding:5px;
+            border:2px solid #EED97C;
+            background:#fff;
+            display:none;
+            -moz-border-radius:0 5px 5px;
+            -webkit-border-radius:0 5px 5px;
+         }
+         #mainDiv:hover dl
+         {
+             display:block;
+             width:290px;
+         }
+          
+    </style>
 </head>
-<body>
-时间输入：</br>
-<input type="text" id="time1" /></br>
-数字输出：</br>
-<input type="text" id="num1" /></br>
-<input type="button" onClick="timeStr()" value="确定" /></br>
-
-数字输入：</br>
-<input type="text" id="num2" /></br>
-时间输出：</br>
-<input type="text" id="time2" /></br>
-<input type="button" onClick="strTime()" value="确定" />
-<script>
-function timeStr(){
-	var str = document.getElementById('time1').value;
-	var arr = new Date(str);
-	document.getElementById('num1').value = arr.getTime();
-}
-function strTime(){
-	var num = new Date(1488538285200);
-	document.getElementById('num2').value = num;
-	var arr = num.getTime();
-	document.getElementById('time2').value = arr;
-}
-</script>
-
-
+ 
+<body style="margin:10px auto">
+ 
+<div style="width:50; margin:auto auto">
+    <div id="mainDiv">
+        <div class="subDiv">
+            <div>Hello</div>
+        </div>
+      
+        <dl>
+            <dd>
+                The thread 0x6b8 has exited with code 0 (0x0).
+            </dd>
+        </dl>
+    </div>
+</div>
+ 
 </body>
+ 
 </html>
