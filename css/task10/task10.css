@@ -143,8 +143,7 @@ label {background:url(noload10.png) no-repeat; height:20px; padding-left:25px;}
 input[type='radio']:checked + .radioStyle {background:url(loading10.png) no-repeat;}
 #mes .input{
 	padding-right:0;
-	height:36px;
-	line-height:38px;
+	height:38px;
 }
 #mes .col-md-2,#mes .col-md-3{
 	padding-right:0;
