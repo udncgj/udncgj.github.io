@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+.list3-user{
+	padding:2vh;
+	margin-left:5vw;
+}
+.list3-user span{
+	display:inline-block;
+	width:70px;
+	text-align:right;
+}
+.list3-upload{
+	padding:2vh;
+	margin-left:5vw;
+}
+.list3-pic img{
+	padding:4vh;
+}
+.list3-lognin{
+	margin-left:2vw;
+}
+.list3-lognin div{
+	padding:2vh;
+}
+</style>
+</head>
+
+<body>
+<div>
+  <p>个人信息</p>
+  <div class="list3-user"><span>登录名：</span><input type="text" id="lis3user" disabled="true" value="admin" /></div>
+  <div class="list3-user"><span>密码：</span><input type="text" id="lis3pwd" disabled="true" value="123456" /></div>
+  <div class="list3-upload">
+    <input type="file" multiple value="选择文件" id="selectFile" ng-model="images" onchange="angular.element(this).scope().imgUpload(this.files)" />
+    <input type="button" value="上传" id="upload" ng-click="upload()" />
+    <span id="picLink"></span>
+  </div>
+  <div class="list3-pic">
+    <img style="width:200px; height:200px" class="uploadPic" />
+    <img style="width:200px; height:200px" class="selectPic"  />
+  </div>
+  <div class="list3-lognin">
+    <div>登录</div>
+    <div><b>用户名</b></div>
+    <input type="text" />
+    <div><b>密码</b></div>
+    <input type="text" />
+    <div><input type="checkbox" value="" /><span>记住密码</span></div>
+  </div>
+</div>
+
+<script>
+/*$(document).ready(function() {
+    var fileReady = false;
+	$('#selectFile').change(function(){
+		var readFile = new FileReader();
+		readFile.readAsDataURL($(this)[0].files[0]);
+		//files是js属性，不能使用$(this)
+		readFile.onload = function(){
+			$('.selectPic:first').attr('src',readFile.result);
+			fileReady = true;
+		}
+		readFile.error = function(){fileReady = false;}
+	})
+	$('#upload').click(function(){
+		var fd = new FormData();
+		fd.append('file',$('#selectFile')[0].files[0]);
+		console.log(fd);
+		$.ajax({
+		  url: "/carrots-admin-ajax/a/u/img/test",
+		  type: "POST",
+		  cache: false,
+		  data: fd,
+		  processData: false,  // 告诉jQuery不要去处理发送的数据
+		  contentType: false   // 告诉jQuery不要去设置Content-Type请求头
+		});
+	})
+});*/
+</script>
+</body>
+</html>

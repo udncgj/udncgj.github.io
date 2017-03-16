@@ -1,0 +1,13 @@
+﻿<view class="top">试试什么职业最适合你</view>
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view wx:for="{{allMes}}">
+    <picker name="{{item.name}}" bindchange="mesChange" data-pindex="{{index}}" value="{{listIndex[index]}}" range="{{item.message}}">
+      <view class="picker">
+    	{{item.name}}  {{item.message[listIndex[index]]}}
+	  </view>
+    </picker>
+  </view>
+  <view>
+    <button formType="submit" class="btn">选好了，点击查看</button>
+  </view>
+</form>

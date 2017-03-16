@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html land="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>css-task7-1</title>
+<link href="bootstrap.css" rel="stylesheet" type="text/css" />
+<!--[if lt IE 9]>
+  <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js">
+  </script>
+  <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js">
+  </script>
+<![endif]-->
+<style type="text/css">
+.body-size{height:100vh;}
+html{font-size:62.5%;}  
+body {font:normal 100% Arial,sans-serif;font-size:14px; font-size:1.4rem;background:#eff0f1;}
+.top{
+	width:100%;
+	height:8vh;
+	background:#34bede;
+}
+.top img{
+	height:1.5rem;
+	margin-top:1.3rem;
+	margin-left:1.2rem;
+}
+.mes{
+	width:95%;
+	float:right;
+	text-align:center;
+	background:#fff;
+	border:1px #dddedf solid;
+}
+.top-btn{
+	height:11vh;
+	line-height:11vh;
+	font-size:2.4rem;
+	margin-top:3vh;
+}
+.bottom{
+	position:fixed;
+	bottom:0;
+	right:0;
+	height:75vh;
+}
+.bottom div{
+	margin:2.5vh auto;
+}
+.mes-top{
+	color:#f8b547;
+	border-bottom:1px solid #f8b547;
+	height:10vh;
+	line-height:10vh;
+	font-size:2.4rem;
+}
+.mes-btn{
+	height:12vh;
+	line-height:12vh;
+	background:#6dd2e9;
+	width:80%;
+	color:#fff;
+	font-size:2.4rem;
+}
+.mes-page{
+	margin-top:-0.5rem;
+}
+.mes-page span{
+	display:inline-block;
+	width:1rem;
+	height:1rem;
+	border-radius:0.5rem;
+	margin:0 0.5rem;
+}
+.orange{
+	background:orange;
+}
+.gray{
+	background:gray;
+}
+.mes-right{
+	position:absolute;
+	top:48%;
+	right:1.5%;
+	width:0;
+    height:0;
+    border-left:1.5rem solid #f8b547;
+    border-top:1.5rem solid transparent;
+    border-bottom:1.5rem solid transparent;
+}
+</style>
+</head>
+
+<body>
+<div class="top">
+  <img src="img/7list.png">
+</div>
+
+<div class="mes top-btn">
+  <span style="margin-left:2rem;">上次游戏：捉鬼猜词版</span>
+  <span style="float:right;padding-right:1rem;color:#e8eaea;">></span>
+</div>
+<div class="mes bottom">
+  <p class="mes-top">捉鬼游戏</p>
+  <div class="mes-btn">简化版</div>
+  <div class="mes-state">有1133个用户正在玩此款游戏</div>
+  <div class="mes-btn">猜词版</div>
+  <div class="mes-state">有1133个用户正在玩此款游戏</div>
+  <div class="mes-btn">白痴版</div>
+  <div class="mes-state">有1133个用户正在玩此款游戏</div>
+  <p class="mes-page"><span class="orange"></span><span class="gray"></span><span class="gray"></span><span class="gray"></span></p>
+  <p class="mes-right"></p>
+</div>
+
+<script src="开发jquery-3.1.1.js"></script>
+<script src="bootstrap.js"></script>
+<script>
+$(window).on('load',function(){
+	$('.top-btn').click(function(){
+		location.href = 'task7-2.html';
+	})
+})
+</script>
+</body>
+</html>

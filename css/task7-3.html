@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html land="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>css-task7-3</title>
+<link href="bootstrap.css" rel="stylesheet" type="text/css" />
+<!--[if lt IE 9]>
+  <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js">
+  </script>
+  <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js">
+  </script>
+<![endif]-->
+<style type="text/css">
+.body-size{height:100vh;}
+html{font-size:62.5%;}  
+body {font:normal 100% Arial,sans-serif;font-size:14px; font-size:1.4rem;background:#34bede;padding:50px 0 13vh;}
+
+.top{
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	color:#fff;
+}
+.top img{
+	height:2rem;
+	margin-top:0.2rem;
+}
+.top-mid{
+	margin-top:0.4rem;
+	display:inline-block;
+	width:75%;
+	font-size:2rem;
+	text-align:center;
+}
+.winpic{
+	width:60%;
+	margin:3vh auto;
+}
+.winpic img{
+	width:100%;
+}
+.mes{
+	width:80%;
+	margin:0 auto 2vh;
+	color:#fbc86c;
+	font-size:2rem;
+}
+.count{
+	width:80%;
+	margin:2vh auto;
+	color:#e8f7fa;
+	font-size:1.6rem;
+	line-height:2rem;
+}
+.count span{
+	padding-right:2.2rem;
+}
+.list{
+	width:100%;
+	background:#fff;
+	border-bottom:1px solid #e1e2e3;
+	padding:1vh 0 2vh;
+}
+.list div{
+	width:80%;
+	margin:0 auto;
+	color:#b2b3b5;
+	font-size:1.7rem;
+}
+.list div p{
+	float:left;
+	color:#7d7e7e;
+	font-size:2rem;
+}
+.list div span{
+	float:right;
+	font-size:1.4rem;
+	padding-top:0.5rem;
+}
+
+.bottom{
+	width:100%;
+	height:13vh;
+	border-top:1px solid #fff;
+	position:fixed;
+	bottom:0;
+	background:rgba(52,190,222,0.7);
+	display:flex;
+	justify-content:space-between;
+}
+.bottom div{
+	color:#fff;
+	height:8vh;
+	line-height:8vh;
+	width:45%;
+	margin:3vh auto 2vh;
+	text-align:center;
+	font-size:2.5rem;
+	background:#f8b445;
+	border-radius:1vh;
+}
+</style>
+</head>
+
+<body>
+<nav class="navbar navbar-default navbar-fixed-top top">
+  <img src="img/7home.png" class="home"><span class="top-mid">游戏结果</span><img src="img/7warn.png">
+</nav>
+
+<div class="winpic"><img src="img/7win.png"></div>
+<div class="mes">本轮游戏共抓出杀手3人，共经历了5个白天，在杀人游戏中击败了67%的玩家！</div>
+<div class="count">
+  <div>本次游戏共计用时0小时25分钟</div>
+  <div><span>杀&#12288;手0人</span><span>警&#12288;察1人</span><span>平&#12288;民6人</span></div>
+  <div><span>狙击手0人</span><span>医&#12288;生1人</span></div>
+  <div>卧底词汇：爱新觉罗</div>
+  <div>水民词汇：努尔哈赤</div>
+</div>
+<div>
+  <div class="list">
+    <div><p>第1天</p><span>0小时07分</span></div>
+    <div style="clear:both;">晚上：5号被杀手杀死，5号是水民</div>
+    <div>白天：8号被全民投票投死，8号是杀手</div>
+  </div>
+  <div class="list">
+    <div><p>第2天</p><span>0小时07分</span></div>
+    <div style="clear:both;">晚上：5号被杀手杀死，5号是水民</div>
+    <div>白天：8号被全民投票投死，8号是杀手</div>
+  </div>
+  <div class="list">
+    <div><p>第3天</p><span>0小时07分</span></div>
+    <div style="clear:both;">晚上：5号被杀手杀死，5号是水民</div>
+    <div>白天：8号被全民投票投死，8号是杀手</div>
+  </div>
+  <div class="list">
+    <div><p>第4天</p><span>0小时07分</span></div>
+    <div style="clear:both;">晚上：5号被杀手杀死，5号是水民</div>
+    <div>白天：8号被全民投票投死，8号是杀手</div>
+  </div>
+</div>
+
+<div class="bottom">
+  <div style="background:#f37072;">再来一局</div><div style="background:#f8b445;">上传并分享</div>
+</div>
+
+<script src="开发jquery-3.1.1.js"></script>
+<script src="bootstrap.js"></script>
+<script>
+$(window).on('load',function(){
+	$('.home:first').click(function(){
+		location.href = 'task7-2.html';
+	})
+	$('.bottom:first>div:first').click(function(){
+		location.href = 'task7-1.html';
+	})
+})
+</script>
+</body>
+</html>

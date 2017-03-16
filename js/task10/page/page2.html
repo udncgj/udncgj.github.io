@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+.list2-list{
+	padding-top:2vh;
+	padding-bottom:2vh;
+}
+.list2-list .list2-project{
+	display:inline-block;
+	width:15%;
+	min-width:110px;
+	text-align:right;
+}
+.list2-list .list2-text{
+	display:inline-block;
+	height:3vh;
+	min-height:20px;
+	padding-left:5px;
+}
+.list2-list .list2-radio{
+	margin-left:1vw;
+}
+.list2-btn{
+	width:200px;
+	margin:0 auto;
+}
+.list2-btn input{
+	width:50px;
+	height:30px;
+	margin:10px;
+}
+</style>
+</head>
+
+<body>
+<div>
+  <p>新增学员</p>
+  <form name="myForm" ng-model="myForm">
+    <div class="list2-list"><span class="list2-project"><b>姓名：</b></span>
+      <input type="text" class="list2-text" name="lisName" ng-model="vm.lisName" placeholder="姓名" ng-pattern="/^[\u4e00-\u9fa5]{2,6}$/" required ng-minlength="2" ng-maxlength="6" />
+      <span style="color:red" ng-show="myForm.lisName.$dirty && myForm.lisName.$invalid">请输入2-6位中文字符
+      </span>
+    </div>
+    <div class="list2-list"><span class="list2-project"><b>QQ：</b></span>
+      <input type="number" class="list2-text" name="lisQQ" ng-model="vm.lisQQ" required placeholder="QQ" ng-minlength="6" ng-maxlength="15" />
+      <span style="color:red" ng-show="myForm.lisQQ.$dirty && myForm.lisQQ.$invalid">请输入6-15位数字
+      </span>
+    </div>
+    <div class="list2-list"><span class="list2-project"><b>修真类型：</b></span>
+      <input type="radio" class="list2-type list2-radio" value=1 ng-model="lisType" ng-change="abc()" />CSS
+      <input type="radio" class="list2-type list2-radio" value=2 ng-model="lisType" ng-change="abc()" />JS
+      <input type="radio" class="list2-type list2-radio" value=3 ng-model="lisType" ng-change="abc()" />JAVA
+      <input type="radio" class="list2-type list2-radio" value=4 ng-model="lisType" ng-change="abc()" />运维
+      <input type="radio" class="list2-type list2-radio" value=5 ng-model="lisType" ng-change="abc()" />DBA
+      <input type="radio" class="list2-type list2-radio" value=6 ng-model="lisType" ng-change="abc()" />产品
+      <input type="radio" class="list2-type list2-radio" value=7 ng-model="lisType" ng-change="abc()" />IOS
+      <input type="radio" class="list2-type list2-radio" value=8 ng-model="lisType" ng-change="abc()" />ANDROID
+    </div>
+    <div class="list2-list"><span class="list2-project"><b>毕业院校：</b></span>
+      <input type="text" class="list2-text" name="lisSchool" ng-model="vm.lisSchool" required placeholder="毕业院校" />
+      <span style="color:red" ng-show="myForm.lisSchool.$dirty && myForm.lisSchool.$invalid">输入毕业院校
+      </span>
+    </div>
+    <div class="list2-list"><span class="list2-project"><b>资质：</b></span>
+      <input type="radio" class="list2-talent list2-radio" value=1 ng-model="lisTalent" />学渣
+      <input type="radio" class="list2-talent list2-radio" value=2 ng-model="lisTalent" />学霸
+    </div>
+    <div class="list2-list"><span class="list2-project"><b>修行等级：</b></span>
+      <input type="radio" class="list2-level list2-radio" value=1 ng-model="lisLevel" />0基础
+      <input type="radio" class="list2-level list2-radio" value=2 ng-model="lisLevel" />修行3个月以内
+      <input type="radio" class="list2-level list2-radio" value=3 ng-model="lisLevel" />修行6个月以内
+      <input type="radio" class="list2-level list2-radio" value=4 ng-model="lisLevel" />修行1年以内
+      <input type="radio" class="list2-level list2-radio" value=5 ng-model="lisLevel" />修行3年以内
+      <input type="radio" class="list2-level list2-radio" value=6 ng-model="lisLevel" />修行3年以上
+    </div>
+    <div class="list2-list"><span class="list2-project"><b>预计入学时间：</b></span>
+      <!--<input type="text" class="list2-text" name="lisTime" ng-model="vm.lisTime" required ng-pattern="/\d{8}/" ng-maxlength="8" />--><input type="date" name="lisTime" required ng-model="vm.lisTime" />
+      <!--<span style="color:red" ng-show="myForm.test.$dirty && myForm.test.$invalid">输入正确时间格式：20160101</span>-->
+    </div>
+    <div class="list2-list"><span class="list2-project"><b>修行立愿：</b></span><span id="lisWish" style="color:red;display:none;">填写立愿</span></div>
+    
+    <input type="text" name="lisText" ng-model="vm.lisText" required style="display:none;" />
+    
+	<script type="text/javascript" charset="utf-8" src="ueditor/ueditor.config.js"> </script>
+    <script type="text/javascript" charset="utf-8" src="ueditor/ueditor.all.js"></script>
+    <script test-d id="editor" type="text/plain" style="width:99%;height:100px;margin:0 auto;"></script>
+    <div class="list2-btn">
+      <input type="button" value="确定" ng-click="lisSubmit()" ng-model="vm.textState" ng-disabled="myForm.$invalid" />
+      <input type="button" value="取消" ng-click="lisCancel()" />
+    </div>
+  </form>
+</div>
+<script>
+</script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html land="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>css-task10</title>
+<link href="bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="task10.css" rel="stylesheet" type="text/css" />
+<!--[if lt IE 9]>
+  <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js">
+  </script>
+  <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js">
+  </script>
+<![endif]-->
+</head>
+
+<body>
+<div id="top" class="back-blue box-center" style="justify-content:space-between;">
+  <h5>客服热线：010-594-78634</h5>
+  <div><h4><span>登录</span><span class="loading">注册</span></h4></div>
+</div>
+<div id="list">
+  <button type="button" class="btn btn-primary">首页</button>
+  <button type="button" class="btn btn-default">在线定制</button>
+  <button type="button" class="btn btn-default">标准箱</button>
+  <button type="button" class="btn btn-default">品质保障</button>
+</div>
+<div id="process">
+  <span class="test loading"><span class="num">1</span></br><span>1.定制纸箱</span></span>
+  <span class="test"><span class="num">2</span></br><span>2.选择数量</span></span>
+  <span class="test"><span class="num">3</span></br><span>3.上传附件</span></span>
+  <span class="test"><span class="num">4</span></br><span>4.确认下单</span></span>
+</div>
+
+<div id="mes">
+	<h4 style="border-left:4px solid #1277dc;padding-left:1rem;">请您按照以下步骤来定制您的纸箱</h4>
+	<div class="list">
+		<p class="box-center"><img src="box10.png"><span class="color-blue">选择箱型</span></p>
+	</div>
+	<div class="mes-select row">
+		<div class="col-md-2 col-xs-6">
+			<input type="radio" name="radio1" id="box1" />
+			<label for="box1" class="radioStyle">
+			  对口箱
+			</label>
+		</div>
+		<div class="col-md-2 col-xs-6">
+			<input type="radio" name="radio1" id="box2" />
+			<label for="box2" class="radioStyle">
+			  飞机盒
+			</label>
+		</div>
+		<div class="col-md-2 col-xs-6">
+			<input type="radio" name="radio1" id="box3" />
+			<label for="box3" class="radioStyle">
+			  天地盖
+			</label>
+		</div>
+		<div class="col-md-2 col-md-offset-4 col-xs-12">
+			<div class="selectBox">
+				<select>
+					<option>查看详情</option>
+					<option>查看详情</option>
+					<option>查看详情</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="list">
+		<p class="box-center"><img src="size10.png"><span class="color-blue">确定尺寸</span></p>
+	</div>
+	<div class="mes-select row">
+		<div class="col-md-8">
+			<div class="row">
+				<div class="col-md-3 col-xs-6">
+					<input type="radio" name="radio2" id="box4" />
+					<label for="box4" class="radioStyle">
+					 外径
+					</label>
+				</div>
+				<div class="col-md-3 col-xs-6 input">
+					长 <input type="text" style="width:50px;height:1.6rem;" /> mm
+				</div>
+				<div class="col-md-3 col-xs-6 input">
+					宽 <input type="text" style="width:50px;height:1.6rem;" /> mm
+				</div>
+				<div class="col-md-3 col-xs-6 input">
+					高 <input type="text" style="width:50px;height:1.6rem;" /> mm
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 col-xs-6">
+					<input type="radio" name="radio2" id="box5" />
+					<label for="box5" class="radioStyle">
+					内径
+					</label>
+				</div>
+				<div class="col-md-3 col-xs-6 input">
+					长 <input type="text" style="width:50px;height:1.6rem;" /> mm
+				</div>
+				<div class="col-md-3 col-xs-6 input">
+					宽 <input type="text" style="width:50px;height:1.6rem;" /> mm
+				</div>
+				<div class="col-md-3 col-xs-6 input">
+					高 <input type="text" style="width:50px;height:1.6rem;" /> mm
+				</div>
+			</div>
+			
+		</div>
+		<div class="col-md-2 col-md-offset-2" style="padding-top:18px;">
+			<div class="selectBox">
+				<select>
+					<option>查看详情</option>
+					<option>查看详情</option>
+					<option>查看详情</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="list">
+		<p class="box-center"><img src="select10.png"><span class="color-blue">选择材质</span></p>
+	</div>
+	<div class="mes-select row">
+		<div class="col-md-2 col-xs-6">
+			<input type="radio" name="radio3" id="box6" />
+			<label for="box6" class="radioStyle">
+			  三层A瓦优质
+			</label>
+		</div>
+		<div class="col-md-2 col-xs-6">
+			<input type="radio" name="radio3" id="box7" />
+			<label for="box7" class="radioStyle">
+			  三层A瓦优质
+			</label>
+		</div>
+		<div class="col-md-2 col-xs-6">
+			<input type="radio" name="radio3" id="box8" />
+			<label for="box8" class="radioStyle">
+			  三层A瓦优质
+			</label>
+		</div>
+		<div class="col-md-2 col-xs-6">
+			<input type="radio" name="radio3" id="box9" />
+			<label for="box9" class="radioStyle">
+			  三层A瓦优质
+			</label>
+		</div>
+		<div class="col-md-2 col-xs-6">
+			<input type="radio" name="radio3" id="box10" />
+			<label for="box10" class="radioStyle">
+			  三层A瓦优质
+			</label>
+		</div>
+		<div class="col-md-2 col-xs-12">
+			<div class="selectBox">
+				<select>
+					<option>查看详情</option>
+					<option>查看详情</option>
+					<option>查看详情</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="button"><button type="button" class="btn btn-danger btn-lg">下一步</button></div>
+</div>
+
+
+
+<div id="bottom">
+	<div class="row">
+		<div class="col-md-4">
+			<h5>51包装网—纸箱包装首选服务平台</h5>
+		</div>
+		<div class="col-md-4 line">
+			<h6><span>关于我们</span><span>配送流程</span><span>联系我们</span></h6>
+			<h6><span>下单指南</span><span>媒体介绍</span></h6>
+		</div>
+		<div class="col-md-4 box-center" style="justify-content:flex-end;">
+			<div>
+				<h6>TEL：400-0000-000</h6>
+				<h6>企业QQ：123456789</h6>
+				<h6>微信号：XXXXXXX</h6>
+			</div>
+			<img src="code10.png">
+		</div>
+	</div>
+</div>
+
+<div id="under">
+  Copyright@2015技能树 www.jnshu.com All Rights Reserved | 京ICP备13005880号
+</div>
+
+<script src="../开发jquery-3.1.1.js"></script>
+<script src="../bootstrap.js"></script>
+<script>
+$(window).on('load',function(){
+	
+})
+</script>
+</body>
+</html>

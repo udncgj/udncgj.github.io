@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>css-task5</title>
+<style type="text/css">
+*{margin:0px; padding:0px;}
+.body-size{height:100vh;}
+html{font-size:62.5%;}  
+body {font:normal 100% Arial,sans-serif;font-size:14px; font-size:1.4rem;background:#fff;}
+/*@media screen and (max-width:500px) {
+	html {
+		font-size: 750%;
+	}
+}*/
+.top{
+	height:8vh;
+	width:100%;
+	background:#5ac0ce;
+}
+.top span{
+	display:inline-block;
+	color:#fff;
+	height:8vh;
+	line-height:8vh;
+	font-size:1.8rem;
+}
+.topleft{
+	padding-left:2%;
+	float:left;
+}
+.topmid{
+	width:6rem;
+	margin:0 auto;
+	color:#fff;
+	height:8vh;
+	line-height:8vh;
+	font-size:1.8rem;
+}
+.personback{
+	height:18rem;
+	width:100%;
+	background:url(img/back.png) center no-repeat;
+	background-size:cover;
+	position:absolute;
+	z-index:-1;
+}
+.all-mes{
+	height:80vh;
+	overflow-y: auto;
+	overflow-x: hidden;
+	position:relative;
+	
+}
+.person{
+	background:rgba(0,0,0,0.4);
+	height:18rem;
+	width:100%;
+}
+.person-pic1 img{
+	height:8rem;
+	float:left;
+	margin:5rem 5%;
+}
+.person-mes{
+	padding-top:7rem;
+}
+.person-mes span{
+	font-size:2rem;
+	color:#fff;
+}
+.person-pic2{
+	height:1.5rem;
+}
+.mes span{
+	font-size:1.6rem;
+}
+.skill{
+	border-bottom:2px solid #e3e3e4;
+	padding:2rem 1rem;
+}
+.skill b{
+	width:0;
+	border-left:3px solid #5ac0ce;
+}
+.skill span{
+	margin-left:0.5rem;
+}
+.term img{
+	margin-left:1rem;
+	height:1rem;
+}
+.term span{
+	margin-left:0.5rem;
+}
+.mes-style{
+	margin-left:2rem;
+	padding:2rem 0;
+	border-bottom:2px solid #e3e3e4;
+	display:flex;
+}
+.list{
+	margin-left:0.5rem;
+	color:#c8c8ca;
+	padding-right:1rem;
+	border-right:1px solid #c8c8ca;
+	margin-right:1rem;
+}
+.introduce{
+	flex:1;
+}
+.btn span{
+	display:inline-block;
+	width:40%;
+	height:8vh;
+	line-height:8vh;
+	text-align:center;
+	border-radius:2vh;
+	font-size:2rem;
+	margin-top:1vh;
+}
+.btn1{
+	border:3px solid #5ac0ce;
+	margin-left:4%;
+	color:#5ac0ce;
+}
+.btn2{
+	background:#5ac0ce;
+	border:3px solid #fff;
+	margin-left:8%;
+	color:#fff;
+}
+</style>
+</head>
+
+<body>
+<div class="top">
+  <span class="topleft"><</span>
+  <div class="topmid">个人主页</div>
+</div>
+<div class="all-mes">
+  <div class="personback"></div>
+  <div class="person">
+    <div class="person-pic1"><img src="img/person.png" /></div>
+    <div class="person-mes">
+      <div><span>徐士林  55岁</span></div>
+      <div>
+        <img src="img/position.png" class="person-pic2" />
+        <span>京城·四方·报纸林</span>
+      </div>
+    </div>
+  </div>
+  <div class="mes">
+    <div class="skill"><b></b><span>专业技能</span></div>
+    <div class="term mes-style"><img src="img/star.png" /><span>住家</span><img src="img/star.png" /><span>不含餐</span></div> 
+    <div class="mes-style"><span class="list">从业年限</span><span>0-3年</span></div> 
+    <div class="mes-style"><span class="list">工作时间</span><span>全天</span></div> 
+    <div class="mes-style"><span class="list">服务价格</span><span style="color:red;">25元/小时</span></div> 
+    <div class="mes-style"><span class="list">自我介绍</span><span class="introduce">可以洗衣、做饭、照顾老人。在护工方面有5年的经验，经验丰富。</span></div>
+  </div>
+</div>
+<div class="btn"><span class="btn1">留言</span><span class="btn2">电话联系</span></div>
+</body>
+</html>

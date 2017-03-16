@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>css-task4</title>
+<style type="text/css">
+*{margin:0px; padding:0px;}
+.body-size{height:100vh;}
+html{font-size:62.5%;}  
+body {font:normal 100% Arial,sans-serif;font-size:14px; font-size:1.4rem;background:#eef0f4;}
+.top{
+	height:8vh;
+	width:100%;
+	background:#5ac0ce;
+}
+.top span{
+	display:inline-block;
+	color:#fff;
+	height:8vh;
+	line-height:8vh;
+	font-size:1.6rem;
+}
+.topleft{
+	padding-left:2%;
+	float:left;
+}
+.topmid{
+	width:3rem;
+	margin:0 auto;
+	color:#fff;
+	height:8vh;
+	line-height:8vh;
+	font-size:1.8rem;
+}
+.topright{
+	float:right;
+	padding-right:2%;
+}
+.input form{
+	width:100%;
+	height:10vh;
+	background:#fff;
+	margin-top:2vh;
+}
+.input form img{
+	height:4vh;
+	padding:3vh 5vw;
+	float:left;
+}
+.input form input{
+	height:5vh;
+	width:70%;
+	margin-top:2.5vh;
+	border:none;
+	border-left:1px solid #eaeaea;
+	padding-left:5vw;
+	font-size:1.5rem;
+}
+input:focus{outline:0;}
+input:-webkit-autofill {-webkit-box-shadow: 0 0 0px 1000px white inset;}
+.login{
+	width:100%;
+	margin-top:3vh;
+	border:none;
+	background:#5ac0ce;
+	color:#fff;
+	height:10vh;
+	line-height:10vh;
+	font-size:2rem;
+}
+.forget{
+	float:right;
+	color:#5ac0ce;
+	padding:2vh;
+}
+</style>
+</head>
+
+<body>
+<div class="top">
+  <span class="topleft">注册</span>
+  <span class="topright">关闭</span>
+  <div class="topmid"><b>登录</b></div>
+</div>
+<div class="input">
+  <form>
+    <img src="img/phonePic.png" />
+    <input type="text" placeholder="请输入手机号" />
+  </form>
+  <form>
+    <img src="img/pwd.png" />
+    <input type="password" placeholder="请输入密码" />
+  </form>
+</div>
+<button class="login">登&nbsp;&nbsp;&nbsp;&nbsp;录</button>
+<a href="#" class="forget">忘记密码</a>
+</body>
+</html>

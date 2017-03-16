@@ -1,0 +1,16 @@
+/**app.wxss**/
+.top{
+  padding-top:40rpx;
+  padding-bottom:40rpx;
+  width:380rpx;
+  margin:0 auto;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 

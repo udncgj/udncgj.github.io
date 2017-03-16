@@ -1,0 +1,234 @@
+"code":0,
+"message":"success",
+"total":"",
+"data":{
+    "type":{
+	    "front":"前端",
+		"backend":"后端",
+		"op":"运维","ued":"用户体验"
+	},
+	"occupations":[{
+"id":1,"name":"css",
+		"img":"http://download2.ptteng.com/skill/thumb/2eb1cdcb-3bec-4e8e-a252-c85188bc81b0.jpg",
+		"description":"WEB工程师的必备技能，唯一零门槛入门的技术职业。",
+		"salary":"[
+		    {\"time\":\"0-1年\",\"salary\":\"5-10\"},
+			{\"time\":\"1-3年\",\"salary\":\"10-20\"}]",
+		"difficult":1,"threshold":1,"cycle":"2年",
+		"company":25744,"basis":"无门槛","type":"front",
+		"onlineGradeCount":1,"offlineGradeCount":1,
+		"classCount":131,"onlineClassCount":161,"offlineClassCount":10,"onlineUserCount":3213,"offlineUserCount":108,"coreUserCount":8,
+		"modules":"[
+		    {\"name\":\"工作内容\",\"content\":\"产品设计好原型，UI做出来了效果图，剩下的就是CSS工程师用代码把静态页面写出来。\"},
+			{\"name\":\"需要技能\",\"content\":\"环境【IDE(WEBStorm，Sublime，EditPlus)】\\n源码管理【(SVN/Git) ，WEB服务器(nginx)】\\n基础【PS，域名，Html，Html5，CSS，CSS3】\\n扩展【自适应，响应式，Bootstrap，Less，Flex】\"},
+			{\"name\":\"发展前景\",\"content\":\"CSS工程师-初级JS工程师-JS工程师-前端架构师-前端Leader（IOS，Android和JS通吃）\\nCSS的发展前景最近几年好的不行。在Android和IOS大行其道的时候，一大部分人都转去做了这两个行业，然而突然之间，因为微信的缘故加上JS的魅力，H5突然又火爆起来，所以，CSS整体来说还是一个挺靠谱的职业。最关键的是，CSS是入门最快的职业，几乎零门槛，只是转JS还是挺不容易的。\"},
+			{\"name\":\"入门门槛\",\"content\":\"无门槛\"},
+			{\"name\":\"谁更合适\",\"content\":\"IT界：All\\n\\n其他界：All\"},
+			{\"name\":\"职业限制\",\"content\":\"CSS的职业限制有三个：1、不去学自适应和响应式；2、不去学框架；3、学不会JS。这三点都是很重要的突破。css这个职业，在一家公司里可替代的程度比较高，并不算特别重要，做不了核心岗，也不存在什么代码交接。你就算代码写的再烂，也最多就是花一个月时间重写。\"}]"},
+		
+{"id":2,"name":"js",
+		"img":"http://download2.ptteng.com/skill/thumb/c7cfcac0-17f7-43ca-9c9b-ec673388ac47.jpg",
+		"description":"最疯狂的低门槛高薪水职业，从前端到后台无所不能。",
+	    "salary":"[
+		    {\"time\":\"0-1年\",\"salary\":\"3-6\"},
+			{\"time\":\"1-3年\",\"salary\":\"6-12\"},
+			{\"time\":\"3年以上\",\"salary\":\"12-40\"}]",
+		"difficult":3,"threshold":1,"cycle":"5年",
+		"company":12980,
+		"basis":"要么是会了CSS，要么是精通了一种后端语言，千万不要CSS没学好，后端语言也不会就直接学JS，心里会没底，不踏实。",
+		"type":"front","onlineGradeCount":1,"offlineGradeCount":1,"classCount":30,"onlineClassCount":27,"offlineClassCount":10,
+		"onlineUserCount":557,"offlineUserCount":109,"coreUserCount":0,
+		"modules":"[
+		    {\"name\":\"工作内容\",\"content\":\"A、对于套页面来说，JS工程师的职责非常简单，一个是做一些简单的动画和交互和验证，轮播图，弹框，验证用户名是否为空等等。\\n\\nB、另一个就是通过Ajax取一些后台数据，然后在页面上展示出来。那个时候的JS工程师并不被太多人重视，很多时候一些后端的人把前端的工作也做了。除了写CSS，大部分的后端工程师写点JS还是不成问题的。可是前后端分离的出现，彻彻底底的改变了前端的世界。前端居然有架构了，前端居然也有“编译”的概念了（你能想象么，JS的项目居然不能直接打开源码直接使用了，必须要经过编译才可以）。前端工程师和后端工程师只通过Json数据交互（感谢Nginx提供了一个完美的跨域解决方案，再也不用什么Jsonp了），然后服务器端的同学发现：好简单啊，我对Android，对IOS，对Html都只需要提供一套API就够了。\"},
+			{\"name\":\"需要技能\",\"content\":\"环境【IDE（WEBStorm，Sublime，EditPlus），源码管理（SVN/Git） ，WEB服务器(nginx)】\\n\\n基础【Http，REST，跨域，语法，组件，F12，Json，Websocket】\\n\\n框架【JQuery，AngularJS，Bower，RequireJS，GruntJS，ReactJS，PhoneGap】\\n\\n业务【金融，教育，医疗，汽车，房产等等等等各种行业】\\n\\n第三方【微信，QQ等各种第三方登录，支付，IM，地图，语音，视频，图片】\"},
+			{\"name\":\"发展前景\",\"content\":\"JS菜鸟-JS初级工程师-JS中级工程师-JS架构师-UED-前端Leader-前端大牛\\n\\nJS工程师在后面有一点后续无力，一般来说，还是强烈推荐JS，IOS，Android三者通吃.。这三者有太多相似之处了，到最后你会发现，语言只是一种工具而已。要做的事情，其实是差不太多的，并不需要对所有的语言都特别熟悉。\"},
+			{\"name\":\"入门门槛\",\"content\":\"要么是会了CSS，要么是精通了一种后端语言，千万不要CSS没学好，后端语言也不会就直接学JS，心里会没底，不踏实。\"},
+			{\"name\":\"谁更合适\",\"content\":\"IT界:CSS and All\\n\\n其他界:All\"},
+			{\"name\":\"职业限制\",\"content\":\"JS的职业限制主要就在于学习的方向上很容易误入歧途。比如说一直坚持喜欢用原生，各种喜欢写一些奇怪语法，各种回调等等等等。学到一些好的框架其实很赞的，对于大多数人来讲，就够了。只是缺少一个清晰的指引。有的时候你会发现，你对Http了解的比较少，会是一个瓶颈。你对数组啊，循环啊不了解，是一个瓶颈。你对MVC不了解，也是另一个瓶颈。对Json不懂，不知道怎么定接口，也是个问题。\"}]"},
+		
+{"id":3,"name":"android",
+		"img":"http://download2.ptteng.com/skill/thumb/f943eafb-306c-4582-b97f-3d3aa5e7ace3.jpg",
+		"description":"这个世界上最流行的手机操作系统，Android大显神威。",
+		"salary":"[
+		    {\"time\":\"0-1年\",\"salary\":\"5-8\"},
+			{\"time\":\"1-3年\",\"salary\":\"8-18\"},
+			{\"time\":\"3年以上\",\"salary\":\"18-35\"}]",
+		"difficult":3,"threshold":3,"cycle":"1年",
+		"company":16707,
+		"basis":"java基础","type":"front","onlineGradeCount":1,"offlineGradeCount":1,"classCount":22,"onlineClassCount":24,
+		"offlineClassCount":1,"onlineUserCount":467,"offlineUserCount":7,"coreUserCount":0,
+		"modules":"[
+		    {\"name\":\"工作内容\",\"content\":\"Android工程师的日常就是听产品经理讲需求，跟后端定接口，听QA反馈哪款机器不兼容，
+			    闹着申请各种测试机，以及用Android做IOS的控件。\\nAndroid其实是对地图，支付，IM，第三方登录，短信，统计，音视频，文件，
+				照片等等要求比较多的。业务上其实一般并不会有太多的内容。也很少会要求一些动画效果。再加一些手势密码。\"},
+			{\"name\":\"需要技能\",\"content\":\"环境【Android Studio，Maven,Gradle】\\n基础【数据结构，Java，计算机网络】
+			    \\n扩展组件【IM，地图，支付，拍照，视频，音频，统计，分享，手势密码】\\n必备工具【java SDK，Android studio，
+				Photoshop，svn，mark man，cutterman，post man，Fiddler，genymotion】\"},
+			{\"name\":\"发展前景\",\"content\":\"Android工程师->Android Leader-》前端Leader\\n很少有Android工程师能够做到技术总监的。
+			    所以还是早做准备，Android，IOS和JS通吃。\"},{\"name\":\"入门门槛\",\"content\":\"门槛比较低了。比JS稍稍高一点儿，
+				但也差别不大。主要是因为Android是纯客户端，要做就必须什么都懂。但是JS就不太一样了，有的时候要求不高也能做事儿。
+				这就是Android比JS的门槛高一点的原因。简单来讲的话，最好是懂Java语法，然后是懂Http请求的含义，然后懂点儿MVC的概念，就可以了\"},
+			{\"name\":\"谁更合适\",\"content\":\"IT界面:All\\n其他界:All(具备计算机基础)\"},
+			{\"name\":\"职业限制\",\"content\":\"只掌握Android很难做到技术高层，应向其他技术进行扩展\"}]"},
+			
+{"id":4,"name":"ios",
+		"img":"http://download2.ptteng.com/skill/thumb/b6939d54-eb26-4fc6-85da-1b385080e856.jpg",
+		"description":"最近几年互联网前端开发的新贵，高冷职业的代表。",
+		"salary":"[
+		    {\"time\":\"0-1年\",\"salary\":\"6-8\"},{\"time\":\"1-3年\",\"salary\":\"8-18\"},
+			{\"time\":\"3年以上\",\"salary\":\"18-35\"}]",
+		"difficult":3,"threshold":3,"cycle":"1-3年",
+		"company":6600,
+		"basis":"计算机基础","type":"front","onlineGradeCount":1,"offlineGradeCount":1,"classCount":9,"onlineClassCount":8,
+		"offlineClassCount":1,"onlineUserCount":156,"offlineUserCount":5,"coreUserCount":0,
+	    "modules":"[
+		    {\"name\":\"工作内容\",\"content\":\"1.负责ios平台项目研发\\n2.完成iOS开发、Code Review、测试、bug修复、性能优化\
+			    n3.编写产品设计文档、功能说明书等相关技术文档。\"},
+			{\"name\":\"需要技能\",\"content\":\"1.熟练掌握Object-C/C,了解C++,对Object-C的内存管理机制有较好的理解;\\n2.熟练掌握MVC、
+			    单例、观察者、代理、工厂等设计模式以及NSNotificationCenter消息机制;\\n3.熟练掌握JSON/XML解析和GET/POST数据请求等操作\
+				\n4.熟练使用AFNetworking、MBProgressHUD、SDWebImage等第三方框架;\\n5.熟练使用基于代码的应用程序框架搭建，
+				熟悉xib和StoryBoard；\\n6.熟练掌握环信、支付、分享、定位等常用的第三方;\\n7.熟悉使用NSTread、GCD、NSOperation多线程开发;
+				\\n8.熟练使用SVN代码管理工具\"},
+			{\"name\":\"发展前景\",\"content\":\"IOS工程师->IOS Leader->前端Leader\"},
+			{\"name\":\"入门门槛\",\"content\":\"1.具有扎实的计算机基础\\n2.计算机专业最好\"},
+			{\"name\":\"谁更合适\",\"content\":\"IT界：都可以。哪怕你是产品，运维或者是QA\\n其他界：All(具备计算机基础)\"},
+			{\"name\":\"职业限制\",\"content\":\"只掌握iOS很难做到技术高层，应向其他技术进行扩展\"}]"},
+			
+{"id":5,"name":"java",
+		"img":"http://download2.ptteng.com/skill/thumb/9494c57f-1f62-4435-bb7f-9a97b5c9d8f3.jpg",
+		"description":"IT界的亲儿子，从出世到现在一直坚挺的中坚职业。",
+		"salary":"[
+		    {\"time\":\"0-1年\",\"salary\":\"6-8\"},
+			{\"time\":\"2-5年\",\"salary\":\"8-18\"},
+			{\"time\":\"5年以上\",\"salary\":\"20-50\"}]",
+		"difficult":5,"threshold":5,"cycle":"7年",
+		"company":21207,
+		"basis":"计算机基础(计算机网络，数据结构，数据库，操作系统，Java基础语法)。","type":"backend","onlineGradeCount":,
+		"offlineGradeCount":1,"classCount":50,"onlineClassCount":73,"offlineClassCount":3,"onlineUserCount":1443,"offlineUserCount":20,
+		"coreUserCount":0,
+		"modules":"[
+		    {\"name\":\"工作内容\",\"content\":\"拿到产品需求-》后端程序员做接口设计，架构设计，DB设计-》拿出方案来做技术方案评审-》
+			    评审通过，开始预估时间-》每日更新自己的Task-》接口完成自测一百遍，每日部署到开发环境，随时集成-》CodeReview-》重构代码-》
+				性能测试-》Demo通过-》发布到测试环境-》修正Bug-》重新发布-》发布到线上环境。\"},
+			{\"name\":\"需要技能\",\"content\":\"环境【IDE（Idea/Eclipse，Maven，jenkins，Nexus，Jetty，Shell，Host)、
+			    源码管理(SVN/Git)，WEB服务器(nginx,tomcat,Resin)】\\n\\n基础【Http，REST，跨域，语法，Websocket,数据库，
+				计算机网络，操作系统，算法，数据结构】\\n\\n框架【Spring，AOP，Quartz，Json TagLib,tiles,activeMQ,memcache,
+				redis,mybatis,log4j,junit】\\n\\n框架【业务【金融，教育，医疗，汽车，房产等各种行业】】\\n\\n第三方
+				【微信、QQ等各种第三方登录、支付、IM、地图、语音、视频、图片】\"},
+			{\"name\":\"发展前景\",\"content\":\"Java初级工程师-Java中级工程师-架构师-技术经理-技术总监-CTO-CEO\\n\\
+			    n后端的爆发力并不差，只要你给他时间，只要你愿意前进，后端的路线很深，深到你有时候会觉得自己还没来得及全部了解，
+				就已经有无数的新人涌进来要替换你的位置了。\"},
+			{\"name\":\"入门门槛\",\"content\":\"计算机基础(计算机网络，数据结构，数据库，操作系统，Java基础语法)。\"},
+			{\"name\":\"谁更合适\",\"content\":\"IT界:无\\n\\n其他界:无\\n\\n科班生:计算机专业的中等水平能力以上\"},
+			{\"name\":\"职业限制\",\"content\":\"职业限制就是不去做独立的项目，不做DB设计，不做接口设计。第二个职业限制就是视野
+			    不开阔，不知道有什么样的开源软件可以用。第三个职业限制就是不重视线上环境，不知道如何写日报，也不知道如何快速定位
+				。我不得不说我带过的兄弟，有一次解决线上问题的时候快把我气疯了，他们在那里猜测问题出现的原因，跟玩福尔摩斯一样，
+				不打日志不看日志，根据现象倒推结果，直接盲改代码再扔到线上看看有没有解决问题---那是最后逼不得已的办法好么，
+				在此之前能不能安静的把日志打出来，确认一下到底是哪里出错了？第四个职业限制就是不懂版本管理，不懂Bug修复流程，
+				不懂开发流程。\"}]"},
+		
+{"id":6,"name":"op",
+		"img":"http://download2.ptteng.com/skill/thumb/735b2cb5-aa45-4cee-b169-e8e018abbd43.jpg",
+		"description":"越来越重要的岗位，“云服务和安全”必备职业。",
+		"salary":"[
+		    {\"time\":\"0-1年\",\"salary\":\"6-8\"},
+			{\"time\":\"1-3年\",\"salary\":\"8-18\"}]",
+		"difficult":1,"threshold":2,"cycle":"2年",
+		"company":25744,
+		"basis":"OP的门槛其实并没有太高，经常玩玩Linux会好一些，但是要学的东西，确实挺多的。处理线上故障，也是一个经验积累的过程，
+		    所以说呢，基本上算是0门槛，谁都可以考虑做，只是要看你喜欢，或者是不喜欢，进度快和慢的问题而已。",
+		"type":"op","onlineGradeCount":1,"offlineGradeCount":1,"classCount":12,"onlineClassCount":12,"offlineClassCount":1,
+		"onlineUserCount":237,"offlineUserCount":3,"coreUserCount":2,
+		"modules":"[
+		    {\"name\":\"工作内容\",\"content\":\"A、基础环境的搭建和常用软件的安装和配置（兼网管的还有各种程控机）,常用软件指的是SVN，
+			Git，邮箱这种，更细节的内容请参考修真院对于运维职业的介绍。\\n\\nB、日常的发布和维护，如刚刚讲到的一样，
+			测试环境和线上环境的发布和记录，原则上，对线上所有的变更都应该有记录。\\n\\nC、数据的备份和服务的监控&安全配置。各种数据，
+			都要做好备份和回滚的手段，提前准备好各种紧急预案，服务的监制要做好。安全始终都是不怎么被重点考虑的问题，因为这个东西无底洞，
+			你永远不知道做到什么程度算是比较安全了，所以大多数都是看着情况来\\n\\nD、运维工具的编写。这一点在大的云服务器商里格外常见，
+			大公司也是一样的\\n\\nE、Hadoop相关的大数据体系架构的运维。\"},
+		{\"name\":\"需要技能\",\"content\":\"环境【Linux，Mysql，Oracle，MongoDB，Hadoop，nginx,apache,F5,lvs,vpn,iptable，svn,git,
+		    memcache,redis】；工具【linux 常用工具，Mysql常用工具，Jenkins，zabbix,nagios】；自动化运维【openstack,docker,ansible】；
+			语言【shell,python】\"},
+		{\"name\":\"发展前景\",\"content\":\"网管-初级运维工程师-中级运维工程师-高级运维工程师；运维做到高级运维工程师这个级别，
+		    已经到头了。很少有运维的同事能做到技术叫监的级别的。所以，对于资质一般的你来说，选择了做运维，就代表着天花板很近，
+			但是对于大多数人来说，已经可以了\"},
+		{\"name\":\"入门门槛\",\"content\":\"OP的门槛其实并没有太高，经常玩玩Linux会好一些，但是要学的东西，确实挺多的。
+		    处理线上故障，也是一个经验积累的过程，所以说呢，基本上算是0门槛，谁都可以考虑做，只是要看你喜欢，或者是不喜欢，
+			进度快和慢的问题而已。\"},
+		{\"name\":\"谁更合适\",\"content\":\"IT界：后端工程师，网管；其他界：All\"},
+	    {\"name\":\"职业限制\",\"content\":\"这样责任和权利分开。所以运维工程师能够相对有更多的时间去研究技术，然而坏处就是对一
+		    个行业了解的会比较少。所以这个职业比较大的问题就是，想要再转行成其他的职业，已经很难了，只能一条路走到黑。\"}]"},
+		
+{"id":7,"name":"pm",
+		"img":"http://download2.ptteng.com/skill/thumb/d6febb74-ca52-415b-8aad-09bbece7ebfb.jpg",
+		"description":"入门门槛虽低，却是成为CEO的最佳职位",
+		"salary":"[
+		    {\"time\":\"0-2年\",\"salary\":\"6-15\"},
+			{\"time\":\"2-4年\",\"salary\":\"12-25\"},
+			{\"time\":\"4年以上\",\"salary\":\"20-50\"}]",
+		"difficult":3,"threshold":1,"cycle":"5年",
+		"company":23614,
+		"basis":"无（甚至你可以不认识字)","type":"ued","onlineGradeCount":1,"offlineGradeCount":1,"classCount":27,
+		"onlineClassCount":29,"offlineClassCount":2,"onlineUserCount":578,"offlineUserCount":20,"coreUserCount":1,
+		"modules":"[
+		    {\"name\":\"工作内容\",\"content\":\"了解用户需求、做竞品调研、画产品原型、写产品文档、讲解产品需求、测试产品Bug、
+			    收集用户反馈\"},{\"name\":\"需要技能\",\"content\":\"PPT，Word, Axure,XP,MVP，行业知识，沟通\"},
+			{\"name\":\"发展前景\",\"content\":\"产品助理-产品经理-高级产品经理-产品总监-CEO\\n\\n不用说，产品经理绝对是一个炙
+			    手可热的职业，而且，TNND的几乎是零门槛，这表示，是个人都可以说，我想成为一个产品经理。 然而，好的产品经理很多么？
+				并不多，所以，好像围棋一样的，入门容易，学精难。 而且，似乎并没有一个系统的教程（这真是一个很难让人相信的事情啊，
+				这么一种职业，没有大学的知识培养，甚至都很少有标准化的职业化培训，全靠业界手把手培养和自发的交流，就能够拿着无数DS
+				程序员根本就想像不到的薪水--产品经理真的跟DS有点儿不搭边的，当然，我大修真还是在努力做产品人员的培养的）。 
+				产品经理的发展前景是很赞的，只是越来越体系化了，而且很容易出人头地。\"},
+			{\"name\":\"入门门槛\",\"content\":\"无（甚至你可以不认识字)\"},
+			{\"name\":\"谁更合适\",\"content\":\"IT界：程序员，UI，QA，运营，市场\\n\\n其他界：无限制\"},
+			{\"name\":\"职业限制\",\"content\":\"很多产品经理都很怕跟程序员沟通。而且经常会苦恼，觉得自己设计的功能，程序员做不了，
+			    做不出来，做的太慢，做的太差。惟独不会觉得自己设计的太烂。 所以，很多产品经理都会认为不同技术是自己的一个弱项，我曾经整理过一个产品经理需要了解的技术术语，有需要直接看楼下的广告。\"}]"},
+			
+{"id":8,"name":"ui",
+			"img":"http://test.download.ptteng.com/skill/thumb/fdb987e9-ee41-4dfc-a090-5f31afc5c028.png",
+			"description":"最近几年互联网前端开发的新贵，高冷职业的代表。",
+			"salary":"[
+			    {\"time\":\"0-1年\",\"salary\":\"6-8\"},
+			    {\"time\":\"1-3年\",\"salary\":\"8-18\"},
+				{\"time\":\"3年以上\",\"salary\":\"18-35\"}]",
+			"difficult":3,"threshold":3,"cycle":"1-3年",
+			"company":6600,
+			"basis":"UI对入门门槛要求还算是比较高的。首先你得有一台Mac。。大部分的情况下你都需要Mac。然后你要懂之前提到的常用软件，
+			    UI的交互规范，配色等等等。。",
+			"type":"ued","onlineGradeCount":1,"offlineGradeCount":1,"classCount":6,"onlineClassCount":8,"offlineClassCount":1,
+			"onlineUserCount":145,"offlineUserCount":8,"coreUserCount":0,
+			"modules":"[
+			    {\"name\":\"工作内容\",\"content\":\"UI表面上看是用户与界面两个组成部分，但实际上还包括用户与界面之间的交互关系。
+				    具体还包括：可用性分析、GUI（Graphic User Interface即图形用户界面）设计、用户测试等。好的UI设计不只是让软件变得
+					有个性有品味而已，更重要的是让软件的操作变得舒适、简单、易用，并且充分体现软件的定位和特点。\"},
+				{\"name\":\"需要技能\",\"content\":\"PS，Illustrator，Sketch，耐性，找素材\"},
+				{\"name\":\"发展前景\",\"content\":\"实习UI-初级U-中级UI-高级UI（UE)\"},
+				{\"name\":\"入门门槛\",\"content\":\"UI对入门门槛要求还算是比较高的。首先你得有一台Mac。。大部分的情况下你都需要Mac。
+				    然后你要懂之前提到的常用软件，UI的交互规范，配色等等等。。\"},
+				{\"name\":\"谁更合适\",\"content\":\"IT界：无\\n\\n其他界：传统做VI的，就是平面设计的会转一些。跟着基本上就是小鲜肉
+				    了，刚毕业就从事这个行业的会比较多一些。还有一些学美术的，会手绘的。\"},
+				{\"name\":\"职业限制\",\"content\":\"UI这个职业的限制在某种程度上就是不太清楚自己应该朝着UE发展。所以时间长了工作就会
+				    变得单调，两年或者是三年之后原地踏步走没怎么有进步的人很多。像Metro（扁平化）或者是material design这样的风格一不
+					熟悉二不了解三不想尝试的人还是挺多的。\"}]"},
+					
+{"id":9,"name":"QA",
+			"img":"http://jns.img.bucket.ks3-cn-beijing.ksyun.com/skill/1/01e1cf98-eea6-4d7f-8d0c-1397636ac247.jpg",
+			"description":"项目的守护神。",
+			"salary":"[
+			    {\"time\":\"0-2\",\"salary\":\"6--10\"},
+				{\"time\":\"2--4年\",\"salary\":\"8--16\"},
+				{\"time\":\"4年以上\",\"salary\":\"15--25\"}]",
+			"difficult":1,"threshold":1,"cycle":"3年",
+			"company":32458,
+			"basis":"无","type":"","onlineGradeCount":0,"offlineGradeCount":0,"classCount":0,"onlineClassCount":0,
+			"offlineClassCount":0,"onlineUserCount":0,"offlineUserCount":0,"coreUserCount":0,
+			"modules":"[
+			    {\"name\":\"工作内容\",\"content\":\"1.了解产品需求。2.对功能点进行分析。3.编写测试用例。4.执行测试用例。5.使用bug工
+				    具。6.追踪bug状态。\"},
+				{\"name\":\"需要技能\",\"content\":\"excel、jmeter、loadrunner、行业知识、沟通、\"},
+				{\"name\":\"发展前景\",\"content\":\"QA贯穿整个项目，它要保证产品的质量，所以被称为“项目的守护神”。\\n测试四大魅力:
+				    1.就业竞争小 2.高薪没商量 3.多元化发展\"},
+				{\"name\":\"入门门槛\",\"content\":\"无\"},
+			    {\"name\":\"谁更合适\",\"content\":\"IT界：程序员、运营、市场、PM、UI、 其他界：无限制\"},
+				{\"name\":\"职业限制\",\"content\":\"如果测试对产品需求业务逻辑不了解， 会导致在测试期间流程行不通。所以不要不敢怼
+				    产品，在需求评审时候都思维的进行思考，有问题提前提出来，避免对人力物力造成不必要的损失。\"}]"}]}}

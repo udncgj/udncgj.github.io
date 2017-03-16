@@ -1,0 +1,135 @@
+@charset "utf-8";
+
+*{margin:0;padding:0}
+.body-size{height:100vh;}
+html{font-size:62.5%;}  
+body {font:normal 100% Arial,sans-serif;font-size:14px; font-size:1.4rem;background:#fff;padding:50px 0 60px;}
+
+
+.box-center{
+	display:flex;
+	align-items:center;
+}
+input:focus{outline:0;}
+input:-webkit-autofill {-webkit-box-shadow: 0 0 0px 1000px white inset;}
+
+#top{
+	height:50px;
+	position:fixed;
+	top:0;
+	width:100%;
+	background:#5ac0ce;
+	.box-center;
+	padding-left:2%;
+	font-size:1.8rem;
+	color:#fff;
+	z-index:1;
+	.left{
+		width:40%;
+	}
+}
+#all-mes{
+	position:relative;
+	.personback{
+		height:18rem;
+		width:100%;
+		background:url(../img/back.png) center no-repeat;
+		background-size:cover;
+		position:absolute;
+		z-index:-1;
+	}
+	.person{
+		background:rgba(0,0,0,0.4);
+		height:18rem;
+		width:100%;
+		.box-center;
+		.person-pic1{
+			margin:5rem 5%;
+			img{
+				height:8rem;
+			}
+		}
+		.person-mes{
+			img{
+				height:1.5rem;
+			}
+			span{
+				font-size:2rem;
+				color:#fff;
+			}
+		}
+	}
+	.mes span{
+		font-size:1.6rem;
+	}
+}
+.skill{
+	border-bottom:2px solid #e3e3e4;
+	padding:2rem 1rem;
+}
+.skill b{
+	width:0;
+	border-left:3px solid #5ac0ce;
+}
+.skill span{
+	margin-left:0.5rem;
+}
+.term{
+	.box-center;
+}
+.term img{
+	margin-left:1rem;
+	height:1rem;
+	margin-bottom:0.3rem;
+}
+.term span{
+	margin-left:0.5rem;
+}
+
+.mes-style{
+	margin-left:2rem;
+	padding:2rem 0;
+	border-bottom:2px solid #e3e3e4;
+	.box-center;
+}
+.list{
+	margin-left:0.5rem;
+	color:#c8c8ca;
+	padding-right:1rem;
+	border-right:1px solid #c8c8ca;
+	margin-right:1rem;
+}
+.introduce{
+	flex:1;
+}
+#btn{
+	.box-center;
+	justify-content:space-between;
+	position:fixed;
+	bottom:0;
+	height:70px;
+	width:100%;
+	background:#fff;
+	span{
+		font-size:2rem;
+		text-align:center;
+		border-radius:10px;
+	}
+	.btn1{
+		border:3px solid #5ac0ce;
+		width:40%-6px;
+		margin:0 5%+3px;
+		height:44px;
+		line-height:44px;
+		color:#5ac0ce;
+	}
+	.btn2{
+		background:#5ac0ce;
+		width:40%;
+		margin:0 5%;
+		height:50px;
+		line-height:50px;
+		color:#fff;
+	}
+}
+

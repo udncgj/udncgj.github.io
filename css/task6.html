@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>css-task6</title>
+<!--<link href="bootstrap.css" rel="stylesheet" type="text/css" />-->
+<style type="text/css">
+*{margin:0;padding:0;}
+.body-size{height:100vh;}
+html{font-size:62.5%;}  
+body {font:normal 100% Arial,sans-serif;font-size:14px; font-size:1.4rem;background:#fff;padding-top:16vh;padding-bottom:10vh;}
+ul{list-style:none;padding:0;}
+.top{
+	position:fixed;
+	top:0;
+	width:100%;
+	background:#5ec0ce;
+	height:8vh;
+	overflow:hidden;
+}
+.top-btn{
+	height:6vh;
+	width:12rem;
+	margin:1vh auto;
+	background:#53a9b2;
+	border-radius:0.5rem;
+}
+.top-btn span{
+	display:inline-block;
+	width:50%;
+	text-align:center;
+	line-height:6vh;
+	font-size:1.8rem;
+	border-radius:0.5rem;
+}
+.top1{
+	color:#fff;
+}
+.top2{
+	color:#5ec0ce;
+	background:#fff;
+}
+.sel{
+	position:fixed;
+	top:8vh;
+	width:100%;
+	height:8vh;
+	border-bottom:1px solid #f3f3f3;
+	background:#fff;
+}
+.sel select{
+	height:100%;
+	width:32%;
+	border:none;
+	padding-left:5%;
+	font-size:1.8rem;
+	color:#a8a8a8;
+}
+.all-mes{
+	/*height:65vh;*/
+	/*overflow-y: auto;
+	overflow-x: hidden;*/
+}
+.list{
+	padding:1.5rem 1rem;
+	border-bottom:1px solid #f3f3f3;
+	font-size:1.6rem;
+}
+.list div{
+	padding-top:0.2rem;
+	padding-bottom:0.2rem;
+}
+.date{
+	display:block;
+	width:50%;
+	float:left;
+    word-break:keep-all;/* 不换行 */
+    white-space:nowrap;/* 不换行 */
+    overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+}
+.pic1{
+	height:1.4rem;
+	padding-right:1rem;
+}
+.pic2{
+	float:right;
+	width:9rem;
+}
+.list-other{
+	color:#a8a8a8;
+	clear:both;
+}
+.list-mid{
+	padding-left:2.2rem;
+}
+.list-mid img{
+	height:1.4rem;
+	padding-left:1rem;
+	padding-right:0.5rem;
+}
+.bottom{
+	position:fixed;
+	bottom:0;
+	height:10vh;
+	width:100%;
+	background:#f9fafc;
+	border-top:1px solid #f3f3f3;
+	text-align:center;
+	overflow:hidden;
+}
+.img1{
+	width:2rem;
+}
+.img2{
+	width:4rem;
+	margin:1vh 15% 0 15%;
+}
+.img3{
+	width:1.7rem;
+}
+</style>
+</head>
+
+<body>
+<div class="top">
+  <div class="top-btn"><span class="top1">找雇主</span><span class="top2">找护工</span></div>
+</div>
+<div class="sel">
+  <select>
+    <option>所&nbsp;在&nbsp;地</option>
+    <option>成&#12288;&#12288;都</option>
+    <option>广&#12288;&#12288;州</option>
+  </select>
+  <select>
+    <option>食&#12288;&#12288;宿</option>
+    <option>不&#12288;&#12288;包</option>
+    <option>包&#12288;&#12288;吃</option>
+    <option>包&#12288;&#12288;住</option>
+    <option>全&#12288;&#12288;包</option>
+  </select>
+  <select>
+    <option>病人情况</option>
+    <option>良&#12288;&#12288;好</option>
+    <option>一&#12288;&#12288;般</option>
+    <option>较&#12288;&#12288;差</option>
+  </select>
+</div>
+<div class="all-mes">
+  <ul class="mes">
+    <li class="list">
+      <div class="list-other"><img src="img/date.png" class="pic1" /><span>服务日期</span></div>
+      <div class="list-mid">
+        <span class="date">2015-7-5 至 2015-7-12</span>
+        <div class="pic2">
+          <span style="color:red;">25元/小时</span>
+          <img src="img/right.png" />
+        </div>
+      </div>
+      <div class="list-other"><img src="img/position3.png" class="pic1" /><span>北京.通州.果园</span></div>
+    </li>
+    <li class="list">
+      <div class="list-other"><img src="img/date.png" class="pic1" /><span>服务日期</span></div>
+      <div class="list-mid">
+        <span class="date">2015-7-5 至 2015-7-12</span>
+        <div class="pic2">
+          <span style="color:red;">25元/小时</span>
+          <img src="img/right.png" />
+        </div>
+      </div>
+      <div class="list-other"><img src="img/position3.png" class="pic1" /><span>北京.通州.果园</span></div>
+    </li>
+    <li class="list">
+      <div class="list-other"><img src="img/date.png" class="pic1" /><span>服务日期</span></div>
+      <div class="list-mid">
+        <span class="date">2015-7-5 至 2015-7-12</span>
+        <div class="pic2">
+          <span style="color:red;">25元/小时</span>
+          <img src="img/right.png" />
+        </div>
+      </div>
+      <div class="list-other"><img src="img/position3.png" class="pic1" /><span>北京.通州.果园</span></div>
+    </li>
+    <li class="list">
+      <div class="list-other"><img src="img/date.png" class="pic1" /><span>服务日期</span></div>
+      <div class="list-mid">
+        <span class="date">2015-7-5 至 2015-7-12</span>
+        <div class="pic2">
+          <span style="color:red;">25元/小时</span>
+          <img src="img/right.png" />
+        </div>
+      </div>
+      <div class="list-other"><img src="img/position3.png" class="pic1" /><span>北京.通州.果园</span></div>
+    </li>
+    <li class="list">
+      <div class="list-other"><img src="img/date.png" class="pic1" /><span>服务日期</span></div>
+      <div class="list-mid">
+        <span class="date">2015-7-5 至 2015-7-12</span>
+        <div class="pic2">
+          <span style="color:red;">25元/小时</span>
+          <img src="img/right.png" />
+        </div>
+      </div>
+      <div class="list-other"><img src="img/position3.png" class="pic1" /><span>北京.通州.果园</span></div>
+    </li>
+    <li class="list">
+      <div class="list-other"><img src="img/date.png" class="pic1" /><span>服务日期</span></div>
+      <div class="list-mid">
+        <span class="date">2015-7-5 至 2015-7-12</span>
+        <div class="pic2">
+          <span style="color:red;">25元/小时</span>
+          <img src="img/right.png" />
+        </div>
+      </div>
+      <div class="list-other"><img src="img/position3.png" class="pic1" /><span>北京.通州.果园</span></div>
+    </li>
+    <li class="list">
+      <div class="list-other"><img src="img/date.png" class="pic1" /><span>服务日期</span></div>
+      <div class="list-mid">
+        <span class="date">2015-7-5 至 2015-7-12</span>
+        <div class="pic2">
+          <span style="color:red;">25元/小时</span>
+          <img src="img/right.png" />
+        </div>
+      </div>
+      <div class="list-other"><img src="img/position3.png" class="pic1" /><span>北京.通州.果园</span></div>
+    </li>
+  </ul>
+</div>
+<div class="bottom">
+  <img src="img/home.png" class="img1" />
+  <img src="img/write.png" class="img2" />
+  <img src="img/mine.png" class="img3" />
+</div>
+</body>
+</html>

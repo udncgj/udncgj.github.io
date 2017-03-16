@@ -1,0 +1,13 @@
+/**index.wxss**/
+.picker{
+  height:100rpx;
+  line-height:100rpx;
+  margin-left:40rpx;
+  border-top:2rpx solid #000;
+}
+.btn{
+  background:#02af00;
+  color:#fff;
+  width:600rpx;
+  margin-top:40rpx;
+}

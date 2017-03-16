@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html land="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>css-task7-2</title>
+<link href="bootstrap.css" rel="stylesheet" type="text/css" />
+<!--[if lt IE 9]>
+  <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js">
+  </script>
+  <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js">
+  </script>
+<![endif]-->
+<style type="text/css">
+.body-size{height:100vh;}
+html{font-size:62.5%;}  
+body {font:normal 100% Arial,sans-serif;font-size:14px; font-size:1.4rem;background:#34bede;padding:135px 0 15vh;}
+
+.top{
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	color:#fff;
+}
+.top img{
+	height:1.8rem;
+	margin-top:0.5rem;
+}
+.top span{
+	margin-top:0.4rem;
+}
+.top-mid{
+	display:inline-block;
+	width:85%;
+	font-size:2rem;
+	text-align:center;
+}
+.top-right{
+	font-size:3rem;
+}
+.talk{
+	position:fixed;
+	top:50px;
+	background:#bae9f4;
+	padding-left:5%;
+	width:100%;
+	height:50px;
+	font-size:1.8rem;
+	line-height:50px;
+}
+.talk img{
+	height:36px;
+	float:right;
+	margin:7px;
+}
+.down{
+	position:fixed;
+	top:100px;
+	width:100%;
+	background:#34bede;
+}
+.down div{
+	padding-top:-1px;
+	margin-left:10%;
+	width:0;
+    height:0;
+    border-top:10px solid #bae9f4;
+    border-left:10px solid transparent;
+    border-right:10px solid transparent;
+}
+.mes{
+	position:fixed;
+	width:100%;
+	top:110px;
+	color:#fff;
+	font-size:1.6rem;
+	height:24px;
+	line-height:24px;
+	padding-left:10%;
+	background:#34bede;
+}
+
+.identity{
+	display:flex;
+	flex-wrap:wrap;
+}
+.identity li{
+	margin:10px 16px 0;
+}
+.iden-mes{
+	width:88px;
+	height:88px;
+	background:#f3c881;
+	border:4px solid #fff;
+	margin-bottom:10px;
+	text-align:center;
+	overflow:hidden;
+}
+.iden-list:hover .iden-pic img{
+	opacity:1;
+	filter:alpha(Opacity=100);
+}
+.iden-iden{
+	height:60px;
+	line-height:60px;
+	font-size:2rem;
+}
+.iden-num{
+	height:20px;
+	background:#82af9b;
+	color:#fff;
+}
+.iden-pic img{
+	height:20px;
+	margin:0 1px;
+	opacity:0;
+	filter:alpha(Opacity=0);
+}
+.bottom{
+	width:100%;
+	height:15vh;
+	border-top:1px solid #fff;
+	position:fixed;
+	bottom:0;
+	background:#34bede;
+}
+.bottom div{
+	color:#fff;
+	height:8vh;
+	line-height:8vh;
+	width:80%;
+	margin:4vh auto 3vh;
+	text-align:center;
+	font-size:2.5rem;
+	background:#f8b445;
+}
+</style>
+</head>
+
+<body>
+<nav class="navbar navbar-default navbar-fixed-top top">
+  <img src="img/7book.png" class="golist"><span class="top-mid">投票</span><span class="top-right">X</span>
+</nav>
+<div class="talk"><span>发言讨论结束，大家请投票</span><img src="img/7right.png" id="music-play"><audio src="img/财富自由.mp3" id="music"></audio></div>
+<div class="down"><div></div></div>
+<div class="mes">点击得票数最多人的头像</div>
+
+
+<ul class="identity list-unstyled">
+  <li class="iden-list"><div class="iden-mes"><div class="iden-iden">水民</div><div class="iden-num">1号</div></div><div class="iden-pic"><img src="img/7nife.png"><img src="img/7chack.png"><img src="img/7point.png"><img src="img/7help.png"></div></li>
+  <li class="iden-list"><div class="iden-mes"><div class="iden-iden">水民</div><div class="iden-num">2号</div></div><div class="iden-pic"><img src="img/7nife.png"><img src="img/7chack.png"><img src="img/7point.png"><img src="img/7help.png"></div></li>
+  <li class="iden-list"><div class="iden-mes"><div class="iden-iden">水民</div><div class="iden-num">3号</div></div><div class="iden-pic"><img src="img/7nife.png"><img src="img/7chack.png"><img src="img/7point.png"><img src="img/7help.png"></div></li>
+  <li class="iden-list"><div class="iden-mes"><div class="iden-iden">水民</div><div class="iden-num">4号</div></div><div class="iden-pic"><img src="img/7nife.png"><img src="img/7chack.png"><img src="img/7point.png"><img src="img/7help.png"></div></li>
+  <li class="iden-list"><div class="iden-mes"><div class="iden-iden">水民</div><div class="iden-num">5号</div></div><div class="iden-pic"><img src="img/7nife.png"><img src="img/7chack.png"><img src="img/7point.png"><img src="img/7help.png"></div></li>
+  <li class="iden-list"><div class="iden-mes"><div class="iden-iden">水民</div><div class="iden-num">6号</div></div><div class="iden-pic"><img src="img/7nife.png"><img src="img/7chack.png"><img src="img/7point.png"><img src="img/7help.png"></div></li>
+  <li class="iden-list"><div class="iden-mes"><div class="iden-iden">水民</div><div class="iden-num">7号</div></div><div class="iden-pic"><img src="img/7nife.png"><img src="img/7chack.png"><img src="img/7point.png"><img src="img/7help.png"></div></li>
+  <li class="iden-list"><div class="iden-mes"><div class="iden-iden">水民</div><div class="iden-num">8号</div></div><div class="iden-pic"><img src="img/7nife.png"><img src="img/7chack.png"><img src="img/7point.png"><img src="img/7help.png"></div></li>
+  <li class="iden-list"><div class="iden-mes"><div class="iden-iden">水民</div><div class="iden-num">9号</div></div><div class="iden-pic"><img src="img/7nife.png"><img src="img/7chack.png"><img src="img/7point.png"><img src="img/7help.png"></div></li>
+  <li class="iden-list"><div class="iden-mes"><div class="iden-iden">水民</div><div class="iden-num">10号</div></div><div class="iden-pic"><img src="img/7nife.png"><img src="img/7chack.png"><img src="img/7point.png"><img src="img/7help.png"></div></li>
+</ul>
+
+<div class="bottom">
+  <div>投死</div>
+</div>
+
+<script src="开发jquery-3.1.1.js"></script>
+<script src="bootstrap.js"></script>
+<script>
+$(window).on('load',function(){
+	var music = document.getElementById('music');
+	var $musicPlay = $('#music-play');
+	$musicPlay.click(function(){
+		music.play();
+	})
+	$('.top-right:first').click(function(){
+		location.href = 'task7-1.html';
+	})
+	$('.golist:first').click(function(){
+		location.href = 'task7-3.html';
+	})
+	$('.bottom:first').click(function(){
+		location.href = 'task7-3.html';
+	})
+})
+</script>
+</body>
+</html>

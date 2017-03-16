@@ -1,0 +1,172 @@
+@charset "utf-8";
+
+*{margin:0;padding:0}
+.body-size{height:100vh;}
+html{font-size:62.5%;}  
+body {font:normal 100% Arial,sans-serif;font-size:14px; font-size:1.4rem;background:#fff;padding:16vh 0 10vh;}
+
+
+.box-center{
+	display:flex;
+	align-items:center;
+}
+input:focus{outline:0;}
+select:focus{outline:0;}
+input:-webkit-autofill {-webkit-box-shadow: 0 0 0px 1000px white inset;}
+
+.top{
+	position:fixed;
+	top:0;
+	width:100%;
+	background:#5ec0ce;
+	height:8vh;
+	overflow:hidden;
+}
+.top-btn{
+	height:6vh;
+	width:12rem;
+	margin:1vh auto;
+	background:#53a9b2;
+	border-radius:0.5rem;
+}
+.top-btn span{
+	display:inline-block;
+	width:50%;
+	text-align:center;
+	line-height:6vh;
+	font-size:1.8rem;
+	border-radius:0.5rem;
+}
+.top1{
+	color:#fff;
+}
+.top2{
+	color:#5ec0ce;
+	background:#fff;
+}
+.sel{
+	position:fixed;
+	top:8vh;
+	width:100%;
+	height:8vh;
+	border-bottom:1px solid #f3f3f3;
+	background:#fff;
+}
+.sel select{
+	height:100%;
+	width:32%;
+	border:none;
+	padding-left:5%;
+	font-size:1.8rem;
+	color:#a8a8a8;
+}
+.all-mes{
+	/*height:65vh;*/
+	/*overflow-y: auto;
+	overflow-x: hidden;*/
+}
+.list{
+	padding:0 1rem 1.5rem;
+	border-bottom:1px solid #f3f3f3;
+	font-size:1.6rem;
+}
+.list div{
+	padding-top:0.2rem;
+	padding-bottom:0.2rem;
+}
+.date{
+	display:block;
+	width:50%;
+	float:left;
+    word-break:keep-all;/* 不换行 */
+    white-space:nowrap;/* 不换行 */
+    overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+}
+.pic1{
+	height:1.4rem;
+	padding-right:1rem;
+}
+.pic2{
+	float:right;
+	width:9rem;
+}
+.list-other{
+	color:#a8a8a8;
+	clear:both;
+	.box-center;
+}
+.list-mid{
+	padding-left:2.2rem;
+}
+.list-mid img{
+	height:1.4rem;
+	padding-left:1rem;
+	padding-right:0.5rem;
+}
+.bottom{
+	position:fixed;
+	bottom:0;
+	height:10vh;
+	width:100%;
+	background:#f9fafc;
+	border-top:1px solid #f3f3f3;
+	text-align:center;
+	overflow:hidden;
+}
+.img1{
+	width:2rem;
+}
+.img2{
+	width:4rem;
+	margin:1vh 15% 0 15%;
+}
+.img3{
+	width:1.7rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#btn{
+	.box-center;
+	justify-content:space-between;
+	position:fixed;
+	bottom:0;
+	height:70px;
+	width:100%;
+	background:#fff;
+	span{
+		font-size:2rem;
+		text-align:center;
+		border-radius:10px;
+	}
+	.btn1{
+		border:3px solid #5ac0ce;
+		width:40%-6px;
+		margin:0 5%+3px;
+		height:44px;
+		line-height:44px;
+		color:#5ac0ce;
+	}
+	.btn2{
+		background:#5ac0ce;
+		width:40%;
+		margin:0 5%;
+		height:50px;
+		line-height:50px;
+		color:#fff;
+	}
+}
+
