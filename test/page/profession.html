@@ -1,0 +1,223 @@
+<!DOCTYPE>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>home</title>
+
+</head>
+
+<body>
+<div ng-controller='professionCtrl'>
+
+<div id="p2-search" class="width-all box-center">
+	<div class="search-left">
+		<div class="list1">
+			<div class="mes mes1">
+				<dl>
+					<dt>产品经理</dt>
+					<dd style="border:none;">初级</dd><dd>中级</dd><dd>高级</dd><dd>总监</dd>
+				</dl>
+				<dl>
+					<dt>移动产品经理</dt>
+					<dd style="border:none;">初级</dd><dd>中级</dd><dd>高级</dd><dd>总监</dd>
+				</dl>
+				<dl>
+					<dt>电商产品经理</dt>
+					<dd style="border:none;">初级</dd><dd>中级</dd><dd>高级</dd><dd>总监</dd>
+				</dl>
+			</div>
+			<div class="box-center"><i class="i1"></i><h4>产品</h4><i class="i2"></i></div>
+			<div class="box-center" style="flex-wrap:wrap;"><h5>产品经理</h5><h5>移动产品经理</h5><h5>产品总监</h5><h5>网页产品经理</h5><h5>电商产品经理</h5></div>
+		</div>
+		<div class="list2">
+			<div class="mes mes2">
+				<dl>
+					<dt>PHP</dt>
+					<dd style="border:none;">初级</dd><dd>中级</dd><dd>高级</dd><dd>总监</dd>
+				</dl>
+				<dl>
+					<dt>JAVA</dt>
+					<dd style="border:none;">初级</dd><dd>中级</dd><dd>高级</dd><dd>总监</dd>
+				</dl>
+				<dl>
+					<dt>WEB前端</dt>
+					<dd style="border:none;">初级</dd><dd>中级</dd><dd>高级</dd><dd>总监</dd>
+				</dl>
+			</div>
+			<div class="box-center"><i class="i3"></i><h4>技术</h4><i class="i4"></i></div>
+			<div class="box-center" style="flex-wrap:wrap;"><h5>PHP</h5><h5>JAVA</h5><h5>IOS</h5><h5>HTML5</h5><h5>WEB前端</h5><h5>Andriod</h5></div>
+		</div>
+		<div class="list3">
+			<div class="mes mes3">
+				<dl>
+					<dt>UI设计</dt>
+					<dd style="border:none;">初级</dd><dd>中级</dd><dd>高级</dd><dd>总监</dd>
+				</dl>
+				<dl>
+					<dt>APP设计</dt>
+					<dd style="border:none;">初级</dd><dd>中级</dd><dd>高级</dd><dd>总监</dd>
+				</dl>
+				<dl>
+					<dt>交互设计师</dt>
+					<dd style="border:none;">初级</dd><dd>中级</dd><dd>高级</dd><dd>总监</dd>
+				</dl>
+			</div>
+			<div class="box-center"><i class="i5"></i><h4>设计</h4><i class="i6"></i></div>
+			<div class="box-center" style="flex-wrap:wrap;"><h5>UI设计</h5><h5>APP设计</h5><h5>设计总监</h5><h5>交互设计师</h5></div>
+		</div>
+	</div>
+	<div id="pro-search" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li ng-repeat="num in pic" data-target="#pro-search" data-slide-to="{{$index}}" ng-class="{active:$first}"></li>
+		</ol>
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner" role="listbox">
+
+			<div ng-repeat="num in pic" ng-class="{active:$first}" class="item">
+				<img ng-src="{{num.img}}" alt="...">
+				<div class="carousel-caption">
+				</div>
+			</div>
+
+
+		</div>
+		<!-- Controls -->
+		<div class="left carousel-control" href="#pro-search" role="button" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		</div>
+		<div class="right carousel-control" href="#pro-search" role="button" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		</div>
+		<div class="search-company">
+			<form class="box-center">
+				<h4>公司名称</h4>
+				<input type="text" placeholder="输入公司名称"/>
+				<button>搜索</button>
+			</form>
+		</div>
+	</div>
+	
+</div>
+
+
+<div id="p2-profession" class="width-all">
+	<div class="list box-between"><div><span class="f16"><b>推荐职位</b></span><span style="margin-left:10px;">最新职位</span></div><div class="f16" style="float:right;">查看更多 ></div></div>
+	<div class="row">
+		<div class="col-sm-6 col-lg-3">
+			<div class="box-center">
+				<div class="pic"><img src="img/27.png"></div>
+				<div><div class="f16" style="color:#fc2a48;"><b>6K-10K</b></div><h5><b>产品经理</b></h5><h5 style="color:#536a82;">携程</h5></div>
+			</div>
+		</div>
+		<div class="col-sm-6 col-lg-3">
+			<div class="box-center">
+				<div class="pic"><img src="img/27.png"></div>
+				<div><div class="f16" style="color:#fc2a48;"><b>6K-10K</b></div><h5><b>产品经理</b></h5><h5 style="color:#536a82;">携程</h5></div>
+			</div>
+		</div>
+		<div class="col-sm-6 col-lg-3">
+			<div class="box-center">
+				<div class="pic"><img src="img/27.png"></div>
+				<div><div class="f16" style="color:#fc2a48;"><b>6K-10K</b></div><h5><b>产品经理</b></h5><h5 style="color:#536a82;">携程</h5></div>
+			</div>
+		</div>
+		<div class="col-sm-6 col-lg-3">
+			<div class="box-center">
+				<div class="pic"><img src="img/27.png"></div>
+				<div><div class="f16" style="color:#fc2a48;"><b>6K-10K</b></div><h5><b>产品经理</b></h5><h5 style="color:#536a82;">携程</h5></div>
+			</div>
+		</div>
+		<div class="col-sm-6 col-lg-3">
+			<div class="box-center">
+				<div class="pic"><img src="img/27.png"></div>
+				<div><div class="f16" style="color:#fc2a48;"><b>6K-10K</b></div><h5><b>产品经理</b></h5><h5 style="color:#536a82;">携程</h5></div>
+			</div>
+		</div>
+		<div class="col-sm-6 col-lg-3">
+			<div class="box-center">
+				<div class="pic"><img src="img/27.png"></div>
+				<div><div class="f16" style="color:#fc2a48;"><b>6K-10K</b></div><h5><b>产品经理</b></h5><h5 style="color:#536a82;">携程</h5></div>
+			</div>
+		</div>
+		<div class="col-sm-6 col-lg-3">
+			<div class="box-center">
+				<div class="pic"><img src="img/27.png"></div>
+				<div><div class="f16" style="color:#fc2a48;"><b>6K-10K</b></div><h5><b>产品经理</b></h5><h5 style="color:#536a82;">携程</h5></div>
+			</div>
+		</div>
+		<div class="col-sm-6 col-lg-3">
+			<div class="box-center">
+				<div class="pic"><img src="img/27.png"></div>
+				<div><div class="f16" style="color:#fc2a48;"><b>6K-10K</b></div><h5><b>产品经理</b></h5><h5 style="color:#536a82;">携程</h5></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div id="p2-company" class="width-all">
+	<div class="list box-between"><div class="f16"><b>推荐公司</b></div><div style="float:right;">查看更多 ></div></div>
+	<div class="row row-company">
+		<div class="col-lg-4">
+			<div>
+				<div class="pic"><img src="img/212.png"></div>
+				<div class="picMes">
+					<div class="f16">北京葡萄藤信息技术有限公司</div>
+					<h5>携程在手 说走就走</h5>
+					<h5 class="box-center"><img src="img/226.png"><span>移动互联网</span><img src="img/227.png"><span>上市</span><img src="img/228.png"><span style="margin-right:0;">北京</span></h5>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-8 row">
+			<div class="col-xs-6 col-sm-3">
+				<div><img src="img/213.png"></div>
+			</div>
+			<div class="col-xs-6 col-sm-3">
+				<div><img src="img/214.png"></div>
+			</div>
+			<div class="col-xs-6 col-sm-3">
+				<div><img src="img/215.png"></div>
+			</div>
+			<div class="col-xs-6 col-sm-3">
+				<div><img src="img/216.png"></div>
+			</div>
+			<div class="col-xs-6 col-sm-3">
+				<div><img src="img/217.png"></div>
+			</div>
+			<div class="col-xs-6 col-sm-3">
+				<div><img src="img/218.png"></div>
+			</div>
+			<div class="col-xs-6 col-sm-3">
+				<div><img src="img/219.png"></div>
+			</div>
+			<div class="col-xs-6 col-sm-3">
+				<div><img src="img/220.png"></div>
+			</div>
+			
+		</div>
+		<div class="col-lg-12">
+			<div class="box-center">
+				<div class="box-center">
+					<div><img src=""></div>
+					<div>
+						<h4><b>携程旅游</b></h4>
+						<h5>加入萝卜多俱乐部</h5>
+						<h5><span>上市公司</span><span>独角兽</span><span>O2O</span></h5>
+					</div>
+				</div>
+				<div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+
+</div>
+
+
+</body>
+</html>

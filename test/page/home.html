@@ -1,0 +1,186 @@
+<!DOCTYPE>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>home</title>
+
+</head>
+
+<body>
+<div ng-controller='homeCtrl'>
+<div id="home-banner" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+	<li ng-repeat="num in pic" data-target="#home-banner" data-slide-to="{{$index}}" ng-class="{active:$first}"></li>
+  </ol>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    
+	<div ng-repeat="num in pic" ng-class="{active:$first}" class="item">
+      <img ng-src="{{num.img}}" alt="...">
+      <div class="carousel-caption">
+      </div>
+    </div>
+	
+	
+  </div>
+  <!-- Controls -->
+  <div class="left carousel-control" href="#home-banner" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+  </div>
+  <div class="right carousel-control" href="#home-banner" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+  </div>
+</div>
+
+<div id="p1-mes">
+	<div class="row width-style">
+		<div class="col-sm-3 right">
+			<div><img src="img/12.png"></div>
+			<h5><b>超短响应时间</b></h5>
+			<h6>48小时高效推荐</h6>
+		</div>
+		<div class="col-sm-3 right">
+			<div><img src="img/13.png"></div>
+			<h5><b>行业1/3的价格</b></h5>
+			<h6>成功推荐仅收费1月工资</h6>
+		</div>
+		<div class="col-sm-3 right">
+			<div><img src="img/14.png"></div>
+			<h5><b>三维的人才评测</b></h5>
+			<h6>技术人事背景三维评定</h6>
+		</div>
+		<div class="col-sm-1"></div>
+		<div class="col-sm-2 left">
+			<div>
+				<h5 style="color:#fc2e54;"><b>500+</b></h5>
+				<h6><b>人才入职</b></h6>
+				<h5 style="color:#fc2e54;"><b>498人</b></h5>
+				<h6><b>成功转正</b></h6>
+				<h5 style="color:#fc2e54;"><b>98%</b></h5>
+				<h6><b>成功率</b></h6>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1-position">
+	<div style="text-align:center;">
+		<h4><b>最新职位</b></h4>
+		<div style="border-bottom:2px solid #f1706b;width:25px;margin:-5px auto 0;"></div>
+		<h5 style="color:#536a82;font-size:16px;margin-top:5px;">NEW POSITION</h5>
+	</div>
+	<div class="link width-style f16">更多 ></div>
+	<div class="box-center width-carousel">
+		<img src="img/120.png">
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="box">
+					<div class="pic"><img src="img/15.png"></div>
+					<div class="f16"><b>产品总监</b></div>
+					<div style="border-bottom:1px solid #f1706b;width:20px;margin:-8px auto 0;"></div>
+					<h6>慕课网</h6>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="box">
+					<div class="pic"><img src="img/15.png"></div>
+					<div class="f16"><b>产品总监</b></div>
+					<div style="border-bottom:1px solid #f1706b;width:20px;margin:-8px auto 0;"></div>
+					<h6>慕课网</h6>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="box">
+					<div class="pic"><img src="img/15.png"></div>
+					<div class="f16"><b>产品总监</b></div>
+					<div style="border-bottom:1px solid #f1706b;width:20px;margin:-8px auto 0;"></div>
+					<h6>慕课网</h6>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="box">
+					<div class="pic"><img src="img/15.png"></div>
+					<div class="f16"><b>产品总监</b></div>
+					<div style="border-bottom:1px solid #f1706b;width:20px;margin:-8px auto 0;"></div>
+					<h6>慕课网</h6>
+				</div>
+			</div>
+		</div>
+		<img src="img/121.png">
+	</div>
+</div>
+
+<div id="p1-flow">
+	<div style="text-align:center;">
+		<h4><b>服务流程</b></h4>
+		<div style="border-bottom:2px solid #f1706b;width:25px;margin:-5px auto 0;"></div>
+		<h5 style="color:#536a82;font-size:16px;margin-top:5px;">SERVICE FLOW</h5>
+	</div>
+	<div class="list width-style">
+		<div class="pic"><img src="img/16.png"></div>
+		<div class="plane"><img src="img/115.png"></div>
+		<div class="pic"><img src="img/17.png"></div>
+		<div class="plane"><img src="img/115.png"></div>
+		<div class="pic"><img src="img/18.png"></div>
+	</div>
+	<div class="list width-style">
+		<div class="pic"><img src="img/19.png"></div>
+		<div class="plane"><img src="img/115.png"></div>
+		<div class="pic"><img src="img/110.png"></div>
+		<div class="plane"><img src="img/115.png"></div>
+		<div class="pic"><img src="img/111.png"></div>
+	</div>
+</div>
+
+<div id="p1-advice">
+	<div style="text-align:center;margin-bottom:20px;">
+		<h4><b>伙伴之言</b></h4>
+		<div style="border-bottom:2px solid #f1706b;width:25px;margin:-5px auto 0;"></div>
+		<h5 style="color:#536a82;font-size:16px;margin-top:5px;">PARTNER ADVICE</h5>
+	</div>
+	<div class="box-center width-carousel width-advice">
+		<img src="img/120.png">
+		<div class="row">
+			<div class="col-sm-6 col-md-3">
+				<div class="box">
+					<div class="pic"><img src="img/113.png"></div>
+					<div class="f16"><b>王思聪</b></div>
+					<h5>拓尔思集团创始人</h5>
+					<p>作为在萝卜多已经招募了50人的leader萝卜多除了是我成功的基石，也是我的社交入口。</p>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-3">
+				<div class="box">
+					<div class="pic"><img src="img/113.png"></div>
+					<div class="f16"><b>王思聪</b></div>
+					<h5>拓尔思集团创始人</h5>
+					<p>作为在萝卜多已经招募了50人的leader萝卜多除了是我成功的基石，也是我的社交入口。</p>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-3">
+				<div class="box">
+					<div class="pic"><img src="img/113.png"></div>
+					<div class="f16"><b>王思聪</b></div>
+					<h5>拓尔思集团创始人</h5>
+					<p>作为在萝卜多已经招募了50人的leader萝卜多除了是我成功的基石，也是我的社交入口。</p>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-3">
+				<div class="box">
+					<div class="pic"><img src="img/113.png"></div>
+					<div class="f16"><b>王思聪</b></div>
+					<h5>拓尔思集团创始人</h5>
+					<p>作为在萝卜多已经招募了50人的leader萝卜多除了是我成功的基石，也是我的社交入口。</p>
+				</div>
+			</div>
+		</div>
+		<img src="img/121.png">
+	</div>
+</div>
+
+
+</div>
+</body>
+</html>

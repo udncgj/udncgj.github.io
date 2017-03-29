@@ -302,17 +302,21 @@ h6 {
 }
 #p1-process .mes {
   align-items: center;
-}
-#p1-process .mes .pic {
-  width: 3%;
-  margin-left: -10px;
-}
-#p1-process .mes .box1 {
-  margin-left: -1px;
-}
-#p1-process .mes .box2 {
-  margin-left: -2%;
-  padding-right: 1%;
+  /*.pic{
+			width:25px;
+			margin-left:-2px;
+			margin-right:-5px;
+			img{
+				width:25px;
+			}
+		}
+		.box1{
+			margin-left:-1px;
+		}
+		.box2{
+			margin-right:-10px;
+			padding-right:10px;
+		}*/
 }
 #p1-person .col-sm-3 {
   padding: 0 1rem;
@@ -349,9 +353,15 @@ h6 {
   background: #fff;
   padding-top: 1rem;
 }
-#p1-link .row {
-  width: 98%;
+#p1-link .linkMes {
+  width: 80%;
   margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+#p1-link .linkMes .col3 {
+  width: 10%;
+  margin-bottom: 10px;
 }
 #p1-link h5 {
   margin-bottom: 20px;
@@ -371,7 +381,6 @@ h6 {
   padding-left: 0;
   padding-right: 0;
   color: #999;
-  margin-bottom: 10px;
 }
 #bottom {
   background: #1ba36e;
@@ -524,7 +533,7 @@ h6 {
   position: relative;
 }
 .col-md-4 .cover {
-  width: 98%;
+  width: 99%;
   height: 100%;
   position: absolute;
   color: #fff;
@@ -568,6 +577,10 @@ table .col-xs-7 {
   #p1-process .mes .box1 .circular {
     margin: 0 auto;
   }
+  #p1-link .linkMes .col3 {
+    width: 33%;
+    text-align: center;
+  }
 }
 @media (min-width: 768px) {
   #p1-person .box img {
@@ -578,5 +591,17 @@ table .col-xs-7 {
   }
   #p1-list .right {
     border-left: 1px dotted #999;
+  }
+  #p1-process .mes .pic {
+    width: 3%;
+  }
+  #p1-process .mes .pic img {
+    width: 25px;
+  }
+  #p1-process .mes .box1 {
+    width: 8%;
+  }
+  #p1-process .mes .box2 {
+    width: 14%;
   }
 }

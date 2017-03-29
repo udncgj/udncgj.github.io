@@ -1,0 +1,110 @@
+@charset "utf-8";
+.box-center{
+	display:flex;
+	align-items:center;
+}
+
+#p4-about{
+	padding:20px 0;
+	.row{
+		color:#2b3d51;
+		i{
+			background:url(../../img/gaga4.png);
+			display:inline-block;
+			margin-right:5px;
+		}
+		.col-sm-3{padding-left:0;}
+		.col-sm-3>div{
+			text-align:center;
+			background:#fff;
+			i{
+				margin-bottom:-3px;
+			}
+			.i1,.i2{width:17px;height:17px;}
+			.i2{background-position:-52px 0;}
+			div{
+				padding:10px 0;
+				cursor:pointer;
+				&:hover{background:#f7f7f7;}
+			}
+			.active{
+				.i1{background-position:-26px 0;}
+				.i2{background-position:-78px 0;}
+				background:#f7f7f7;
+				span{
+					color:#fc2a48;
+				}
+			}
+		}
+		.col-sm-9{padding:0 0 0 5px;}
+		.col-sm-9>div{
+			background:#fff;
+			padding:60px 8%;
+			.about1{
+				border-left:3px solid #eb5254;
+				padding-left:12px;
+				height:14px;
+				line-height:14px;
+			}
+			p{
+				color:#2b3d51;
+				padding-left:15px;
+			}
+		}
+		.col-sm-5{padding:5px 0;font-size:12px;}
+		.col-sm-7{padding:5px 0;font-size:12px;}
+		.i3,.i4,.i5,.i6{margin-bottom:-4px;width:15px;height:15px;}
+		.i3{background-position:-104px 0;}
+		.i4{background-position:-130px 0;}
+		.i5{background-position:-156px 0;}
+		.i6{background-position:-182px 0;}
+	}
+}
+
+#p4-about2{display:none;}
+
+
+@media (max-width: 768px) {
+	#p4-about{
+		.row{
+			.col-sm-3{padding:0;}
+			.col-sm-3>div{
+				.box-center;
+				padding:10px 10px 0;
+				.active{
+					border-bottom:2px solid #eb5254;
+				}
+				div{
+					width:50%;
+				}
+			}
+			.col-sm-9{padding:0;}
+		}
+	}
+}
+@media (min-width: 768px) {
+	#p4-about{
+		.col-sm-3>div{
+			max-width:250px;
+			padding:60px 0;
+			.active{
+				border-left:3px solid #eb5254;
+			}
+		}
+		.row .col-sm-7{padding-left:10px;}
+	}
+}
+@media (min-width: 768px) and (max-width: 992px) {
+	#p4-about{
+		.row{
+			.col-sm-9>div{
+					padding:60px 5%;
+					}
+					}
+					}
+}
+@media (max-width: 992px) {
+}
+@media (min-width: 992px) {
+	
+}

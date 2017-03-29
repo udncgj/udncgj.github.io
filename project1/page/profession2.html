@@ -1,0 +1,153 @@
+
+<div id="p2s-top" class="width-all">
+	<div class="box-center sel">
+		<a href="#/profession/searchCompany" class="f16" ng-class="{true:'active',false:''}[p2sTop]" ng-click="company()">公司</a>
+		<a href="#/profession/searchJob" class="f16" ng-class="{true:'',false:'active' }[p2sTop]" ng-click="job()">职业</a>
+	</div>
+	<form class="list">
+		<div class="box-center">
+			<div class="b">关&ensp;键&ensp;词：</div>
+			<input type="text" placeholder="{{inputMes}}" />
+		</div>
+		<div class="box-center" ng-repeat="x in professionList">
+			<div class="b">{{x}}</div>
+			<div><span ng-repeat="y in professionMes[$index]" ng-class="{'active':$first}">{{y}}</span></div>
+		</div>
+		<div class="search-btn box-center">
+			<span>清空</span><span class="active">搜索</span>
+		</div>
+	</form>
+	<!-- <div class="list">
+		<div class="box-center">
+			<div class="b">关&ensp;键&ensp;词：</div>
+			<input type="text" placeholder="IT修真院" />
+		</div>
+		<div class="box-center">
+			<div class="b">所在地区：</div>
+			<div><span class="active">不限</span><span>北京</span></div>
+		</div>
+		<div class="box-center">
+			<div class="b">所属行业：</div>
+			<div><span class="active">不限</span><span>移动互联网</span><span>电子商务</span><span>O2O</span><span>游戏</span><span>企业服务</span><span>教育</span><span>金融</span></div>
+		</div>
+		<div class="box-center">
+			<div class="b">融资规模：</div>
+			<div><span class="active">不限</span><span>天使轮</span><span>A轮</span><span>B轮</span><span>C轮</span><span>D轮及以上</span><span>上市公司</span><span>无需融资</span></div>
+		</div>
+		<div class="search-btn box-center">
+			<span>清空</span><span class="active">搜索</span>
+		</div>
+	</div> -->
+</div>
+
+<div id="p2s-company" class="width-all">
+	<div class="row">
+		<div class="col-sm-6 col-md-4">
+			<div class="company">
+				<div class="box-center">
+					<div class="pic"><img src="img/2-41.png"></div>
+					<div class="ellipsis">
+						<div class="f16 b">北京慕课科技中心</div>
+						<h5 style="color:#536a82;">携程在手说走就走</h5>
+						<h5><span class="b" style="color:#fc2a48;">10</span><span style="color:#999;">个在招职位</span></h5>
+					</div>
+				</div>
+				<h5 class="box-center">
+					<div><img src="img/2-45.png"><span class="ellipsis">移动互联网</span></div>
+					<div><img src="img/2-46.png"><span>上市</span></div>
+					<div><img src="img/2-47.png"><span>北京</span></div>
+				</h5>
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-4">
+			<div class="company">
+				<div class="box-center">
+					<div class="pic"><img src="img/2-41.png"></div>
+					<div class="ellipsis">
+						<div class="f16 b">北京慕课科技中心</div>
+						<h5 style="color:#536a82;">携程在手说走就走</h5>
+						<h5><span class="b" style="color:#fc2a48;">10</span><span style="color:#999;">个在招职位</span></h5>
+					</div>
+				</div>
+				<h5 class="box-center">
+					<div><img src="img/2-45.png"><span class="ellipsis">移动互联网</span></div>
+					<div><img src="img/2-46.png"><span>上市</span></div>
+					<div><img src="img/2-47.png"><span>北京</span></div>
+				</h5>
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-4">
+			<div class="company">
+				<div class="box-center">
+					<div class="pic"><img src="img/2-41.png"></div>
+					<div class="ellipsis">
+						<div class="f16 b">北京慕课科技中心</div>
+						<h5 style="color:#536a82;">携程在手说走就走</h5>
+						<h5><span class="b" style="color:#fc2a48;">10</span><span style="color:#999;">个在招职位</span></h5>
+					</div>
+				</div>
+				<h5 class="box-center">
+					<div><img src="img/2-45.png"><span class="ellipsis">移动互联网</span></div>
+					<div><img src="img/2-46.png"><span>上市</span></div>
+					<div><img src="img/2-47.png"><span>北京</span></div>
+				</h5>
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-4">
+			<div class="company">
+				<div class="box-center">
+					<div class="pic"><img src="img/2-41.png"></div>
+					<div class="ellipsis">
+						<div class="f16 b">北京慕课科技中心</div>
+						<h5 style="color:#536a82;">携程在手说走就走</h5>
+						<h5><span class="b" style="color:#fc2a48;">10</span><span style="color:#999;">个在招职位</span></h5>
+					</div>
+				</div>
+				<h5 class="box-center">
+					<div><img src="img/2-45.png"><span class="ellipsis">移动互联网</span></div>
+					<div><img src="img/2-46.png"><span>上市</span></div>
+					<div><img src="img/2-47.png"><span>北京</span></div>
+				</h5>
+			</div>
+		</div>
+		
+	</div>
+	<div class="page">
+		<ul style="margin: 0px;" >  
+			<li ng-class="{true:'disabled'}[p_current==1]"><a href="javascript:void(0);" ng-click="p_index()">首页</a></li> 
+			<li ng-class="{true:'disabled'}[p_current==1]"><a href="javascript:void(0);" ng-click="p_index()">1</a></li> 
+			<li ng-class="{true:'disabled'}[p_current==1]"><a href="javascript:void(0);" ng-click="p_index()">2</a></li> 
+			<li ng-repeat="page in pages" ng-class="{true:'active'}[p_current==page]"><a href="javascript:void(0);" ng-click="load_page(page)">{{ page }}</a></li>  
+			<li ng-class="{true:'disabled'}[p_current==p_all_page]"><a href="javascript:void(0);" ng-click="p_last()">尾页</a></li>  
+		</ul>
+		<div><h5 style="padding:0 5px;">去第</h5><input type="test" style="width:30px;height:34px;border:1px solid #ccc;border-radius:4px;" /><h5 style="padding:0 5px;">页</h5><button>确定</button></div> 
+	</div>
+</div>
+
+<div id="p2s-job" class="width-all">
+	<div class="jobBox row">
+		<div class="col-md-6">
+			<div><span class="f16 b">产品经理</span><span class="f12 fc9"></span></div>
+			<h5 class="b fcR">20-30万</h5>
+			<h5 class="fc5">北京-海淀区 / 大专及以上 / 3年经验</h5>
+		</div>
+		<div class="col-md-6 box-center">
+			<div>
+				<h5 class="b">和创科技（红圈营销）</h5>
+				<h5 class="fc5">互联网</h5>
+				<div class="f12 fc5"><span>五险一金</span></div>
+			</div>
+			<div><img src=""></div>
+		</div>
+	</div>
+	<div class="page">
+		<ul style="margin: 0px;" >  
+			<li ng-class="{true:'disabled'}[p_current==1]"><a href="javascript:void(0);" ng-click="p_index()">首页</a></li> 
+			<li ng-class="{true:'disabled'}[p_current==1]"><a href="javascript:void(0);" ng-click="p_index()">1</a></li> 
+			<li ng-class="{true:'disabled'}[p_current==1]"><a href="javascript:void(0);" ng-click="p_index()">2</a></li> 
+			<li ng-repeat="page in pages" ng-class="{true:'active'}[p_current==page]"><a href="javascript:void(0);" ng-click="load_page(page)">{{ page }}</a></li>  
+			<li ng-class="{true:'disabled'}[p_current==p_all_page]"><a href="javascript:void(0);" ng-click="p_last()">尾页</a></li>  
+		</ul>
+		<div><h5 style="padding:0 5px;">去第</h5><input type="test" style="width:30px;height:34px;border:1px solid #ccc;border-radius:4px;" /><h5 style="padding:0 5px;">页</h5><button>确定</button></div> 
+	</div>
+</div>

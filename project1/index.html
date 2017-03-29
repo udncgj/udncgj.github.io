@@ -1,0 +1,81 @@
+<!DOCTYPE>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>萝卜多前台</title>
+<link href="frame/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<link href="css/home/home.css" rel="stylesheet" type="text/css" />
+<link href="css/about/about.css" rel="stylesheet" type="text/css" />
+<link href="css/profession/profession.css" rel="stylesheet" type="text/css" />
+<link href="css/profession/professionSearch.css" rel="stylesheet" type="text/css" />
+<link href="css/elite/elite.css" rel="stylesheet" type="text/css" />
+
+<script src="js/开发jquery-3.1.1.js"></script>
+<script src="http://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+<script src="http://cdn.bootcss.com/angular.js/1.4.6/angular-animate.min.js"></script> 
+<script src="http://cdn.bootcss.com/angular-ui-router/1.0.0-rc.1/angular-ui-router.js"></script>
+<script src="http://cdn.bootcss.com/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+<script src="http://cdn.bootcss.com/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js"></script> 
+
+<script src="js/controllers.js"></script>
+<script src="js/directives.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/services.js"></script>
+<script src="js/ocLazyLoad.js"></script>
+<script src="js/app.js"></script>
+</head>
+
+<body ng-app='myApp' ng-controller='personCtrl as vm'>
+<nav id="top">
+	<div class="left box-center">
+		<a class="pic" href="#/home"><img src="img/top1.png"></a>
+		<div><img src="img/top2.png"><span class="f16">北京站</span></div>
+	</div>
+	<ul class="right" id="top-list">
+		<li><a href="#/home" ng-class="{0:'active',1:'',2:'',3:''}[topList]" ng-click="topList=0"><h4>首页</h4></a></li>
+		<li><a href="#/profession/" ng-class="{0:'',1:'active',2:'',3:''}[topList]" ng-click="topList=1"><h4>找职业</h4></a></li>
+		<li><a href="#/elite" ng-class="{0:'',1:'',2:'active',3:''}[topList]" ng-click="topList=2"><h4>找精英</h4></a></li>
+		<li><a href="#/about" ng-class="{0:'',1:'',2:'',3:'active'}[topList]" ng-click="topList=3"><h4>关于我们</h4></a></li>
+	</ul>
+	<div class="dropdown">
+		<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+		<h5>菜单</h5>
+		</button>
+		<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+			<li><a href="#/home" ng-class="{0:'active',1:'',2:'',3:''}[topList]" ng-click="topList=0"><h4>首页</h4></a></li>
+			<li><a href="#/profession/" ng-class="{0:'',1:'active',2:'',3:''}[topList]" ng-click="topList=1"><h4>找职业</h4></a></li>
+			<li><a href="#/elite" ng-class="{0:'',1:'',2:'active',3:''}[topList]" ng-click="topList=2"><h4>找精英</h4></a></li>
+			<li><a href="#/about" ng-class="{0:'',1:'',2:'',3:'active'}[topList]" ng-click="topList=3"><h4>关于我们</h4></a></li>
+		</ul>
+	</div>
+</nav>
+
+<div id="view" ui-view></div> 
+
+
+
+<div id="bottom">
+	<div class="row">
+		<div class="col-sm-4">
+			<h5>关于我们</h5>
+			<h6>萝卜多————有别传统新猎头</h6>
+		</div>
+		<div class="col-sm-5">
+			<h5>联系我们</h5>
+			<h6><img src="img/bot3.png">联系电话：（010）59478634</h6>
+			<h6><img src="img/bot4.png">邮箱支持：fuhua@pttent.com</h6>
+			<h6><img src="img/bot5.png">地&emsp;&emsp;址：北京市海淀区翠微路甲10#225室</h6>
+		</div>
+		<div class="col-sm-3">
+			<img src="img/bot2.png">
+			<h6>微信号：pttent-fuhuaqi</h6>
+		</div>
+	</div>
+	<div style="background:#37485a;text-align:center;padding:8px 0;"><h6 style="margin:0;">Copyright © 2015 北京葡萄藤信息技术有限公司 All Rights Reserved | 京ICP备15035574号-1</h6></div>
+</div>
+
+<script src="frame/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

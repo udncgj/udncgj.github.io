@@ -1,0 +1,3 @@
+使用alert()
+为防止意外进入全局作用域（各种bug的来源）
+请注入$window服务，并$window.alert()

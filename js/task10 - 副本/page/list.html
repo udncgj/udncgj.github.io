@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>无标题文档</title>
+
+<link href="list.css" rel="stylesheet" type="text/css" />
+<script src="开发jquery-3.1.1.js"></script>
+<script src="list.js"></script>
+
+<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script src="http://cdn.bootcss.com/angular-ui-router/1.0.0-rc.1/angular-ui-router.js"></script>
+<script src="ocLazyLoad.js"></script>
+<script src="app.js"></script>
+
+
+<script type="text/javascript" charset="utf-8" src="ueditor/ueditor.config.js"> </script>
+<script type="text/javascript" charset="utf-8" src="ueditor/ueditor.all.js"></script>
+</head>
+
+<body>
+<div class="list-box" ng-app='angularJS' ng-controller='personCtrl'>
+  <div class="list-top">
+    <span>后台管理系统</span>
+    <input type="button" class="list-top-logout" value="退出" />
+    <a href="#" class="list-top-mes">八臂哪吒</a>
+    <img src="img/头像.png" />
+    <div style="clear:both"></div></div>
+  <div id="list-list">
+    <ul ng-model="user">
+      <li><a class="pageLink" ui-sref="page1({user:user})">学员列表</a></li>
+      <li><a class="pageLink" ui-sref="page2({user:user})">新增学员</a></li>
+      <li><a class="pageLink" ui-sref="page3({user:user})">个人信息</a></li>
+    </ul>
+  </div>
+  <div id="list-view" ui-view>
+    
+  </div>
+  <div style="clear:both"></div>
+</div>
+</body>
+</html>
