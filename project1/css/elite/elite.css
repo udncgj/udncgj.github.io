@@ -45,9 +45,18 @@
   text-align: center;
   margin: 10px 0;
 }
-#p3-case .row .col-sm-6 img {
+#p3-case .row .col-sm-6 .pic {
+  height: 180px;
   width: 100%;
   max-width: 260px;
+  display: flex;
+  align-items: center;
+  background: #fff;
+}
+#p3-case .row .col-sm-6 .pic img {
+  width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
 }
 @media (min-width: 768px) {
   #p3-process > .pic {

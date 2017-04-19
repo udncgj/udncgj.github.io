@@ -1,0 +1,91 @@
+<div id="" class="p2s-mes">
+	<div class="top box-center width-all">
+		<div class="pic box-center"><img ng-src="{{pro.comMes.company.logo}}"></div>
+		<div>
+			<div class="box-center" style="margin-bottom:20px;flex-wrap:wrap;"><span class="h4 b" style="padding-right:10px;">{{pro.comMes.company.name}}</span><img src="img/2-11.png"></div>
+			<h5 class="fc5">{{pro.comMes.company.slogan}}</h5>
+			<div class="f12 fc5">{{pro.comMes.company.summary}}</div>
+		</div>
+	</div>
+	<div class="width-all">
+		<div class="mes row">
+			<div class="col-md-8">
+				<div class="box-center list">
+					<div class="f16" ng-class="{true:'active',false:''}[pro.p2sMesList]" ng-click="p2sMesListChange(true)">公司详情</div>
+					<div class="f16" ng-class="{true:'',false:'active'}[pro.p2sMesList]" ng-click="p2sMesListChange(false)">在招职位</div>
+				</div>
+				
+				<div class="mes-mes" id="proComMes">
+					<div class="f16 b">公司产品</div>
+					<div class="box-center ">
+						<div class="pic box-center"><img ng-src="{{pro.comMes.company.logo}}"></div>
+						<div>
+							<div class="f16 b">{{pro.comMes.company.name}}</div>
+							<h5 class="fc5">????</h5>
+							<h5 class="fc5">{{pro.comMes.company.slogan}}</h5>
+						</div>
+					</div>
+					<div class="f16 b">公司介绍</div>
+					<p class="f12 fc5">{{pro.comMes.company.summary}}</p>
+				</div>
+				
+				<div id="proComJobMes">
+					<div class="mes-mes" id="proComJobMes1">
+						<div class="f16 b">在招职位{{pro.comJobNum}}个</div>
+						<!-- <div class="box-center select"><div class="b">职业类别</div><div class="box-center"><span class="active">全部</span><span>产品</span><span>技术</span><span>设计</span><span>运营</span></div></div> -->
+						<div class="row job cur-hover" ng-repeat="x in pro.comJobMes" ng-click="proJobMes(x)" >
+							<div class="col-xs-6 col-sm-4 f16 b" style="padding:0;">{{x.name}} [{{x.province|provinceFilter}}]</div>
+							<div class="col-xs-6 col-sm-2 fcR b">{{x.compensation|fMes:'compensation':'type'}}</div>
+							<div class="col-xs-6 col-sm-3 fc5" style="padding-left:0;">{{x.experience|fMes:'experience':'type'}} / {{x.education|fMes:'education':'type'}} / {{x.category|fMes:'category':'type'}}</div>
+							<div class="col-xs-6 col-sm-3 fc9" style="padding:0;">{{x.updateAt | date:"yyyy-MM-dd hh:mm:ss"}}发布</div>
+						</div>
+						
+						
+	<div class="page">
+		<ul style="margin: 0px;" >  
+			<li ng-class="{true:'disabled'}[pro.comMesPageNum==1]"><a href="javascript:void(0);" ng-click="comMesLoadPage(1)">首页</a></li>
+			<li ng-class="{true:'displaynone'}[pro.comMesPageNum==1]"><a href="javascript:void(0);" ng-click="comMesLoadPage(pro.comMesPageNum-1)"><</a></li> 
+			<li ng-repeat="x in pro.comMesPage" ng-class="{true:'active'}[pro.comMesPageNum == $index+1]"><a href="javascript:void(0);" ng-click="comMesLoadPage($index+1)">{{$index+1}}</a></li>
+			<li ng-class="{true:'displaynone'}[pro.comMesPageNum==pro.comMesAllPage || pro.comMesAllPage<=1]"><a href="javascript:void(0);" ng-click="comMesLoadPage(pro.comMesPageNum+1)">></a></li>
+			<li ng-class="{true:'disabled'}[pro.comMesPageNum==pro.comMesAllPage || pro.comMesAllPage<=1]"><a href="javascript:void(0);" ng-click="comMesLoadPage(pro.comMesAllPage)">尾页</a></li>
+		</ul>
+		<div><h5 style="padding:0 5px;">去第</h5><input type="test" style="width:30px;height:34px;border:1px solid #ccc;border-radius:4px;padding-left:5px;" ng-model="comMesPageIn" /><h5 style="padding:0 5px;">页</h5><button ng-click="comMesLoadPage(comMesPageIn)">确定</button></div>
+	</div>
+						
+						
+					</div>
+					<div class="mes-mes" id="proComJobMes2">
+						<div class="box-center" style="justify-content:center;padding:100px 0;">
+							<div style="margin-right:20px;"><img src="img/2-48.png"></div>
+							<div>
+								<div class="f20 b">暂时没有符合该搜索条件的内容</div>
+								<h4 class="fc5">请重新修改搜索条件后再次进行搜索</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="box-center">
+					<h5 class="fc5 b" style="padding-right:15px;margin:0;">公司信息</h5>
+					<div style="width:60%;border-top:1px solid #e8e8e8;"></div>
+				</div>
+				<div class="label-list">
+					<div><img src="img/2-13.png"><h5 class="fc5">{{pro.comMes.company.totalNum}}</h5></div>
+					<div><img src="img/2-14.png" style="margin-left:1px;"><h5 class="fc5"><span ng-repeat="x in pro.comMes.industryList">{{'/' | fSymbol:$index}}{{x.industry | fMes:'industry':'id'}}</span></h5></div>
+					<div><img src="img/2-15.png"><h5 class="fc5">{{pro.comMes.company.province|provinceFilter}}</h5></div>
+				</div>
+				<div class="box-center">
+					<h5 class="fc5 b" style="padding-right:15px;margin:0;">公司标签</h5>
+					<div style="width:60%;border-top:1px solid #e8e8e8;"></div>
+				</div>
+				<div class="label-list">
+					<div class="f12 fc5">
+						<span>五险一金</span><span>带薪年假</span><span>年14薪</span><span>健康体检</span><span>年度旅游</span><span>节日礼金</span><span>独栋办公</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<d-commes></d-commes>

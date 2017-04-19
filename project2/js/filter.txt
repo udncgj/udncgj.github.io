@@ -1,0 +1,82 @@
+uppercase,lowercase:
+	大小写转换
+date:
+	{{ 1304375948024 | date:'medium'}}   //May 03, 2011 06:39:08 PM 
+	{{ 1304375948024 | date }}             //结果：May 3, 2011 
+	{{ 1304375948024 | date:"MM/dd/yyyy @ h:mma" }}   //结果：05/03/2011 @ 6:39AM 
+	{{ 1304375948024 | date:"yyyy-MM-dd hh:mm:ss" }}  //结果：2011-05-03 06:39:08 
+number:
+	{{ 1.234567 | number:1 }}  //结果：1.2  
+	{{ 1234567 | number }}    //结果：1,234,567  
+currency:
+	货币
+	{{ 250 | currency }}         //结果：$250.00  
+	{{ 250 | currency:"RMB ￥ " }}    //结果：RMB ￥ 250.00  
+filter:
+	{{ [{"age": 20,"id": 10,"name": "iphone"}, {"age": 12,"id": 11,"name": "sunm xing"}, {"age": 44,"id": 12,"name": "test abc"} ] | filter:'s'}}  //查找含有有s的行   
+	//上例结果：[{"age":12,"id":11,"name":"sunm xing"},{"age":44,"id":12,"name":"test abc"}]   
+	{{ [{"age": 20,"id": 10,"name": "iphone"}, {"age": 12,"id": 11,"name": "sunm xing"}, {"age": 44,"id": 12,"name": "test abc"} ] | filter:{'name':'ip'} }}  //查找name like ip的行 
+	//上例结果:[{"age":20,"id":10,"name":"iphone"}]   
+	$filter('number')(30000, 2); var jsonString = $filter('json')({"age":12,"id":11,"name":"sunm xing"},{"age":44,"id":12,"name":"test abc"}]) 
+limitTo:
+	字符串，对象截取
+	{{ "i love tank" | limitTo:6 }}      //结果：i love 
+	{{ "i love tank" | limitTo:-4 }}     //结果：tank   
+	{{ [{"age": 20,"id": 10,"name": "iphone"}, {"age": 12,"id": 11,"name": "sunm xing"}, {"age": 44,"id": 12,"name": "test abc"} ] | limitTo:1 }}   
+	//结果：[{"age":20,"id":10,"name":"iphone"}] 
+orderBy:
+	对象排序
+	{{ [{"age": 20,"id": 10,"name": "iphone"}, {"age": 12,"id": 11,"name": "sunm xing"}, {"age": 44,"id": 12,"name": "test abc"} ] | orderBy:'id':true }}    //根id降序排   
+	{{ [{"age": 20,"id": 10,"name": "iphone"}, {"age": 12,"id": 11,"name": "sunm xing"}, {"age": 44,"id": 12,"name": "test abc"} ] | orderBy:'id' }}      //根据id升序排   
+	{{ [{"age": 20,"id": 10,"name": "iphone"}, {"age": 12,"id": 11,"name": "sunm xing"}, {"age": 44,"id": 12,"name": "test abc"} ] | orderBy:['-age','name'] }} 
+
+
+
+{
+	"recommend":["最新职位","推荐职位"],
+	"category":["产品","运营","技术","设计","测试"],
+	"name":"不限",
+	"industry":["移动互联网","电子商务","企业服务","O2O","教育","金融","游戏"],
+	"experience":["应届","1~2年","3~5年","6～9年","10年及以上"],
+	"education":["大专","本科","硕士","博士及以上"],
+	"compensation":["8K","8~15K","16~25K","26K及以上"],
+	"updateAt":["今天","3天内","7天内"],
+	"approvedStatus":["未认证","已认证"],
+	"financing":["无需融资","天使轮","A轮","B轮","C轮","D轮及以上","上市公司"],
+	"subCategory":["产品经理","JAVA","IOS","Android","Web前端","运维","UI设计","功能测试"]
+}
+
+
+0: Object
+boon: ""
+category: 2                                 "技术"
+city: "28"                                 
+companyId: 40                               
+companyName: "新增公司"                                 
+compensation: 1                             "8~15K"    
+county: "395"                                 
+education: 0                                "大专" 
+experience: 1                               "1~2年"
+id: 22                                 
+industryList: Array[2]                                 
+0: Object                                 
+industry: 0                                 "移动互联网"
+__proto__: Object
+1: Object
+industry: 1                                 "电子商务"
+__proto__: Object
+length: 2                                   
+__proto__: Array[0]
+logo: "http://carrots.ks3-cn-beijing.ksyun.com/3/5d765e3c-84ed-44e8-bdea-47910b2566c3.jpg"
+name: "测试新增"                                 
+province: "6"                                 
+recommend: 0                                 
+requisite(必要的): "123123"                                 
+responsibility(责任): "112312312"                                 
+subCategory: 2                              "技术"?   
+tags: Array[0]                                 
+length: 0                                 
+__proto__: Array[0]                                 
+updateAt: 1490945721935        
+
+

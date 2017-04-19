@@ -1,0 +1,25 @@
+
+<div id="module" ng-controller="module">
+	
+	<div ui-view></div>
+	
+	<!-- Modal -->
+	<div class="modal fade" id="accModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">操作提示</h4>
+				</div>
+				<div class="modal-body" style="text-align:center;">
+					<div>你确定删除该模块吗？</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">再考虑下</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="operateOk()">删除</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

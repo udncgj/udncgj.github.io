@@ -1,0 +1,65 @@
+<div id="p2s-companyList" class="width-all p2s-company">
+	<div class="row">
+		<div class="col-sm-6 col-md-4" ng-repeat="x in pro.cList">
+			<div class="company cur-hover" ng-click="proComMes(x)">
+				<div class="box-center">
+					<div class="pic"><img ng-src="{{x.logo}}"></div>
+					<div class="ellipsis">
+						<div class="f16 b">{{x.name}}</div>
+						<h5 style="color:#536a82;">{{x.slogan}}</h5>
+						<h5><span class="b" style="color:#fc2a48;">{{x.professionNum}}</span><span style="color:#999;">个在招职位</span></h5>
+					</div>
+				</div>
+				<h5 class="box-center">
+					<div><img src="img/2-45.png"><span class="ellipsis"><span ng-repeat="y in x.industryList">{{'/' | fSymbol:$index}}{{y | fMes:'industry':'id'}}</span></span></div>
+					<div><img src="img/2-46.png"><span>{{x.financing|fMes:'financing':'id'}}</span></div>
+					<div><img src="img/2-47.png"><span>{{x.province|provinceFilter}}</span></div>
+				</h5>
+			</div>
+		</div>
+		
+	</div>
+	
+	<div class="page">
+		<ul style="margin: 0px;" >  
+			<li ng-class="{true:'disabled'}[pro.cPageNum==1]"><a href="javascript:void(0);" ng-click="cLoadPage(1)">首页</a></li>
+			<li ng-class="{true:'displaynone'}[pro.cPageNum==1]"><a href="javascript:void(0);" ng-click="cLoadPage(pro.cPageNum-1)"><</a></li> 
+			<li ng-repeat="x in pro.cPage" ng-class="{true:'active'}[pro.cPageNum == $index+1]"><a href="javascript:void(0);" ng-click="cLoadPage($index+1)">{{$index+1}}</a></li>
+			<li ng-class="{true:'displaynone'}[pro.cPageNum==pro.cAllPage || pro.cAllPage==1]"><a href="javascript:void(0);" ng-click="cLoadPage(pro.cPageNum+1)">></a></li>
+			<li ng-class="{true:'disabled'}[pro.cPageNum==pro.cAllPage]"><a href="javascript:void(0);" ng-click="cLoadPage(pro.cAllPage)">尾页</a></li>
+		</ul>
+		<div><h5 style="padding:0 5px;">去第</h5><input type="test" style="width:30px;height:34px;border:1px solid #ccc;border-radius:4px;padding-left:5px;" ng-model="cPageIn" /><h5 style="padding:0 5px;">页</h5><button ng-click="cLoadPage(cPageIn)">确定</button></div>
+	</div>
+</div>
+
+<div id="p2s-companyListNo" class="width-all p2s-company" style="padding:0 15px 50px;;">
+	<div class="box-center" style="justify-content:center;padding:100px 0;">
+		<div style="margin-right:20px;"><img src="img/2-48.png"></div>
+		<div>
+			<div class="f20 b">暂时没有符合该搜索条件的公司</div>
+			<h4 class="fc5">请重新修改搜索条件后再次进行搜索</h4>
+		</div>
+	</div>
+	
+	<div class="row" style="border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;padding-bottom:20px;">
+		<div class="f16 b" style="margin:20px 0 10px;padding-left:5px;">推荐公司</div>
+		<div class="col-sm-6 col-md-4" style="padding-left:0" ng-repeat="x in pro.commendCompany|limitTo:3:0" ng-click="">
+			<div class="company cur-hover" ng-click="proComMes(x)">
+				<div class="box-center">
+					<div class="pic"><img ng-src="{{x.logo}}"></div>
+					<div class="ellipsis">
+						<div class="f16 b">{{x.name}}</div>
+						<h5 style="color:#536a82;">{{x.slogan}}</h5>
+						<h5><span class="b" style="color:#fc2a48;">{{x.professionNum}}</span><span style="color:#999;">个在招职位</span></h5>
+					</div>
+				</div>
+				<h5 class="box-center">
+					<div><img src="img/2-45.png"><span class="ellipsis"><span ng-repeat="y in x.industryList">{{'/' | fSymbol:$index}}{{y | fMes:'industry':'id'}}</span></span></div>
+					<div><img src="img/2-46.png"><span>{{x.financing|fMes:'financing':'id'}}</span></div>
+					<div><img src="img/2-47.png"><span>{{x.province|provinceFilter}}</span></div>
+				</h5>
+			</div>
+		</div>
+	</div>
+</div>
+<d-searchcom></d-searchcom>

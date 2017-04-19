@@ -1,0 +1,57 @@
+<div id="p2s-jobMes" class="p2s-mes" d-jobmes>
+	<div class="width-all">
+		<div class="mes row">
+			<div class="col-md-8">
+				<div class="job-top">
+					<div class="f16 b" style="margin:5px 0;">{{jobMes.name}}</div>
+					<div class="f12 fc5">{{jobMes.companyName}}</div>
+					<h5 class="box-center fc5"><span class="fcR b">{{jobMes.compensation|fMes:'compensation':'type'}}</span><img src="img/2-21.png"><span>{{jobMes.province | provinceFilter}}</span><img src="img/2-22.png"><span>{{jobMes.education|fMes:'education':'type'}}</span><img src="img/2-23.png"><span>{{jobMes.experience|fMes:'experience':'type'}}</span></h5>
+					<div class="label-list">
+						<div class="f12 fc5">
+							<!-- <span>五险一金</span> -->
+						</div>
+					</div>
+					<div class="f12 fc9 box-center"><img src="img/2-24.png"><span>{{jobMes.updateAt | date:"yyyy-MM-dd hh:mm:ss"}}</span></div>
+				</div>
+				<div class="mes-mes">
+					<div class="f16 b" style="margin-bottom:5px;">职位描述</div>
+					<h5 class="fc5">
+						<div>岗位职责：</div>
+						<div>{{jobMes.responsibility}}</div>
+					</h5>
+					<h5 class="fc5">
+						<div>必备条件：</div>
+						<div>{{jobMes.requisite}}</div>
+					</h5>
+					<h5 class="fc5">
+						<div>公司福利：</div>
+						<div>{{}}</div>
+					</h5>
+				</div>
+			</div>
+			
+			<div class="col-md-4">
+				<div class="companyTitle">
+					<div class="pic"><img ng-src="{{jobMes.logo}}"></div>
+					<h5 class="b box-center"><span>{{jobMes.companyName}}</span><img src="img/2-29.png"></h5>
+				</div>
+				<div class="box-center">
+					<h5 class="fc5 b" style="padding-right:15px;margin:0;">公司信息</h5>
+					<div style="width:60%;border-top:1px solid #e8e8e8;"></div>
+				</div>
+				<div class="label-list">
+					<div><img src="img/2-13.png"><h5 class="fc5">5000人</h5></div>
+					<div><img src="img/2-14.png" style="margin-left:1px;"><h5 class="fc5"><span ng-repeat="x in jobMes.industryList">{{'/' | fSymbol:$index}}{{x.industry | fMes:'industry':'id'}}</span></h5></div>
+				</div>
+			</div>
+			
+			<div class="col-md-8" style="border-right:none;">
+				<div style="width:100%;border-top:1px solid #e8e8e8;"></div>
+				<div class="box-between interest">
+					<div class="box-center"><img src="img/2-25.png"><span style="margin-right:15px;">分享</span><img src="img/2-26.png"><img src="img/2-27.png"><img src="img/2-28.png"></div>
+					<button class="modal-btn-style">我感兴趣</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

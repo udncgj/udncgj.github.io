@@ -13,57 +13,39 @@
 	<div class="search-left">
 		<div class="list1">
 			<div class="mes mes1">
-				<dl>
-					<dt>产品经理</dt>
-					<dd style="border:none;">初级</dd><dd>中级</dd><dd>高级</dd><dd>总监</dd>
-				</dl>
-				<dl>
-					<dt>移动产品经理</dt>
-					<dd style="border:none;">初级</dd><dd>中级</dd><dd>高级</dd><dd>总监</dd>
-				</dl>
-				<dl>
-					<dt>电商产品经理</dt>
-					<dd style="border:none;">初级</dd><dd>中级</dd><dd>高级</dd><dd>总监</dd>
+				<dl ng-repeat="x in (categoryData|limitTo:3)">
+					<dt>{{x.name}}</dt>
+					<dd ng-class="{'noBor':$first}" ng-repeat="y in x.subCategory" ng-click="professionGo(x.id,y.id)">{{y.name}}</dd>
 				</dl>
 			</div>
 			<div class="box-center"><i class="i1"></i><h4>产品</h4><i class="i2"></i></div>
-			<div class="box-center" style="flex-wrap:wrap;"><h5>产品经理</h5><h5>移动产品经理</h5><h5>产品总监</h5><h5>网页产品经理</h5><h5>电商产品经理</h5></div>
+			<div class="box-center" style="flex-wrap:wrap;">
+				<h5 ng-repeat="x in (categoryData|limitTo:3)" ng-click="professionGo(x.id)">{{x.name}}</h5>
+			</div>
 		</div>
 		<div class="list2">
 			<div class="mes mes2">
-				<dl>
-					<dt>PHP</dt>
-					<dd style="border:none;">初级</dd><dd>中级</dd><dd>高级</dd><dd>总监</dd>
-				</dl>
-				<dl>
-					<dt>JAVA</dt>
-					<dd style="border:none;">初级</dd><dd>中级</dd><dd>高级</dd><dd>总监</dd>
-				</dl>
-				<dl>
-					<dt>WEB前端</dt>
-					<dd style="border:none;">初级</dd><dd>中级</dd><dd>高级</dd><dd>总监</dd>
+				<dl ng-repeat="x in (categoryData|limitTo:5:3)">
+					<dt>{{x.name}}</dt>
+					<dd ng-class="{'noBor':$first}" ng-repeat="y in x.subCategory" ng-click="professionGo(x.id,y.id)">{{y.name}}</dd>
 				</dl>
 			</div>
 			<div class="box-center"><i class="i3"></i><h4>技术</h4><i class="i4"></i></div>
-			<div class="box-center" style="flex-wrap:wrap;"><h5>PHP</h5><h5>JAVA</h5><h5>IOS</h5><h5>HTML5</h5><h5>WEB前端</h5><h5>Andriod</h5></div>
+			<div class="box-center" style="flex-wrap:wrap;">
+				<h5 ng-repeat="x in (categoryData|limitTo:5:3)" ng-click="professionGo(x.id)">{{x.name}}</h5>
+			</div>
 		</div>
 		<div class="list3">
 			<div class="mes mes3">
-				<dl>
-					<dt>UI设计</dt>
-					<dd style="border:none;">初级</dd><dd>中级</dd><dd>高级</dd><dd>总监</dd>
-				</dl>
-				<dl>
-					<dt>APP设计</dt>
-					<dd style="border:none;">初级</dd><dd>中级</dd><dd>高级</dd><dd>总监</dd>
-				</dl>
-				<dl>
-					<dt>交互设计师</dt>
-					<dd style="border:none;">初级</dd><dd>中级</dd><dd>高级</dd><dd>总监</dd>
+				<dl ng-repeat="x in (categoryData|limitTo:-3)">
+					<dt>{{x.name}}</dt>
+					<dd ng-class="{'noBor':$first}" ng-repeat="y in x.subCategory" ng-click="professionGo(x.id,y.id)">{{y.name}}</dd>
 				</dl>
 			</div>
 			<div class="box-center"><i class="i5"></i><h4>设计</h4><i class="i6"></i></div>
-			<div class="box-center" style="flex-wrap:wrap;"><h5>UI设计</h5><h5>APP设计</h5><h5>设计总监</h5><h5>交互设计师</h5></div>
+			<div class="box-center" style="flex-wrap:wrap;">
+				<h5 ng-repeat="x in (categoryData|limitTo:-3)" ng-click="professionGo(x.id)">{{x.name}}</h5>
+			</div>
 		</div>
 	</div>
 	<div id="pro-search" class="carousel slide" data-ride="carousel">
@@ -92,8 +74,8 @@
 		<div class="search-company">
 			<form class="box-center">
 				<h4>公司名称</h4>
-				<input type="text" placeholder="输入公司名称"/>
-				<button ng-click="professionCompany()">搜索</button>
+				<input type="text" ng-model="pro.companyName" placeholder="输入公司名称"/>
+				<button ng-click="professionCompany(pro.companyName)">搜索</button>
 			</form>
 		</div>
 	</div>
@@ -101,54 +83,18 @@
 
 
 <div id="p2-profession" class="width-all">
-	<div class="list box-between"><div><span class="f16"><b>推荐职位</b></span><span style="margin-left:10px;">最新职位</span></div><div class="f16" style="float:right;">查看更多 ></div></div>
+	<div class="list box-between">
+		<div>
+			<span class="cur" ng-class="{true:'f16 b'}[proShow]" ng-click="proShowChange(true)">推荐职位</span>
+			<span class="cur" style="margin-left:10px;" ng-class="{false:'f16 b'}[proShow]" ng-click="proShowChange(false)">最新职位</span>
+		</div>
+		<div class="f16 cur" style="float:right;" ng-click="proMore()">查看更多 ></div>
+	</div>
 	<div class="row">
-		<div class="col-sm-6 col-lg-3">
-			<div class="box-center">
-				<div class="pic"><img src="img/27.png"></div>
-				<div><div class="f16" style="color:#fc2a48;"><b>6K-10K</b></div><h5><b>产品经理</b></h5><h5 style="color:#536a82;">携程</h5></div>
-			</div>
-		</div>
-		<div class="col-sm-6 col-lg-3">
-			<div class="box-center">
-				<div class="pic"><img src="img/27.png"></div>
-				<div><div class="f16" style="color:#fc2a48;"><b>6K-10K</b></div><h5><b>产品经理</b></h5><h5 style="color:#536a82;">携程</h5></div>
-			</div>
-		</div>
-		<div class="col-sm-6 col-lg-3">
-			<div class="box-center">
-				<div class="pic"><img src="img/27.png"></div>
-				<div><div class="f16" style="color:#fc2a48;"><b>6K-10K</b></div><h5><b>产品经理</b></h5><h5 style="color:#536a82;">携程</h5></div>
-			</div>
-		</div>
-		<div class="col-sm-6 col-lg-3">
-			<div class="box-center">
-				<div class="pic"><img src="img/27.png"></div>
-				<div><div class="f16" style="color:#fc2a48;"><b>6K-10K</b></div><h5><b>产品经理</b></h5><h5 style="color:#536a82;">携程</h5></div>
-			</div>
-		</div>
-		<div class="col-sm-6 col-lg-3">
-			<div class="box-center">
-				<div class="pic"><img src="img/27.png"></div>
-				<div><div class="f16" style="color:#fc2a48;"><b>6K-10K</b></div><h5><b>产品经理</b></h5><h5 style="color:#536a82;">携程</h5></div>
-			</div>
-		</div>
-		<div class="col-sm-6 col-lg-3">
-			<div class="box-center">
-				<div class="pic"><img src="img/27.png"></div>
-				<div><div class="f16" style="color:#fc2a48;"><b>6K-10K</b></div><h5><b>产品经理</b></h5><h5 style="color:#536a82;">携程</h5></div>
-			</div>
-		</div>
-		<div class="col-sm-6 col-lg-3">
-			<div class="box-center">
-				<div class="pic"><img src="img/27.png"></div>
-				<div><div class="f16" style="color:#fc2a48;"><b>6K-10K</b></div><h5><b>产品经理</b></h5><h5 style="color:#536a82;">携程</h5></div>
-			</div>
-		</div>
-		<div class="col-sm-6 col-lg-3">
-			<div class="box-center">
-				<div class="pic"><img src="img/27.png"></div>
-				<div><div class="f16" style="color:#fc2a48;"><b>6K-10K</b></div><h5><b>产品经理</b></h5><h5 style="color:#536a82;">携程</h5></div>
+		<div class="col-sm-6 col-lg-3" ng-repeat="x in proShowMes">
+			<div class="box-center cur-hover" ng-click="proJobMes(x)">
+				<div class="pic"><img ng-src="{{x.logo}}"></div>
+				<div class="mes"><div class="f16" style="color:#fc2a48;"><b>{{x.compensation|fMes:'compensation':'type'}}</b></div><h5 class="b">{{x.name}}</h5><h5 style="color:#536a82;">{{x.companyName}}</h5></div>
 			</div>
 		</div>
 	</div>
@@ -156,7 +102,7 @@
 
 
 <div id="p2-company" class="width-all">
-	<div class="list box-between"><div class="f16"><b>推荐公司</b></div><div style="float:right;">查看更多 ></div></div>
+	<div class="list box-between"><div class="f16"><b>推荐公司</b></div><div class="cur" style="float:right;" ng-click="comMore()">查看更多 ></div></div>
 	<div class="row row-company">
 		<div class="col-lg-4">
 			<div>
@@ -195,24 +141,76 @@
 			</div>
 			
 		</div>
-		<div class="col-lg-12">
-			<div class="box-center row">
-				<div class="box-center col-xs-7">
-					<div class="logo"><img src="img/28.png"></div>
-					<div class="mes">
-						<h4 class="ellipsis"><b>携程旅游</b></h4>
-						<h5 class="ellipsis">加入萝卜多俱乐部</h5>
-						<h5 class="lab ellipsis"><span style="margin-left:0;">上市公司</span><span>独角兽</span><span>O2O</span></h5>
+		
+		<!-- <div class="box-center width-carousel"  data-ride="carousel">
+			<img src="img/120.png" ng-click="carLeft('p1-carPos')">
+			<div id="p1-carPos" class="carousel slide" data-ride="carousel" style="width:100%;" d-Carousel>
+				<div class="carousel-inner" role="listbox">
+					
+					<div class="item row" ng-repeat="x in pos" ng-class="{active:$first}">
+						<div class="col-sm-3" ng-repeat="y in x">
+							<div class="box" ng-click="hJob(y,$index,$parent.$index)">
+								<div class="pic"><img ng-src="{{y.logo}}"></div>
+								<div class="f16"><b>{{y.name}}</b></div>
+								<div style="border-bottom:1px solid #f1706b;width:20px;margin:-8px auto 0;"></div>
+								<h6>{{y.companyName}}</h6>
+							</div>
+						</div>
 					</div>
-				</div>
-				<div class="box-center col-xs-5">
-					<div>
-						<h4 class="ellipsis"><b>正在热招</b></h4>
-						<h5 class="ellipsis"><span style="padding-left:0;border-left:none;">产品经理</span><span>产品总监</span><span>移动产品经理</span></h5>
-					</div>
+					
 				</div>
 			</div>
-		</div>
+			<img src="img/121.png" ng-click="carRight('p1-carPos')">
+		</div> -->
+		
+		
+		
+		
+		<div id="p2-carCompany" class="carousel slide col-lg-12 row" data-ride="carousel" style="width:100%;" d-Carousel><!--  d-Carousel -->
+			<div class="carousel-inner" role="listbox" style="float:left;">
+					
+				<div class="item row box-center cur" ng-repeat="x in pro.commendCompany" ng-class="{active:$first}" ng-click="proComMes(x)">
+					<div class="box-center col-xs-7">
+						<div class="logo"><img ng-src="{{x.logo}}"></div>
+						<div class="mes">
+							<h4 class="ellipsis"><b>{{x.name}}</b></h4>
+							<h5 class="ellipsis">加入萝卜多俱乐部</h5>
+							<h5 class="lab ellipsis"><span style="margin-left:0;">上市公司</span><span>独角兽</span><span>O2O</span></h5>
+						</div>
+					</div>
+					<div class="box-center col-xs-5">
+						<div>
+							<h4 class="ellipsis"><b>正在热招</b></h4>
+							<h5 class="ellipsis"><span style="padding-left:0;border-left:none;">产品经理</span><span>产品总监</span><span>移动产品经理</span></h5>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="" style="float:right;height:155px;width:5%;">
+				<ol class="carousel-indicators">
+					<li ng-repeat="x in pro.commendCompany" data-target="#p2-carCompany" data-slide-to="{{$index}}" ng-class="{'active':$first}"></li>
+				</ol>
+			</div>
+			<!-- <div class="col-xs-11">
+				<div class="box-center row">
+					<div class="box-center col-xs-7">
+						<div class="logo"><img src="img/28.png"></div>
+						<div class="mes">
+							<h4 class="ellipsis"><b>携程旅游</b></h4>
+							<h5 class="ellipsis">加入萝卜多俱乐部</h5>
+							<h5 class="lab ellipsis"><span style="margin-left:0;">上市公司</span><span>独角兽</span><span>O2O</span></h5>
+						</div>
+					</div>
+					<div class="box-center col-xs-5">
+						<div>
+							<h4 class="ellipsis"><b>正在热招</b></h4>
+							<h5 class="ellipsis"><span style="padding-left:0;border-left:none;">产品经理</span><span>产品总监</span><span>移动产品经理</span></h5>
+						</div>
+					</div>
+				</div>
+			</div> -->
+		
 	</div>
 	
 </div>

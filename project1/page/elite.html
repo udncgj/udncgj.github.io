@@ -119,30 +119,10 @@
 		<div style="border-bottom:2px solid #f1706b;width:30px;margin:-5px auto 0;"></div>
 	</div> 
 	<div class="row width-all">
-		<div class="col-sm-6 col-md-3">
-			<div><img src="img/313.png"></div>
+		<div class="col-sm-6 col-md-3" ng-repeat="x in commendCompany">
+			<div class="pic cur-hover"><img ng-src="{{x.logo}}" class=""></div>
 		</div>
-		<div class="col-sm-6 col-md-3">
-			<div><img src="img/313.png"></div>
-		</div>
-		<div class="col-sm-6 col-md-3">
-			<div><img src="img/313.png"></div>
-		</div>
-		<div class="col-sm-6 col-md-3">
-			<div><img src="img/313.png"></div>
-		</div>
-		<div class="col-sm-6 col-md-3">
-			<div><img src="img/313.png"></div>
-		</div>
-		<div class="col-sm-6 col-md-3">
-			<div><img src="img/313.png"></div>
-		</div>
-		<div class="col-sm-6 col-md-3">
-			<div><img src="img/313.png"></div>
-		</div>
-		<div class="col-sm-6 col-md-3">
-			<div><img src="img/313.png"></div>
-		</div>
+		
 	</div>
 	<div style="text-align:center;margin-top:10px;"><button type="button" class="btn btn-danger" style="padding:10px 30px;">更多合作公司</button></div>
 </div>

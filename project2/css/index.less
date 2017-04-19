@@ -1,0 +1,540 @@
+@charset "utf-8";
+
+html{
+	font-size:62.5%;
+}  
+body {
+	border:0;
+	font:normal 100% Arial,sans-serif;
+	font-family: "Microsoft Yahei", Arial;
+	font-size:1.4rem;
+	font-size:14px;
+	background:#f6f7f8;
+	color:#2d3e50;
+}
+ul{
+	list-style: none;
+}
+a,a:hover,a:focus,a:active{
+	text-decoration:none;
+}
+input:focus{outline:0;}
+input:-webkit-autofill {-webkit-box-shadow: 0 0 0px 1000px white inset;}
+.box-center{
+	display:flex;
+	align-items:center;
+}
+.box-between{
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+}
+.fcR{color:#fc2a48;}
+.fc9{color:#999;}
+.fc5{color:#536a82;}
+.f12{
+	font-size:12px;
+	margin:5px 0;
+}
+.f16{
+	font-size:16px;
+	margin:10px 0;
+}
+.f20{
+	font-size:20px;
+	margin:10px 0;
+}
+.cur{
+	cursor:pointer;
+}
+.cur-hover{
+	cursor:pointer;
+	&:hover{
+		box-shadow:0px 0px 1px 1px #ccc;
+	}
+}
+.width-style{
+	width:80%;
+	margin:0 auto;
+	max-width:1020px;
+}
+.width-carousel{
+	width:90%;
+	margin:0 auto;
+	max-width:1200px;
+}
+.row{
+	margin:0;
+}
+.ellipsis{
+	word-break:keep-all;/* 不换行 */
+    white-space:nowrap;/* 不换行 */
+    overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+}
+.b{
+	font-weight:bold;
+}
+.page{
+	.box-center;
+	justify-content:flex-end;
+	padding:20px 15px 30px 0;
+	ul,div{
+		.box-center;
+	}
+	ul>li>a,div>button{
+		display: inline-block;
+		padding: 6px 12px;
+		margin-bottom: 0;
+		font-size: 14px;
+		font-weight: normal;
+		line-height: 1.42857143;
+		text-align: center;
+		white-space: nowrap;
+		vertical-align: middle;
+		-ms-touch-action: manipulation;
+		touch-action: manipulation;
+		cursor: pointer;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		background-image: none;
+		border: 1px solid transparent;
+		border-radius: 4px;
+		
+		color: #333;
+		background-color: #f8f8f8;
+		border-color: #ccc;
+		&:hover,&:focus,&.focus{
+			background-color: #e8e8e8;
+			text-decoration: none;
+		}
+	}
+	ul>li{
+		margin:0 3px;
+	}
+	.disabled>a{
+		background-color: #e8e8e8;
+		color:#999;
+		cursor:default;
+	}
+	.displaynone{
+		display:none;
+	}
+	.active>a,.active>a:hover,.active>a:focus{
+		background-color:#fc2a48;
+		color:#fff;
+	}
+}
+/*flex-wrap:wrap;*/
+
+#top{
+	background:#fff;
+	height:80px;
+	padding:0 5%;
+	margin-bottom:20px;
+	min-width:950px;
+}
+#mes{
+	//width:100%;
+	margin:0 5px;
+	display:flex;
+	.list{
+		width:15%;
+		min-width:150px;
+		height:444px;
+		border:1px solid #999;
+		border-right:none;
+		border-radius:3px;
+		div,li{
+			height:40px;
+			line-height:40px;
+			border-bottom:1px solid #fff;
+			.cur;
+		}
+		div{
+			background:#31B0D5;
+			color:#fff;
+		}
+		ul{
+			background:#fff;
+			.cur;
+			padding:0;
+			li{
+				&:hover{
+					background:#d9edf7;
+				}
+				a{
+					color:#2d3e50;
+					display:inline-block;
+					width:100%;
+				}
+			}
+		}
+	}
+	.list>div,.list>ul{
+		border-bottom:1px solid #fff;
+		margin:0;
+	}
+	.list>div,.list>ul>li>a{
+		padding-left:25%;
+	}
+	
+	.view{
+		width:85%;
+		background:#fff;
+		border:1px solid #999;
+		padding:10px;
+		min-width:950px;
+	}
+}
+
+.search{
+	border:1px solid #999;
+	padding:10px 0;
+	margin-bottom:10px;
+	//background:#f6f7f8;
+	.formSearch{
+		.box-center;
+		flex-wrap:wrap;
+		margin-bottom:0;
+	}
+	.formSearch>div{
+		margin:10px 25px;
+		span{
+			display:inline-block;
+			width:65px;
+			text-align:right;
+			margin-right:10px;
+		}
+		input{
+			padding:3px 5px;
+			width:150px;
+			background:#fff;
+		}
+		select{
+			width:150px;
+			background:#fff;
+			margin-left:-5px;
+		}
+		.laydate-icon{
+			font-size:12px;
+			display:inline-block;
+			width:150px;
+			text-align:left;
+		}
+	}
+	.searchBtn{
+		text-align:right;
+		padding-right:25px;
+		.btn{
+			padding-left:20px;
+			padding-right:20px;
+			margin-left:20px;
+		}
+	}
+}
+
+.search-list{
+	border:1px solid #999;
+	.top{
+		border-bottom:1px solid #999;
+		padding:10px 25px;
+		background:#31b0d5;
+		color:#fff;
+		button{
+			float:right;
+		}
+	}
+	.mes{
+		padding:10px;
+		font-size:14px;
+		.title{
+			background:#31b0d5;
+			color:#fff;
+		}
+		ul{
+			padding:0;
+			margin:0;
+		}
+		.mes-list{
+			.box-center;
+			height:50px;
+			border-top:1px solid #999;
+			li{
+				text-align:center;
+				.ellipsis;
+				span{
+					display:inline-block;
+					.cur;
+				}
+			}
+		}
+	}
+	.mes-check{
+		div{
+			input{
+				height:40px;
+				width:550px;
+				margin-left:15px;
+			}
+			margin:20px auto;
+			text-align:center;
+			font-size:16px;
+			button{
+				height:40px;
+			}
+		}
+		.check{
+			display:flex;
+			justify-content:center;
+		}
+		.check>div{
+			//.box-center;
+			width:550px;
+			margin:0;
+			margin-left:20px;
+			text-align:left;
+			font-size:14px;
+			line-height:25px;
+			div{
+				text-align:left;
+				font-size:14px;
+			}
+			input{
+				height:15px;
+				width:15px;
+				margin:0 5px 0 0;
+			}
+		}
+	}
+}
+
+#company{
+	.li1{width:8%;}
+	.li2{width:14%;}
+	.li3{width:14%;}
+	.li4{width:14%;}
+	.li5{width:10%;}
+	.li6{width:10%;}
+	.li7{width:10%;}
+	.li8{width:20%;span{width:20%;.cur;}}
+}
+#job{
+	.li1{width:8%;}
+	.li2{width:14%;}
+	.li3{width:15%;}
+	.li4{width:10%;}
+	.li5{width:8%;}
+	.li6{width:8%;}
+	.li7{width:14%;}
+	.li8{width:8%;}
+	.li9{width:15%;span{width:33%;.cur;}}
+}
+#article{
+	.li1{width:8%;}
+	.li2{width:15%;}
+	.li3{width:11%;}
+	.li4{width:11%;}
+	.li5{width:8%;}
+	.li6{width:12%;}
+	.li7{width:12%;}
+	.li8{width:8%;}
+	.li9{width:15%;span{width:33%;.cur;}}
+	.search-list{
+		.mes{
+			.mes-list{
+				height:100px;
+			}
+		}
+	}
+}
+#accountNum{
+	.li1{width:8%;}
+	.li2{width:10%;}
+	.li3{width:12%;}
+	.li4{width:10%;}
+	.li5{width:15%;}
+	.li6{width:10%;}
+	.li7{width:15%;}
+	.li8{width:20%;span{width:40%;}}
+}
+#role{
+	.li1{width:8%;}
+	.li3{width:12%;}
+	.li4{width:12%;}
+	.li5{width:18%;}
+	.li6{width:12%;}
+	.li7{width:18%;}
+	.li8{width:20%;span{width:40%;}}
+}
+
+		
+	
+#module{
+	.li1{width:8%;}
+	.li2{width:10%;}
+	.li3{width:12%;}
+	.li4{width:8%;}
+	.li5{width:10%;}
+	.li6{width:12%;}
+	.li7{width:8%;}
+	.li8{width:10%;}
+	.li9{width:8%;}
+	.li10{width:14%;span{width:40%;}}
+}
+
+.newEdit{
+	border:1px solid #999;
+	.top{
+		border-bottom:1px solid #999;
+		padding:10px 25px;
+		background:#31b0d5;
+		color:#fff;
+		select{
+			float:right;
+			color:#000;
+		}
+	}
+	.row>div{
+		margin:10px 0;
+		padding-left:5%;
+		padding-right:0;
+		display:flex;
+		align-items:flex-start;
+		.item{
+			display:inline-block;
+			width:95px;
+			text-align:right;
+			position:relative;
+			margin-right:10px;
+			line-height:30px;
+			.fcR{
+				position:absolute;
+				top:4px;
+				left:0;
+				
+			}
+		}
+		input{
+			width:325px;
+			padding:3px 5px;
+		}
+		.checkbox{
+			font-size:14px;
+			margin:0;
+			position:static;
+			input{
+				position:static;
+				margin:0 10px 0 0;
+				width:20px;
+				padding:0;
+			}
+			span{
+				color:#fff;
+				background:#337ab7;
+				padding:5px 10px;
+				border-radius:5px;
+				margin-right:20px;
+			}
+		}
+		select{
+			width:325px;
+		}
+		position:relative;
+		.formError{
+			position:absolute;
+			//right:0;
+			.fcR;
+			word-break:keep-all;/* 不换行 */
+			white-space:nowrap;/* 不换行 */
+			line-height:30px;
+		}
+	}
+	.row{
+		.col-lg-6{
+			height:30px;
+		}
+		.col-lg-12>div{
+			display:inline-block;
+			div,table{
+				margin-top:10px;
+			}
+			table{
+				tr{
+					height:40px;
+					text-align:center;
+				}
+			}
+			.pic{
+				width:300px;
+				height:150px;
+				border:1px solid #999;
+				position:relative;
+				div{
+					position:absolute;
+					top:0;
+					left:0;
+				}
+			}
+			.tagsAdd{
+				border:1px solid #999;
+				width:200px;
+				margin-top:0;
+				input{
+					border:none;
+					width:180px;
+				}
+			}
+			.tags{
+				.bg-primary{
+					padding:5px 5px 5px 15px;
+					font-size:14px;
+					border-radius:5px;
+					margin-right:5px;
+					span{
+						margin-left:12px;
+					}
+				}
+			}
+		}
+	}
+	
+	.formBox{
+		width:96%;
+		margin:10px auto;
+		border:1px solid #999;
+	}
+	
+	.newEditBtn{
+		margin:30px 0 30px;
+		text-align:right;
+		padding:0 25px;
+		.btn{
+			margin-left:30px;
+			padding:10px 30px;
+		}
+	}
+}
+
+.textStyle{
+	display:flex;
+}
+
+
+@media (max-width: 650px) {
+}
+@media (max-width: 767px) {
+}
+
+@media (min-width: 768px) {
+}
+@media (min-width: 768px) and (max-width: 991px) {
+}
+@media (max-width: 991px) {
+}
+@media (min-width: 992px) {
+}
+@media (min-width: 1200px) {
+}

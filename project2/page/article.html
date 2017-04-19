@@ -1,0 +1,110 @@
+
+<div id="article" ng-controller='article as art'>
+	
+	<div class="search">
+		<form class="formSearch" name="articleSearch">
+			<div><span>标题</span><input type="text"  ng-model="articleSearchData.title" /></div>
+			<div><span>创建者</span><input type="text"  ng-model="articleSearchData.author" /></div>
+			<div class="box-center">
+				<span>发布时间</span>
+				<span class="laydate-icon" id="start" style="margin-right:5px;" ng-click="laydateStart()"></span>
+				-
+				<span class="laydate-icon" id="end" style="margin-left:5px;" ng-click="laydateEnd()"></span>
+			</div>
+			<div>
+				<span>状态</span>
+				<select ng-model="articleSearchData.status">
+					<option value="">全部</option>
+					<option ng-repeat="x in status" value="{{$index}}">{{x.name}}</option>
+				</select>
+			</div>
+			<div>
+				<span>类型</span>
+				<select ng-model="articleSearchData.type">
+					<option value="">全部</option>
+					<option ng-repeat="x in type" value="{{$index}}">{{x.name}}</option>
+				</select>
+			</div>
+			
+		</form>
+		<div class="searchBtn"><button class="btn btn-default" ng-click="clear()">清空</button><button class="btn btn-danger" ng-click="searchGo()">搜索</button></div>
+	</div>
+	
+	<div class="search-list">
+		<div class="top">
+			<span class="f16">公司列表</span>
+			<button class="btn btn-primary btn-xs" ng-click="operate('new')">+ 新增</button>
+		</div>
+		<div class="mes">
+			<ul style="border:1px solid #999;">
+				<li>
+					<ul class="title mes-list" style="border:none;height:40px;">
+						<li class="li1">序号</li>
+						<li class="li2">图片</li>
+						<li class="li3">标题</li>
+						<li class="li4">类型</li>
+						<li class="li5">创建者</li>
+						<li class="li6">创建时间</li>
+						<li class="li7">修改时间</li>
+						<li class="li8">状态</li>
+						<li class="li9">操作</li>
+					</ul>
+				</li>
+				<li ng-repeat="x in articleDataList">
+					<ul class="mes-list">
+						<li class="li1">{{$index+1}}</li>
+						<li class="li2"><div style="width:90%;height:80%;margin:0 auto;"><img width="100%" height="100%" ng-src="{{articleData[$index].img}}" ng-show="articleData[$index]!=null"></div></li>
+						<li class="li3">{{articleData[$index].title}}</li>
+						<li class="li4">{{articleData[$index].type|fMes:'articleType':'type'}}</li>
+						<li class="li5">{{articleData[$index].author}}</li>
+						<li class="li6">{{articleData[$index].createAt|date:"yyyy-MM-dd"}}</br>{{articleData[$index].createAt|date:"hh:mm:ss"}}</li>
+						<li class="li7">{{articleData[$index].updateAt|date:"yyyy-MM-dd"}}</br>{{articleData[$index].updateAt|date:"hh:mm:ss"}}</li>
+						<li class="li8">{{articleData[$index].status|fMes:'articleStatus':'type'}}</li>
+						<li class="li9">
+							<span ng-click="operate('status',articleData[$index])">{{{0:'？？',1:'下线',2:'上线'}[articleData[$index].status]}}</span><span ng-click="operate('id',articleData[$index])">{{{true:'编辑'}[articleData[$index]!=null]}}</span><span class="fcR" ng-click="operate('del',articleData[$index])">{{{true:'删除'}[articleData[$index]!=null]}}</span>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			
+<div class="page">
+	<ul style="margin: 0px;" >  
+		<li ng-class="{true:'disabled'}[!(pageNum>1)]"><a href="javascript:void(0);" ng-click="loadPage(1)">首页</a></li>
+		<li ng-class="{true:'disabled'}[!(pageNum>1)]"><a href="javascript:void(0);" ng-click="loadPage(pageNum-1)"><</a></li> 
+		<li ng-repeat="x in page" ng-class="{true:'active'}[pageNum == $index+1]"><a href="javascript:void(0);" ng-click="loadPage($index+1)">{{$index+1}}</a></li>
+		<li ng-class="{true:'disabled'}[pageNum==allPage || allPage<=1]"><a href="javascript:void(0);" ng-click="loadPage(pageNum+1)">></a></li>
+		<li ng-class="{true:'disabled'}[pageNum==allPage || allPage<=1]"><a href="javascript:void(0);" ng-click="loadPage(allPage)">尾页</a></li>
+	</ul>
+	<div><h5 style="padding:0 5px;">去第</h5><input type="test" style="width:30px;height:34px;border:1px solid #ccc;border-radius:4px;padding-left:5px;" ng-model="pageIn" /><h5 style="padding:0 5px;">页</h5><button ng-click="loadPage(pageIn)">确定</button></div>
+</div>
+			
+			
+		</div>
+	</div>
+	
+	<!-- Modal -->
+	<div class="modal fade" id="artModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">操作提示</h4>
+				</div>
+				<div class="modal-body" style="text-align:center;">
+					<div>{{value1}}</div>
+					</br>
+					<div>{{value2}}</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="operateOk()">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<d-article></d-article>
+
+
+</div>

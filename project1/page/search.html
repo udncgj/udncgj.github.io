@@ -1,0 +1,27 @@
+
+<div id="p2s-top" class="width-all p2s-top">
+	<div class="box-center sel">
+		<div class="f16" ng-class="{true:'active',false:''}[pro.p2sTop]" ng-click="company(true)">公司</div>
+		<div class="f16" ng-class="{true:'',false:'active'}[pro.p2sTop]" ng-click="job(true)">职业</div>
+	</div>
+	
+	<form class="list">
+		<div class="box-center">
+			<div class="b" style="width:70px;">关&ensp;键&ensp;词：</div>
+			<input type="text" placeholder="{{inputMes}}" ng-model="pro.searchData.name" />
+		</div>
+		<div ng-repeat="x in professionList" ng-hide="x.title =='subCategory' && (pro.jobSearchData.category.length < 1 || pro.jobSearchData.category.length > 2)">
+			<div style="float:left;height:26px;line-height:26px;width:75px;"><span class="b">{{x.name}}</span></div>
+			<div>
+				<div class="box-center" style="flex-wrap:wrap;"><span ng-class="{true:'active'}[pro.searchData[x.title] === '']" class="spanlist" ng-click="listSelect(x.title,'')">不限</span>
+				<span ng-repeat="y in professionMes[$index]" ng-class="{true:'active'}[(pro.searchData[x.title]|fSearchData:$index)]" class="spanlist" ng-click="listSelect(x.title,$index)">{{y.name}}</span></div>
+				<!-- <div style="margin-left:70px;"><span class="spanlist" ng-repeat="z in subCategory" ng-if="$index == 1">{{z.name}}</span></div> -->
+			</div>
+		</div>
+		<div class="search-btn box-center">
+			<span class="spanlist" ng-click="clearOut()">清空</span><span class="active spanlist" ng-click="searchGo()">搜索</span>
+		</div>
+	</form>
+</div>
+<d-search></d-search>
+<div ui-view></div>

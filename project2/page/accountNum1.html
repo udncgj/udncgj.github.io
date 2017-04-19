@@ -1,0 +1,97 @@
+
+
+	<div class="search">
+		<div class="formSearch" style="position:relative;">
+			<div>
+				<span>角色</span>
+				<select>
+					<option>— —请选择— —</option>
+					<option>超级管理员</option>
+					<option>管理员</option>
+					<option>运营</option>
+				</select>
+			</div>
+			<div>
+				<span>用户名</span>
+				<input type="text" />
+			</div>
+			<div class="searchBtn" style="position:absolute;right:0;">
+				<button class="btn btn-default" ng-click="companyClear()">重置</button>
+				<button class="btn btn-danger" ng-click="searchGo()">查询</button>
+			</div>
+		</div>
+	</div>
+	
+	<div class="search-list">
+	
+		<div class="search" style="margin:20px;">
+			<div class="formSearch" style="position:relative;">
+				<div>
+					<span>角色</span>
+					<select>
+						<option>— —请选择— —</option>
+						<option>超级管理员</option>
+						<option>管理员</option>
+						<option>运营</option>
+					</select>
+				</div>
+				<div>
+					<span>用户名</span>
+					<input type="text" />
+				</div>
+				<div class="searchBtn" style="position:absolute;right:0;">
+					<button class="btn btn-danger" ng-click="searchGo()">搜索</button>
+				</div>
+			</div>
+		</div>
+	<div class="search-list" style="margin:20px;">
+		<div class="top">
+			<span class="f16">账号列表</span>
+			<button class="btn btn-primary btn-xs" ng-click="companySetGo()">+ 新增账户</button>
+		</div>
+		<div class="mes">
+			<ul style="border:1px solid #999;">
+				<li>
+					<ul class="title mes-list" style="border:none;">
+						<li class="li1">ID</li>
+						<li class="li2">登录名</li>
+						<li class="li3">角色</li>
+						<li class="li4">创建人</li>
+						<li class="li5">创建时间</li>
+						<li class="li6">更新人</li>
+						<li class="li7">更新时间</li>
+						<li class="li8">操作</li>
+					</ul>
+				</li>
+				<li>
+					<ul class="mes-list">
+						<li class="li1">001</li>
+						<li class="li2">科比</li>
+						<li class="li3">超级管理员</li>
+						<li class="li4">admin</li>
+						<li class="li5">2015/08/31</br>14:30:27</li>
+						<li class="li6">admin</li>
+						<li class="li7">2015/08/31 14:30</li>
+						<li class="li8">
+							<span ng-click="operate('id',comData[$index])">编辑</span><span class="fcR" ng-click="operate('del',comData[$index])">删除</span>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			
+<div class="page">
+	<ul style="margin: 0px;" >  
+		<li ng-class="{true:'disabled'}[!(pageNum>1)]"><a href="javascript:void(0);" ng-click="loadPage(1)">首页</a></li>
+		<li ng-class="{true:'disabled'}[!(pageNum>1)]"><a href="javascript:void(0);" ng-click="loadPage(pageNum-1)"><</a></li> 
+		<li ng-repeat="x in page" ng-class="{true:'active'}[pageNum == $index+1]"><a href="javascript:void(0);" ng-click="loadPage($index+1)">{{$index+1}}</a></li>
+		<li ng-class="{true:'disabled'}[pageNum==allPage || allPage<=1]"><a href="javascript:void(0);" ng-click="loadPage(pageNum+1)">></a></li>
+		<li ng-class="{true:'disabled'}[pageNum==allPage || allPage<=1]"><a href="javascript:void(0);" ng-click="loadPage(allPage)">尾页</a></li>
+	</ul>
+	<div><h5 style="padding:0 5px;">去第</h5><input type="test" style="width:30px;height:34px;border:1px solid #ccc;border-radius:4px;padding-left:5px;" ng-model="pageIn" /><h5 style="padding:0 5px;">页</h5><button ng-click="loadPage(pageIn)">确定</button></div>
+</div>
+			
+			
+		</div></div>
+	</div>
+	
+

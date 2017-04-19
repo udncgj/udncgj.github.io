@@ -1,0 +1,125 @@
+
+<div id="company" ng-controller="company">
+	<div class="search">
+		<form class="formSearch" name="comSearch">
+			<div><span>公司名称</span><input type="text"  ng-model="comSearchData.name" /></div>
+			<div>
+				<span>公司行业</span>
+				<select ng-model="comSearchData.industry">
+					<option value="">全部</option>
+					<option ng-repeat="x in industry" value="{{$index}}">{{x.name}}</option>
+				</select>
+			</div>
+			<div>
+				<span>地区</span>
+				<select ng-model="comSearchData.province" ng-click="comProvince(comSearchData.province)">
+					<option value="">全部</option>
+					<option ng-repeat="x in province" value="{{$index+1}}">{{x.ProName}}</option>
+				</select>
+				-
+				<select style="margin-left:0;" ng-model="comSearchData.city">
+					<option value="">全部</option>
+					<option ng-repeat="x in city" value="{{x.CityID}}">{{x.CityName}}</option>
+				</select>
+			</div>
+			<div><span>产品名称</span><input type="text" /></div>
+			<div>
+				<span>融资规模</span>
+				<select ng-model="comSearchData.financing">
+					<option value="">全部</option>
+					<option ng-repeat="x in financing" value="{{$index}}">{{x.name}}</option>
+				</select>
+			</div>
+			<div>
+				<span>认证状态</span>
+				<select ng-model="comSearchData.approvedStatus">
+					<option value="">全部</option>
+					<option ng-repeat="x in approvedStatus" value="{{$index}}">{{x}}</option>
+				</select>
+			</div>
+			<div>
+				<span>冻结状态</span>
+				<select ng-model="comSearchData.freezedStatus">
+					<option value="">全部</option>
+					<option ng-repeat="x in freezedStatus" value="{{$index}}">{{x}}</option>
+				</select>
+			</div>
+			
+		</form>
+		<div class="searchBtn"><button class="btn btn-default" ng-click="clear()">清空</button><button class="btn btn-danger" ng-click="searchGo()">搜索</button></div>
+	</div>
+	
+	<div class="search-list">
+		<div class="top">
+			<span class="f16">公司列表</span>
+			<button class="btn btn-primary btn-xs" ng-click="operate('new')">+ 新增</button>
+		</div>
+		<div class="mes">
+			<ul style="border:1px solid #999;">
+				<li>
+					<ul class="title mes-list" style="border:none;">
+						<li class="li1">序号</li>
+						<li class="li2">公司名称</li>
+						<li class="li3">公司行业</li>
+						<li class="li4">地区</li>
+						<li class="li5">融资情况</li>
+						<li class="li6">认证状态</li>
+						<li class="li7">冻结状态</li>
+						<li class="li8">操作</li>
+					</ul>
+				</li>
+				<li ng-repeat="x in comDataList">
+					<ul class="mes-list">
+						<li class="li1">{{$index+1}}</li>
+						<li class="li2">{{comData[$index].name}}</li>
+						<li class="li3"><span ng-repeat="y in comData[$index].industryList">{{'/' | fSymbol:$index}}{{y | fMes:'industry':'id'}}</span></li>
+						<li class="li4">{{comData[$index].province|provinceFilter}}{{{true:'-'}[comData[$index].id>0]}}{{comData[$index].city|cityFilter}}</li>
+						<li class="li5">{{comData[$index].financing|fMes:'financing':'id'}}</li>
+						<li class="li6">{{comData[$index].approved|fMes:'approved':'type'}}</li>
+						<li class="li7">{{comData[$index].freezed|fMes:'freezed':'type'}}</li>
+						<li class="li8">
+							<span ng-click="operate('job',comData[$index])">{{{true:'职位'}[comData[$index].id>0]}}</span><span ng-click="operate('approved',comData[$index])">{{{1:'解除',0:'认证'}[comData[$index].approved]}}</span><span ng-click="operate('id',comData[$index])">{{{true:'编辑'}[comData[$index].id>0]}}</span><span class="fcR" ng-click="operate('freezed',comData[$index])">{{{1:'解冻',0:'冻结'}[comData[$index].freezed]}}</span><span class="fcR" ng-click="operate('del',comData[$index])">{{{true:'删除'}[comData[$index].id>0]}}</span>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			
+<div class="page">
+	<ul style="margin: 0px;" >  
+		<li ng-class="{true:'disabled'}[!(pageNum>1)]"><a href="javascript:void(0);" ng-click="loadPage(1)">首页</a></li>
+		<li ng-class="{true:'disabled'}[!(pageNum>1)]"><a href="javascript:void(0);" ng-click="loadPage(pageNum-1)"><</a></li> 
+		<li ng-repeat="x in page" ng-class="{true:'active'}[pageNum == $index+1]"><a href="javascript:void(0);" ng-click="loadPage($index+1)">{{$index+1}}</a></li>
+		<li ng-class="{true:'disabled'}[pageNum==allPage || allPage<=1]"><a href="javascript:void(0);" ng-click="loadPage(pageNum+1)">></a></li>
+		<li ng-class="{true:'disabled'}[pageNum==allPage || allPage<=1]"><a href="javascript:void(0);" ng-click="loadPage(allPage)">尾页</a></li>
+	</ul>
+	<div><h5 style="padding:0 5px;">去第</h5><input type="test" style="width:30px;height:34px;border:1px solid #ccc;border-radius:4px;padding-left:5px;" ng-model="pageIn" /><h5 style="padding:0 5px;">页</h5><button ng-click="loadPage(pageIn)">确定</button></div>
+</div>
+			
+			
+		</div>
+	</div>
+	
+	<!-- Modal -->
+	<div class="modal fade" id="comModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">操作提示</h4>
+				</div>
+				<div class="modal-body" style="text-align:center;">
+					<div>{{value1}}</div>
+					</br>
+					<div>{{value2}}</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="operateOk()">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<d-company></d-company>
+</div>

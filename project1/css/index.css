@@ -14,6 +14,12 @@ body {
 ul {
   list-style: none;
 }
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+}
 input:focus {
   outline: 0;
 }
@@ -49,6 +55,15 @@ input:-webkit-autofill {
 .f20 {
   font-size: 20px;
   margin: 10px 0;
+}
+.cur {
+  cursor: pointer;
+}
+.cur-hover {
+  cursor: pointer;
+}
+.cur-hover:hover {
+  box-shadow: 0px 0px 1px 1px #ccc;
 }
 .width-style {
   width: 80%;
@@ -87,9 +102,6 @@ input:-webkit-autofill {
   display: flex;
   align-items: center;
 }
-.page ul > li {
-  margin: 0 3px;
-}
 .page ul > li > a,
 .page div > button {
   display: inline-block;
@@ -123,6 +135,23 @@ input:-webkit-autofill {
 .page div > button.focus {
   background-color: #e8e8e8;
   text-decoration: none;
+}
+.page ul > li {
+  margin: 0 3px;
+}
+.page .disabled > a {
+  background-color: #e8e8e8;
+  color: #999;
+  cursor: default;
+}
+.page .displaynone {
+  display: none;
+}
+.page .active > a,
+.page .active > a:hover,
+.page .active > a:focus {
+  background-color: #fc2a48;
+  color: #fff;
 }
 /*flex-wrap:wrap;*/
 #top {

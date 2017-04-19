@@ -1,0 +1,52 @@
+
+<div id="p2s-jobList" class="width-all p2s-job">
+	
+	<div class="jobBox row cur-hover" ng-repeat="x in pro.jList" ng-click="proJobMes(x)">
+		<div class="col-md-6 jobLeft">
+			<div><span class="f16 b">{{x.name}}</span><span class="f12 fc9"></span></div>
+			<h5 class="b fcR">{{x.compensation|fMes:'compensation':'type'}}</h5>
+			<h5 class="fc5">{{x.province | provinceFilter}}-{{x.city | cityFilter}} / {{x.education | fMes:'education':'type'}} / {{x.experience | fMes:'experience':'type'}}</h5>
+		</div>
+		<div class="col-md-6 box-between jobRight">
+			<div>
+				<h5 class="b">{{x.companyName}}</h5>
+				<h5 class="fc5"><span ng-repeat="y in x.industryList">{{'/' | fSymbol:$index}}{{y.industry | fMes:'industry':'id'}}</span></h5>
+				<div class="f12 fc5"><span ng-repeat="z in x.companyTag">{{z | fMes}}</span></div>
+			</div>
+			<div class="pic"><img ng-src="{{x.logo}}"></div>
+		</div>
+	</div>
+	
+	
+	<div class="page">
+		<ul style="margin: 0px;" >  
+			<li ng-class="{true:'disabled'}[pro.jPageNum==1]"><a href="javascript:void(0);" ng-click="jLoadPage(1)">首页</a></li>
+			<li ng-class="{true:'displaynone'}[pro.jPageNum==1]"><a href="javascript:void(0);" ng-click="jLoadPage(pro.jPageNum-1)"><</a></li> 
+			<li ng-repeat="x in pro.jPage" ng-class="{true:'active'}[pro.jPageNum == $index+1]"><a href="javascript:void(0);" ng-click="jLoadPage($index+1)">{{$index+1}}</a></li>
+			<li ng-class="{true:'displaynone'}[pro.jPageNum==pro.jAllPage || pro.jAllPage==1]"><a href="javascript:void(0);" ng-click="jLoadPage(pro.jPageNum+1)">></a></li>
+			<li ng-class="{true:'disabled'}[pro.jPageNum==pro.jAllPage]"><a href="javascript:void(0);" ng-click="jLoadPage(pro.jAllPage)">尾页</a></li>
+		</ul>
+		<div><h5 style="padding:0 5px;">去第</h5><input type="test" style="width:30px;height:34px;border:1px solid #ccc;border-radius:4px;padding-left:5px;" ng-model="jPageIn" /><h5 style="padding:0 5px;">页</h5><button ng-click="jLoadPage(jPageIn)">确定</button></div>
+	</div>
+</div>
+
+<div id="p2s-jobListNo" class="width-all p2s-company" style="padding:0 15px 50px;">
+	<div class="box-center" style="justify-content:center;padding:100px 0;">
+		<div style="margin-right:20px;"><img src="img/2-48.png"></div>
+		<div>
+			<div class="f20 b">暂时没有符合该搜索条件的内容</div>
+			<h4 class="fc5">请重新修改搜索条件后再次进行搜索</h4>
+		</div>
+	</div>
+	
+	<div class="row jobMes" style="border-top:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;padding-bottom:20px;">
+		<div class="f16 b" style="margin:20px 0 10px;padding-left:5px;">推荐职位</div>
+		<div class="col-sm-6 col-md-4" style="padding-left:0" ng-repeat="x in pro.commendJob|limitTo:3:0">
+			<div class="box-center cur-hover" ng-click="proJobMes(x)">
+				<div class="pic"><img ng-src="{{x.logo}}"></div>
+				<div class="mes"><div class="f16" style="color:#fc2a48;"><b>{{x.compensation|fMes:'compensation':'type'}}</b></div><h5 class="b">{{x.name}}</h5><h5 style="color:#536a82;">{{x.companyName}}</h5></div>
+			</div>
+		</div>
+	</div>
+</div>
+<d-searchjob></d-searchjob>

@@ -1,0 +1,129 @@
+
+<div id="job" ng-controller='job'>
+	<div class="search">
+		<form class="formSearch" name="jobSearch">
+			<div><span>公司名称</span><input type="text"  ng-model="jobSearchData.companyName" /></div>
+			<div><span>职位名称</span><input type="text"  ng-model="jobSearchData.name" /></div>
+			<div>
+				<span>职业类别</span>
+				<select ng-model="jobSearchData.category">
+					<option value="">全部</option>
+					<option ng-repeat="x in category" value="{{$index}}">{{x.name}}</option>
+				</select>
+			</div>
+			<div>
+				<span>学历要求</span>
+				<select ng-model="jobSearchData.education">
+					<option value="">全部</option>
+					<option ng-repeat="x in education" value="{{$index}}">{{x.name}}</option>
+				</select>
+			</div>
+			<div>
+				<span>工作经验</span>
+				<select ng-model="jobSearchData.experience">
+					<option value="">全部</option>
+					<option ng-repeat="x in experience" value="{{$index}}">{{x.name}}</option>
+				</select>
+			</div>
+			<div class="box-center">
+				<span>发布时间</span>
+				<span class="laydate-icon" id="start" style="margin-right:5px;" ng-click="laydateStart()"></span>
+				-
+				<span class="laydate-icon" id="end" style="margin-left:5px;" ng-click="laydateEnd()"></span>
+			</div>
+			<div>
+				<span>薪资</span>
+				<select ng-model="jobSearchData.compensation">
+					<option value="">全部</option>
+					<option ng-repeat="x in compensation" value="{{$index}}">{{x.name}}</option>
+				</select>
+			</div>
+			<div>
+				<span>状态</span>
+				<select ng-model="jobSearchData.status">
+					<option value="">全部</option>
+					<option ng-repeat="x in status" value="{{$index}}">{{x}}</option>
+				</select>
+			</div>
+			
+		</form>
+		<div class="searchBtn"><button class="btn btn-default" ng-click="clear()">清空</button><button class="btn btn-danger" ng-click="searchGo()">搜索</button></div>
+	</div>
+	
+	<div class="search-list">
+		<div class="top">
+			<span class="f16">{{jobTop}}</span>
+			<button class="btn btn-primary btn-xs" ng-click="operate('new')" ng-hide="jobSearchData.companyId==null">+ 新增</button>
+		</div>
+		<div class="mes">
+			<ul style="border:1px solid #999;">
+				<li>
+					<ul class="title mes-list" style="border:none;">
+						<li class="li1">序号</li>
+						<li class="li2">公司名称</li>
+						<li class="li3">职位名称</li>
+						<li class="li4">薪资</li>
+						<li class="li5">学历要求</li>
+						<li class="li6">工作经验</li>
+						<li class="li7">发布时间</li>
+						<li class="li8">状态</li>
+						<li class="li9">操作</li>
+					</ul>
+				</li>
+				<li ng-repeat="x in jobDataList">
+					<ul class="mes-list">
+						<li class="li1">{{$index+1}}</li>
+						<li class="li2">{{jobData[$index].companyName}}</li>
+						<li class="li3">{{jobData[$index].name}}</li>
+						<li class="li4">{{jobData[$index].compensation|fMes:'compensation':'type'}}</li>
+						<li class="li5">{{jobData[$index].education|fMes:'education':'type'}}</li>
+						<li class="li6">{{jobData[$index].experience|fMes:'experience':'type'}}</li>
+						<li class="li7">{{jobData[$index].updateAt|date:"yyyy-MM-dd" }}</li>
+						<li class="li8">{{jobData[$index].status|fMes:'jobStatus':'type'}}</li>
+						<li class="li9">
+							<span ng-click="operate('id',jobData[$index])">{{{true:'编辑'}[jobData[$index].id>0]}}</span><span class="fcR" ng-click="operate('status',jobData[$index])">{{{0:'下架',1:'上架'}[jobData[$index].status]}}</span><span class="fcR" ng-click="operate('del',jobData[$index])">{{{true:'删除'}[jobData[$index].id>0]}}</span>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			
+<div class="page">
+	<ul style="margin: 0px;" >  
+		<li ng-class="{true:'disabled'}[!(pageNum>1)]"><a href="javascript:void(0);" ng-click="loadPage(1)">首页</a></li>
+		<li ng-class="{true:'disabled'}[!(pageNum>1)]"><a href="javascript:void(0);" ng-click="loadPage(pageNum-1)"><</a></li> 
+		<li ng-repeat="x in page" ng-class="{true:'active'}[pageNum == $index+1]"><a href="javascript:void(0);" ng-click="loadPage($index+1)">{{$index+1}}</a></li>
+		<li ng-class="{true:'disabled'}[pageNum==allPage || allPage<=1]"><a href="javascript:void(0);" ng-click="loadPage(pageNum+1)">></a></li>
+		<li ng-class="{true:'disabled'}[pageNum==allPage || allPage<=1]"><a href="javascript:void(0);" ng-click="loadPage(allPage)">尾页</a></li>
+	</ul>
+	<div><h5 style="padding:0 5px;">去第</h5><input type="test" style="width:30px;height:34px;border:1px solid #ccc;border-radius:4px;padding-left:5px;" ng-model="pageIn" /><h5 style="padding:0 5px;">页</h5><button ng-click="loadPage(pageIn)">确定</button></div>
+</div>
+			
+			
+		</div>
+	</div>
+	
+	<!-- Modal -->
+	<div class="modal fade" id="jobModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">操作提示</h4>
+				</div>
+				<div class="modal-body" style="text-align:center;">
+					<div>{{value1}}</div>
+					</br>
+					<div>{{value2}}</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="operateOk()">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<d-job></d-job>
+
+
+</div>

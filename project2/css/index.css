@@ -1,0 +1,644 @@
+@charset "utf-8";
+html {
+  font-size: 62.5%;
+}
+body {
+  border: 0;
+  font: normal 100% Arial, sans-serif;
+  font-family: "Microsoft Yahei", Arial;
+  font-size: 1.4rem;
+  font-size: 14px;
+  background: #f6f7f8;
+  color: #2d3e50;
+}
+ul {
+  list-style: none;
+}
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+}
+input:focus {
+  outline: 0;
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+.box-center {
+  display: flex;
+  align-items: center;
+}
+.box-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.fcR {
+  color: #fc2a48;
+}
+.fc9 {
+  color: #999;
+}
+.fc5 {
+  color: #536a82;
+}
+.f12 {
+  font-size: 12px;
+  margin: 5px 0;
+}
+.f16 {
+  font-size: 16px;
+  margin: 10px 0;
+}
+.f20 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+.cur {
+  cursor: pointer;
+}
+.cur-hover {
+  cursor: pointer;
+}
+.cur-hover:hover {
+  box-shadow: 0px 0px 1px 1px #ccc;
+}
+.width-style {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1020px;
+}
+.width-carousel {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.row {
+  margin: 0;
+}
+.ellipsis {
+  word-break: keep-all;
+  /* 不换行 */
+  white-space: nowrap;
+  /* 不换行 */
+  overflow: hidden;
+  /* 内容超出宽度时隐藏超出部分的内容 */
+  text-overflow: ellipsis;
+  /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+}
+.b {
+  font-weight: bold;
+}
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px 15px 30px 0;
+}
+.page ul,
+.page div {
+  display: flex;
+  align-items: center;
+}
+.page ul > li > a,
+.page div > button {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #333;
+  background-color: #f8f8f8;
+  border-color: #ccc;
+}
+.page ul > li > a:hover,
+.page div > button:hover,
+.page ul > li > a:focus,
+.page div > button:focus,
+.page ul > li > a.focus,
+.page div > button.focus {
+  background-color: #e8e8e8;
+  text-decoration: none;
+}
+.page ul > li {
+  margin: 0 3px;
+}
+.page .disabled > a {
+  background-color: #e8e8e8;
+  color: #999;
+  cursor: default;
+}
+.page .displaynone {
+  display: none;
+}
+.page .active > a,
+.page .active > a:hover,
+.page .active > a:focus {
+  background-color: #fc2a48;
+  color: #fff;
+}
+/*flex-wrap:wrap;*/
+#top {
+  background: #fff;
+  height: 80px;
+  padding: 0 5%;
+  margin-bottom: 20px;
+  min-width: 950px;
+}
+#mes {
+  margin: 0 5px;
+  display: flex;
+}
+#mes .list {
+  width: 15%;
+  min-width: 150px;
+  height: 444px;
+  border: 1px solid #999;
+  border-right: none;
+  border-radius: 3px;
+}
+#mes .list div,
+#mes .list li {
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #fff;
+  cursor: pointer;
+}
+#mes .list div {
+  background: #31B0D5;
+  color: #fff;
+}
+#mes .list ul {
+  background: #fff;
+  cursor: pointer;
+  padding: 0;
+}
+#mes .list ul li:hover {
+  background: #d9edf7;
+}
+#mes .list ul li a {
+  color: #2d3e50;
+  display: inline-block;
+  width: 100%;
+}
+#mes .list > div,
+#mes .list > ul {
+  border-bottom: 1px solid #fff;
+  margin: 0;
+}
+#mes .list > div,
+#mes .list > ul > li > a {
+  padding-left: 25%;
+}
+#mes .view {
+  width: 85%;
+  background: #fff;
+  border: 1px solid #999;
+  padding: 10px;
+  min-width: 950px;
+}
+.search {
+  border: 1px solid #999;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+.search .formSearch {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+.search .formSearch > div {
+  margin: 10px 25px;
+}
+.search .formSearch > div span {
+  display: inline-block;
+  width: 65px;
+  text-align: right;
+  margin-right: 10px;
+}
+.search .formSearch > div input {
+  padding: 3px 5px;
+  width: 150px;
+  background: #fff;
+}
+.search .formSearch > div select {
+  width: 150px;
+  background: #fff;
+  margin-left: -5px;
+}
+.search .formSearch > div .laydate-icon {
+  font-size: 12px;
+  display: inline-block;
+  width: 150px;
+  text-align: left;
+}
+.search .searchBtn {
+  text-align: right;
+  padding-right: 25px;
+}
+.search .searchBtn .btn {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 20px;
+}
+.search-list {
+  border: 1px solid #999;
+}
+.search-list .top {
+  border-bottom: 1px solid #999;
+  padding: 10px 25px;
+  background: #31b0d5;
+  color: #fff;
+}
+.search-list .top button {
+  float: right;
+}
+.search-list .mes {
+  padding: 10px;
+  font-size: 14px;
+}
+.search-list .mes .title {
+  background: #31b0d5;
+  color: #fff;
+}
+.search-list .mes ul {
+  padding: 0;
+  margin: 0;
+}
+.search-list .mes .mes-list {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  border-top: 1px solid #999;
+}
+.search-list .mes .mes-list li {
+  text-align: center;
+  word-break: keep-all;
+  /* 不换行 */
+  white-space: nowrap;
+  /* 不换行 */
+  overflow: hidden;
+  /* 内容超出宽度时隐藏超出部分的内容 */
+  text-overflow: ellipsis;
+  /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+}
+.search-list .mes .mes-list li span {
+  display: inline-block;
+  cursor: pointer;
+}
+.search-list .mes-check div {
+  margin: 20px auto;
+  text-align: center;
+  font-size: 16px;
+}
+.search-list .mes-check div input {
+  height: 40px;
+  width: 550px;
+  margin-left: 15px;
+}
+.search-list .mes-check div button {
+  height: 40px;
+}
+.search-list .mes-check .check {
+  display: flex;
+  justify-content: center;
+}
+.search-list .mes-check .check > div {
+  width: 550px;
+  margin: 0;
+  margin-left: 20px;
+  text-align: left;
+  font-size: 14px;
+  line-height: 25px;
+}
+.search-list .mes-check .check > div div {
+  text-align: left;
+  font-size: 14px;
+}
+.search-list .mes-check .check > div input {
+  height: 15px;
+  width: 15px;
+  margin: 0 5px 0 0;
+}
+#company .li1 {
+  width: 8%;
+}
+#company .li2 {
+  width: 14%;
+}
+#company .li3 {
+  width: 14%;
+}
+#company .li4 {
+  width: 14%;
+}
+#company .li5 {
+  width: 10%;
+}
+#company .li6 {
+  width: 10%;
+}
+#company .li7 {
+  width: 10%;
+}
+#company .li8 {
+  width: 20%;
+}
+#company .li8 span {
+  width: 20%;
+  cursor: pointer;
+}
+#job .li1 {
+  width: 8%;
+}
+#job .li2 {
+  width: 14%;
+}
+#job .li3 {
+  width: 15%;
+}
+#job .li4 {
+  width: 10%;
+}
+#job .li5 {
+  width: 8%;
+}
+#job .li6 {
+  width: 8%;
+}
+#job .li7 {
+  width: 14%;
+}
+#job .li8 {
+  width: 8%;
+}
+#job .li9 {
+  width: 15%;
+}
+#job .li9 span {
+  width: 33%;
+  cursor: pointer;
+}
+#article .li1 {
+  width: 8%;
+}
+#article .li2 {
+  width: 15%;
+}
+#article .li3 {
+  width: 11%;
+}
+#article .li4 {
+  width: 11%;
+}
+#article .li5 {
+  width: 8%;
+}
+#article .li6 {
+  width: 12%;
+}
+#article .li7 {
+  width: 12%;
+}
+#article .li8 {
+  width: 8%;
+}
+#article .li9 {
+  width: 15%;
+}
+#article .li9 span {
+  width: 33%;
+  cursor: pointer;
+}
+#article .search-list .mes .mes-list {
+  height: 100px;
+}
+#accountNum .li1 {
+  width: 8%;
+}
+#accountNum .li2 {
+  width: 10%;
+}
+#accountNum .li3 {
+  width: 12%;
+}
+#accountNum .li4 {
+  width: 10%;
+}
+#accountNum .li5 {
+  width: 15%;
+}
+#accountNum .li6 {
+  width: 10%;
+}
+#accountNum .li7 {
+  width: 15%;
+}
+#accountNum .li8 {
+  width: 20%;
+}
+#accountNum .li8 span {
+  width: 40%;
+}
+#role .li1 {
+  width: 8%;
+}
+#role .li3 {
+  width: 12%;
+}
+#role .li4 {
+  width: 12%;
+}
+#role .li5 {
+  width: 18%;
+}
+#role .li6 {
+  width: 12%;
+}
+#role .li7 {
+  width: 18%;
+}
+#role .li8 {
+  width: 20%;
+}
+#role .li8 span {
+  width: 40%;
+}
+#module .li1 {
+  width: 8%;
+}
+#module .li2 {
+  width: 10%;
+}
+#module .li3 {
+  width: 12%;
+}
+#module .li4 {
+  width: 8%;
+}
+#module .li5 {
+  width: 10%;
+}
+#module .li6 {
+  width: 12%;
+}
+#module .li7 {
+  width: 8%;
+}
+#module .li8 {
+  width: 10%;
+}
+#module .li9 {
+  width: 8%;
+}
+#module .li10 {
+  width: 14%;
+}
+#module .li10 span {
+  width: 40%;
+}
+.newEdit {
+  border: 1px solid #999;
+}
+.newEdit .top {
+  border-bottom: 1px solid #999;
+  padding: 10px 25px;
+  background: #31b0d5;
+  color: #fff;
+}
+.newEdit .top select {
+  float: right;
+  color: #000;
+}
+.newEdit .row > div {
+  margin: 10px 0;
+  padding-left: 5%;
+  padding-right: 0;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+.newEdit .row > div .item {
+  display: inline-block;
+  width: 95px;
+  text-align: right;
+  position: relative;
+  margin-right: 10px;
+  line-height: 30px;
+}
+.newEdit .row > div .item .fcR {
+  position: absolute;
+  top: 4px;
+  left: 0;
+}
+.newEdit .row > div input {
+  width: 325px;
+  padding: 3px 5px;
+}
+.newEdit .row > div .checkbox {
+  font-size: 14px;
+  margin: 0;
+  position: static;
+}
+.newEdit .row > div .checkbox input {
+  position: static;
+  margin: 0 10px 0 0;
+  width: 20px;
+  padding: 0;
+}
+.newEdit .row > div .checkbox span {
+  color: #fff;
+  background: #337ab7;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+.newEdit .row > div select {
+  width: 325px;
+}
+.newEdit .row > div .formError {
+  position: absolute;
+  color: #fc2a48;
+  word-break: keep-all;
+  /* 不换行 */
+  white-space: nowrap;
+  /* 不换行 */
+  line-height: 30px;
+}
+.newEdit .row .col-lg-6 {
+  height: 30px;
+}
+.newEdit .row .col-lg-12 > div {
+  display: inline-block;
+}
+.newEdit .row .col-lg-12 > div div,
+.newEdit .row .col-lg-12 > div table {
+  margin-top: 10px;
+}
+.newEdit .row .col-lg-12 > div table tr {
+  height: 40px;
+  text-align: center;
+}
+.newEdit .row .col-lg-12 > div .pic {
+  width: 300px;
+  height: 150px;
+  border: 1px solid #999;
+  position: relative;
+}
+.newEdit .row .col-lg-12 > div .pic div {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.newEdit .row .col-lg-12 > div .tagsAdd {
+  border: 1px solid #999;
+  width: 200px;
+  margin-top: 0;
+}
+.newEdit .row .col-lg-12 > div .tagsAdd input {
+  border: none;
+  width: 180px;
+}
+.newEdit .row .col-lg-12 > div .tags .bg-primary {
+  padding: 5px 5px 5px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+.newEdit .row .col-lg-12 > div .tags .bg-primary span {
+  margin-left: 12px;
+}
+.newEdit .formBox {
+  width: 96%;
+  margin: 10px auto;
+  border: 1px solid #999;
+}
+.newEdit .newEditBtn {
+  margin: 30px 0 30px;
+  text-align: right;
+  padding: 0 25px;
+}
+.newEdit .newEditBtn .btn {
+  margin-left: 30px;
+  padding: 10px 30px;
+}
+.textStyle {
+  display: flex;
+}

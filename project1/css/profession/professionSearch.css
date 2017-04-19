@@ -13,29 +13,36 @@
   text-overflow: ellipsis;
   /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
 }
-#p2s-top .sel .f16 {
+.p2s-top {
+  margin-top: 20px;
+}
+.p2s-top .sel {
+  border-bottom: 2px solid #eb5255;
+}
+.p2s-top .sel .f16 {
+  width: 90px;
+  text-align: center;
   padding: 5px 25px;
   cursor: pointer;
   margin-bottom: 0;
   color: #2d3e50;
 }
-#p2s-top .sel .active {
+.p2s-top .sel .active {
   color: #FFF;
 }
-#p2s-top .list {
+.p2s-top .list {
   background: #fff;
-  border-top: 2px solid #eb5255;
   padding: 10px 25px;
 }
-#p2s-top .list .b {
+.p2s-top .list .b {
   margin-right: 5px;
+  width: 70px;
 }
-#p2s-top .list > div {
+.p2s-top .list > div {
   padding: 10px 0;
   line-height: 20px;
-  flex-wrap: wrap;
 }
-#p2s-top .list > div input {
+.p2s-top .list > div input {
   border: 1px solid #e8e8e8;
   border-radius: 5px;
   height: 35px;
@@ -43,48 +50,57 @@
   width: 40%;
   min-width: 300px;
 }
-#p2s-top span {
+.p2s-top .list > div span {
+  margin-bottom: 2px;
+}
+.p2s-top .spanlist {
   display: inline-block;
   padding: 3px 13px;
   cursor: pointer;
   color: #536a82;
 }
-#p2s-top .search-btn {
+.p2s-top .search-btn {
   justify-content: flex-end;
 }
-#p2s-top .search-btn span {
+.p2s-top .search-btn span {
   margin-left: 20px;
   margin-top: 15px;
 }
-#p2s-top .active {
+.p2s-top .active {
   background: #Eb5255;
   color: #fff;
   margin: 0 5px;
 }
-#p2s-top .sel > .active {
+.p2s-top .sel > .active {
   margin: 10px 0 0 0;
 }
-#p2s-company {
+.p2s-company {
   margin: 20px auto;
   background: #fff;
 }
-#p2s-company .company {
+.p2s-company .company {
   border: 1px solid #e8e8e8;
   border-radius: 5px;
   width: 100%;
   height: 195px;
   margin: 20px auto;
 }
-#p2s-company .company > div {
+.p2s-company .company > div {
   height: 156px;
   padding: 20px;
 }
-#p2s-company .company > div .pic {
+.p2s-company .company > div .pic {
   margin-right: 20px;
   height: 115px;
   width: 115px;
+  display: flex;
+  align-items: center;
 }
-#p2s-company .company > h5 {
+.p2s-company .company > div .pic img {
+  width: 100%;
+  max-height: 100%;
+}
+.p2s-company .company > h5 {
   height: 37px;
   width: 100%;
   background: #fafafa;
@@ -92,24 +108,305 @@
   border-radius: 0 0 5px 5px;
   justify-content: center;
 }
-#p2s-company .company > h5 div {
+.p2s-company .company > h5 div {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 33%;
 }
-#p2s-company .company > h5 div img {
+.p2s-company .company > h5 div img {
   margin-right: 5px;
 }
-#p2s-job {
+.p2s-job {
   background: #fff;
   margin: 20px auto;
+  padding: 20px;
+}
+.p2s-job .jobBox {
+  margin-bottom: 20px;
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+  padding: 0 20px;
+}
+.p2s-job .jobBox .jobLeft {
+  margin-top: 5px;
+}
+.p2s-job .jobBox .jobLeft div,
+.p2s-job .jobBox .jobLeft h5 {
+  margin: 18px 0;
+}
+.p2s-job .jobBox .jobRight {
+  margin-top: 8px;
+  border-left: 1px solid #e8e8e8;
+  padding-left: 35px;
+}
+.p2s-job .jobBox .jobRight h5,
+.p2s-job .jobBox .jobRight .f12 {
+  margin: 18px 0;
+}
+.p2s-job .jobBox .jobRight .f12 > span {
+  padding: 3px 12px;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+}
+.p2s-job .jobBox .jobRight .pic {
+  width: 114px;
+  height: 114px;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+}
+.p2s-job .jobBox .jobRight .pic img {
+  width: 100%;
+  max-height: 100%;
+}
+#proComMes {
+  display: block;
+}
+#proComJobMes {
+  display: none;
+}
+#proComJobMes #proComJobMes1 {
+  display: block;
+}
+#proComJobMes #proComJobMes2 {
+  display: none;
+}
+.p2s-mes {
+  margin: 20px auto;
+}
+.p2s-mes .top {
+  margin-bottom: 20px;
+  height: 200px;
+  background: #fff;
+}
+.p2s-mes .top .pic {
+  height: 200px;
+  width: 200px;
+  border: 1px solid #e8e8e8;
+  margin-right: 5%;
+  display: flex;
+  align-items: center;
+}
+.p2s-mes .top .pic img {
+  width: 90%;
+  max-height: 80%;
+  margin: 0 auto;
+}
+.p2s-mes .top h5,
+.p2s-mes .top .f12 {
+  margin: 15px 0;
+}
+.p2s-mes .mes {
+  background: #fff;
+  padding-bottom: 40px;
+}
+.p2s-mes .mes .col-md-8 {
+  margin-top: 45px;
+  border-right: 3px solid #e8e8e8;
+}
+.p2s-mes .mes .col-md-8 .list {
+  margin-top: -45px;
+  border-bottom: 1px solid #e8e8e8;
+}
+.p2s-mes .mes .col-md-8 .list .f16 {
+  cursor: pointer;
+  margin: 0;
+  padding: 15px 10px 15px;
+  border-bottom: 3px solid #fff;
+}
+.p2s-mes .mes .col-md-8 .list .active {
+  font-weight: bold;
+  color: #fc2a48;
+  border-bottom: 2px solid #fc2a48;
+}
+.p2s-mes .mes .col-md-8 .mes-mes > .f16 {
+  border-left: 5px solid #fc2a48;
+  padding-left: 15px;
+  margin: 20px 0;
+  height: 18px;
+  line-height: 18px;
+}
+.p2s-mes .mes .col-md-8 .mes-mes .pic {
+  height: 150px;
+  width: 150px;
+  border: 1px solid #e8e8e8;
+  margin-right: 3%;
+  display: flex;
+  align-items: center;
+}
+.p2s-mes .mes .col-md-8 .mes-mes .pic img {
+  width: 90%;
+  max-height: 80%;
+  margin: 0 auto;
+}
+.p2s-mes .mes .col-md-8 .mes-mes p {
+  line-height: 25px;
+  margin-bottom: 15px;
+}
+.p2s-mes .mes .col-md-8 .mes-mes .select {
+  width: 100%;
+  min-height: 50px;
+  border: 1px solid #e8e8e8;
+}
+.p2s-mes .mes .col-md-8 .mes-mes .select .b {
+  width: 86px;
+  margin: 0 10px 0 20px;
+}
+.p2s-mes .mes .col-md-8 .mes-mes .select .box-center {
+  flex-wrap: wrap;
+  height: 30px;
+}
+.p2s-mes .mes .col-md-8 .mes-mes .select span {
+  color: #536a82;
+  padding: 3px 15px;
+  margin: 0 3px;
+}
+.p2s-mes .mes .col-md-8 .mes-mes .select .active {
+  background: #fc2a48;
+  color: #fff;
+}
+.p2s-mes .mes .col-md-8 .mes-mes .select,
+.p2s-mes .mes .col-md-8 .mes-mes .job {
+  margin-bottom: 20px;
+}
+.p2s-mes .mes .col-md-8 .mes-mes .job > div {
+  word-break: keep-all;
+  /* 不换行 */
+  white-space: nowrap;
+  /* 不换行 */
+  overflow: hidden;
+  /* 内容超出宽度时隐藏超出部分的内容 */
+  text-overflow: ellipsis;
+  /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+  line-height: 70px;
+  margin: 0;
+}
+.p2s-mes .mes .col-md-8 .mes-mes .job {
+  min-height: 72px;
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+  padding: 0 20px;
+}
+.p2s-mes .mes .col-md-4 {
+  padding: 0 4% 0 4%;
+  margin-top: 45px;
+}
+.p2s-mes .mes .col-md-4 .label-list {
+  margin-top: 40px;
+  margin-bottom: 60px;
+  padding-left: 40px;
+}
+.p2s-mes .mes .col-md-4 .label-list .f12 span {
+  margin: 10px 30px 10px -10px;
+}
+.label-list div {
+  display: flex;
+  align-items: center;
+}
+.label-list div h5 {
+  margin-left: 15px;
+}
+.label-list .f12 {
+  flex-wrap: wrap;
+}
+.label-list .f12 span {
+  padding: 3px 8px;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  margin-right: 10px;
+  margin: 10px 10px 5px 0;
+}
+#p2s-jobMes > div .mes .col-md-8 {
+  margin-top: 35px;
+}
+#p2s-jobMes > div .mes .col-md-8 .job-top {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e8e8e8;
+}
+#p2s-jobMes > div .mes .col-md-8 .job-top div > img,
+#p2s-jobMes > div .mes .col-md-8 .job-top h5 > img {
+  margin-right: 5px;
+}
+#p2s-jobMes > div .mes .col-md-8 .job-top h5 > img {
+  margin-left: 15px;
+}
+#p2s-jobMes > div .mes .col-md-8 .mes-mes h5 {
+  line-height: 23px;
+  margin-bottom: 20px;
+  max-width: 625px;
+}
+#p2s-jobMes > div .mes .col-md-8 .interest {
+  width: 100%;
+  margin-top: 20px;
+  flex-wrap: warp;
+}
+#p2s-jobMes > div .mes .col-md-8 .interest img {
+  margin-right: 10px;
+}
+#p2s-jobMes > div .mes .col-md-4 .companyTitle .pic {
+  height: 150px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  border: 1px solid #e8e8e8;
+}
+#p2s-jobMes > div .mes .col-md-4 .companyTitle .pic img {
+  width: 90%;
+  max-height: 90%;
+  margin: 0 auto;
+}
+#p2s-jobMes > div .mes .col-md-4 .companyTitle .b {
+  padding-left: 10px;
+  margin: 20px 0 35px;
+  justify-content: center;
+}
+#p2s-jobMes > div .mes .col-md-4 .companyTitle .b img {
+  margin-left: 5px;
+}
+.modal-btn-style {
+  background-color: #fc2b47;
+  color: white;
+  width: 18%;
+  min-width: 90px;
+  height: 40px;
+  float: right;
+  border: none;
+  border-radius: 5px;
+  position: relative;
+  z-index: 10;
+  outline: none;
+}
+@media (max-width: 450px) {
+  .p2s-job .jobBox .jobRight .pic {
+    display: none;
+  }
 }
 @media (min-width: 768px) {
-  #p2s-company .company {
+  .p2s-company .company {
     max-width: 360px;
   }
-  #p2s-company .company > h5 div {
+  .p2s-company .company > h5 div {
     max-width: 110px;
+  }
+}
+@media (max-width: 991px) {
+  .p2s-job .jobBox .jobLeft {
+    margin-top: 0;
+  }
+  .p2s-job .jobBox .jobRight {
+    margin-top: 0;
+    border-left: none;
+    padding-left: 15px;
+  }
+  .p2s-mes .mes .col-md-8 {
+    border-right: none;
+  }
+}
+@media (min-width: 992px) {
+  .p2s-job .jobBox {
+    height: 134px;
   }
 }

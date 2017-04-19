@@ -8,31 +8,11 @@
 </head>
 
 <body>
-<div ng-controller='homeCtrl'>
+<div ng-controller='homeCtrl as home'>
 <div id="home-banner" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-	<li ng-repeat="num in pic" data-target="#home-banner" data-slide-to="{{$index}}" ng-class="{active:$first}"></li>
-  </ol>
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    
-	<div ng-repeat="num in pic" ng-class="{active:$first}" class="item">
-      <img ng-src="{{num.img}}" alt="...">
-      <div class="carousel-caption">
-      </div>
-    </div>
-	
-	
-  </div>
-  <!-- Controls -->
-  <div class="left carousel-control" href="#home-banner" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-  </div>
-  <div class="right carousel-control" href="#home-banner" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-  </div>
+	<img ng-src="{{pic[0].img}}" style="width:100%;">
 </div>
+
 
 <div id="p1-mes">
 	<div class="row width-style">
@@ -71,44 +51,28 @@
 		<div style="border-bottom:2px solid #f1706b;width:25px;margin:-5px auto 0;"></div>
 		<h5 style="color:#536a82;font-size:16px;margin-top:5px;">NEW POSITION</h5>
 	</div>
-	<div class="link width-style f16">更多 ></div>
-	<div class="box-center width-carousel">
-		<img src="img/120.png">
-		<div class="row">
-			<div class="col-sm-3">
-				<div class="box">
-					<div class="pic"><img src="img/15.png"></div>
-					<div class="f16"><b>产品总监</b></div>
-					<div style="border-bottom:1px solid #f1706b;width:20px;margin:-8px auto 0;"></div>
-					<h6>慕课网</h6>
+	<div class="link width-style f16"><a href="javascript:void(0);" ng-click="hJobList()">更多 ></a></div>
+	<div class="box-center width-carousel"  data-ride="carousel">
+		<img src="img/120.png" ng-click="carLeft('p1-carPos')">
+		<div id="p1-carPos" class="carousel slide" data-ride="carousel" style="width:100%;" d-Carousel><!--  d-Carousel -->
+			<!-- <d-carousel carid="p1-carPos"></d-carousel> -->
+			<div class="carousel-inner" role="listbox">
+				
+				<div class="item row" ng-repeat="x in pos" ng-class="{active:$first}">
+					<div class="col-sm-3" ng-repeat="y in x">
+						<div class="box" ng-click="hJob(y,$index,$parent.$index)">
+							<div class="pic"><img ng-src="{{y.logo}}"></div>
+							<div class="f16 ellipsis b">{{y.name}}</div>
+							<!-- {{global.appoint.subCategory[y.subCategory]}} -->
+							<div style="border-bottom:1px solid #f1706b;width:20px;margin:-8px auto 0;"></div>
+							<h6 class="ellipsis">{{y.companyName}}</h6>
+						</div>
+					</div>
 				</div>
-			</div>
-			<div class="col-sm-3">
-				<div class="box">
-					<div class="pic"><img src="img/15.png"></div>
-					<div class="f16"><b>产品总监</b></div>
-					<div style="border-bottom:1px solid #f1706b;width:20px;margin:-8px auto 0;"></div>
-					<h6>慕课网</h6>
-				</div>
-			</div>
-			<div class="col-sm-3">
-				<div class="box">
-					<div class="pic"><img src="img/15.png"></div>
-					<div class="f16"><b>产品总监</b></div>
-					<div style="border-bottom:1px solid #f1706b;width:20px;margin:-8px auto 0;"></div>
-					<h6>慕课网</h6>
-				</div>
-			</div>
-			<div class="col-sm-3">
-				<div class="box">
-					<div class="pic"><img src="img/15.png"></div>
-					<div class="f16"><b>产品总监</b></div>
-					<div style="border-bottom:1px solid #f1706b;width:20px;margin:-8px auto 0;"></div>
-					<h6>慕课网</h6>
-				</div>
+				
 			</div>
 		</div>
-		<img src="img/121.png">
+		<img src="img/121.png" ng-click="carRight('p1-carPos')">
 	</div>
 </div>
 

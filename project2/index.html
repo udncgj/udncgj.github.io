@@ -1,0 +1,75 @@
+<!DOCTYPE>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>萝卜多后台</title>
+<link href="frame/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+
+
+<script src="http://nervgh.github.io/js/es5-shim.min.js"></script>
+<script src="http://nervgh.github.io/js/es5-sham.min.js"></script>
+<script src="js/开发jquery-3.1.1.js"></script>
+<script src="frame/laydate/laydate.js"></script>
+<script src="frame/angular-upload/console-sham.js"></script>
+<script src="http://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+<script src="http://cdn.bootcss.com/angular-ui-router/1.0.0-rc.1/angular-ui-router.js"></script>
+<script src="http://cdn.bootcss.com/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js"></script>
+
+<script src="frame/angular-upload/dist/angular-file-upload.min.js"></script>
+
+<script src="js/app.js"></script>
+<script src="constant.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/controllers2.js"></script>
+<script src="js/directives.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/services.js"></script>
+<script src="js/ocLazyLoad.js"></script>
+
+
+</head>
+
+<body ng-app='myApp' ng-controller='personCtrl as ctrl'>
+
+<div id="top" class="box-between">
+	<div class="f20 b"><img src="">萝卜多后台管理系统</div>
+	<div class="box-center f16">
+		<div>管理员</div>
+		<div><img src=""></div>
+		<div>刘德华</div>
+		<div>退出</div>
+	</div>
+</div>
+
+<div id="mes" class="f16">
+	<div class="list">
+		<div>欢迎页</div>
+		<div>信息管理</div>
+		<ul>
+			<li><a href="#/company">公司信息</a></li>
+			<li style="border-bottom:none;"><a ui-sref="job({id:null})" ui-sref-opts="{reload: true}">职位信息</a></li><!--  -->
+		</ul>
+		<div>内容管理</div>
+		<ul>
+			<li style="border-bottom:none;"><a href="#/article">Article管理</a></li>
+		</ul>
+		<div>后台管理</div>
+		<ul style="border-bottom:none;">
+			<li><a href="#/accountNum/">账号管理</a></li>
+			<li><a href="#/role/">角色管理</a></li>
+			<li><a href="#/password">修改密码</a></li>
+			<li style="border-bottom:none;"><a href="#/module/">模块管理</a></li>
+		</ul>
+	</div>
+	<div class="view" ui-view></div> 
+</div>
+<button class="btn btn-danger" style="position:fixed;top:10vh;left:10px;" onclick="interfaceTest()">接口测试</button>
+
+
+
+
+<script src="frame/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

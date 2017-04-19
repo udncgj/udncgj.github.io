@@ -96,9 +96,6 @@
 #p4-about .row .i6 {
   background-position: -182px 0;
 }
-#p4-about2 {
-  display: none;
-}
 @media (max-width: 768px) {
   #p4-about .row .col-sm-3 {
     padding: 0;

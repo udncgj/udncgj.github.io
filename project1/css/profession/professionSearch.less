@@ -10,9 +10,14 @@
     text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
 }
 
-#p2s-top{
+.p2s-top{
+	margin-top:20px;
 	.sel{
+		border-bottom:2px solid #eb5255;
+		//height:41px;
 		.f16{
+			width:90px;
+			text-align:center;
 			padding:5px 25px;
 			cursor:pointer;
 			margin-bottom:0;
@@ -24,16 +29,16 @@
 	}
 	.list{
 		background:#fff;
-		border-top:2px solid #eb5255;
 		padding:10px 25px;
 		.b{
 			margin-right:5px;
+			width:70px;
 		}
 	}
 	.list>div{
 		padding:10px 0;
 		line-height:20px;
-		flex-wrap:wrap;
+		//flex-wrap:wrap;
 		input{
 			border:1px solid #e8e8e8;
 			border-radius:5px;
@@ -42,8 +47,9 @@
 			width:40%;
 			min-width:300px;
 		}
+		span{margin-bottom:2px;}
 	}
-	span{
+	.spanlist{
 		display:inline-block;
 		padding:3px 13px;
 		cursor:pointer;
@@ -64,7 +70,7 @@
 	.sel>.active{margin:10px 0 0 0;}
 }
 
-#p2s-company{
+.p2s-company{
 	margin:20px auto;
 	background:#fff;
 	.company{
@@ -82,6 +88,11 @@
 			margin-right:20px;
 			height:115px;
 			width:115px;
+			.box-center;
+			img{
+				width:100%;
+				max-height:100%;
+			}
 		}
 	}
 	.company>h5{
@@ -102,20 +113,281 @@
 	}
 }
 
-#p2s-job{
+.p2s-job{
 	background:#fff;
 	margin:20px auto;
+	padding:20px;
+	.jobBox{
+		margin-bottom:20px;
+		border:1px solid #e8e8e8;
+		border-radius:5px;
+		padding:0 20px;
+		.jobLeft{
+			margin-top:5px;
+			div,h5{margin:18px 0;}
+		}
+		.jobRight{
+			margin-top:8px;
+			border-left:1px solid #e8e8e8;
+			padding-left:35px;
+			h5,.f12{
+				margin:18px 0;
+			}
+			.f12>span{
+				padding:3px 12px;
+				border:1px solid #e8e8e8;
+				border-radius:12px;
+			}
+			.pic{
+				width:114px;
+				height:114px;
+				border:1px solid #e8e8e8;
+				border-radius:3px;
+				.box-center;
+				img{
+					width:100%;
+					max-height:100%;
+				}
+			}
+			
+		}
+	}
+}
+#proComMes{
+	display:block;
+}
+#proComJobMes{
+	display:none;
+	#proComJobMes1{
+		display:block;
+	}
+	#proComJobMes2{
+		display:none;
+	}
+}
+.p2s-mes{
+	margin:20px auto;
+	.top{
+		margin-bottom:20px;
+		height:200px;
+		background:#fff;
+		.pic{
+			height:200px;
+			width:200px;
+			border:1px solid #e8e8e8;
+			margin-right:5%;
+			.box-center;
+			img{
+				width:90%;
+				max-height:80%;
+				margin:0 auto;
+			}
+		}
+		h5,.f12{
+			margin:15px 0;
+		}
+	}
+	.mes{
+		background:#fff;
+		padding-bottom:40px;
+		.col-md-8{
+			margin-top:45px;
+			border-right:3px solid #e8e8e8;
+			.list{
+				margin-top:-45px;
+				border-bottom:1px solid #e8e8e8;
+				.f16{
+					cursor:pointer;
+					margin:0;
+					padding:15px 10px 15px;
+					border-bottom:3px solid #fff;
+				}
+				.active{
+					font-weight:bold;
+					color:#fc2a48;
+					border-bottom:2px solid #fc2a48;
+				}
+			}
+			.mes-mes>.f16{
+				border-left:5px solid #fc2a48;
+				padding-left:15px;
+				margin:20px 0;
+				height:18px;
+				line-height:18px;
+			}
+			.mes-mes{
+				.pic{
+					height:150px;
+					width:150px;
+					border:1px solid #e8e8e8;
+					margin-right:3%;
+					.box-center;
+					img{
+						width:90%;
+						max-height:80%;
+						margin:0 auto;
+					}
+				}
+				p{
+					line-height:25px;
+					margin-bottom:15px;
+				}
+				.select{
+					width:100%;
+					min-height:50px;
+					border:1px solid #e8e8e8;
+					.b{
+						width:86px;
+						margin:0 10px 0 20px;
+					}
+					.box-center{
+						flex-wrap:wrap;
+						height:30px;
+					}
+					span{
+						color:#536a82;
+						padding:3px 15px;
+						margin:0 3px;
+					}
+					.active{
+						background:#fc2a48;
+						color:#fff;
+					}
+				}
+				.select,.job{margin-bottom:20px;}
+				.job>div{
+					.ellipsis;
+					line-height:70px;
+					margin:0;
+				}
+				.job{
+					min-height:72px;
+					border:1px solid #e8e8e8;
+					border-radius:5px;
+					padding:0 20px;
+				}
+			}
+		}
+		.col-md-4{
+			padding:0 4% 0 4%;
+			margin-top:45px;
+			.label-list{
+				margin-top:40px;
+				margin-bottom:60px;
+				padding-left:40px;
+				.f12{
+					span{
+						margin:10px 30px 10px -10px;
+					}
+				}
+			}
+		}
+	}
+}
+.label-list{
+	div{
+		.box-center;
+		h5{
+			margin-left:15px;
+		}
+	}
+	.f12{
+		flex-wrap:wrap;
+		span{
+			padding:3px 8px;
+			border:1px solid #e8e8e8;
+			border-radius:12px;
+			margin-right:10px;
+		    margin:10px 10px 5px 0;
+		}
+	}
+}
+#p2s-jobMes>div{
+	.mes{
+		.col-md-8{
+			margin-top:35px;
+			.job-top{
+				padding-bottom:15px;
+				border-bottom:1px solid #e8e8e8;
+				div>img,h5>img{margin-right:5px;}
+				h5>img{margin-left:15px;}
+			}
+			.mes-mes{
+				h5{
+					line-height:23px;
+					margin-bottom:20px;
+					max-width:625px;
+				}
+			}
+			.interest{
+				width:100%;
+				margin-top:20px;
+				flex-wrap:warp;
+				img{
+					margin-right:10px;
+				}
+			}
+		}
+		.col-md-4{
+			.companyTitle{
+				.pic{
+					height:150px;
+					width:150px;
+					.box-center;
+					margin:0 auto;
+					border:1px solid #e8e8e8;
+					img{
+						width:90%;
+						max-height:90%;
+						margin:0 auto;
+					}
+				}
+				.b{
+					padding-left:10px;
+					margin:20px 0 35px;
+					justify-content:center;
+					img{
+						margin-left:5px;
+					}
+				}
+			}
+		}
+	}
+}
+.modal-btn-style{
+    background-color: #fc2b47;
+    color: white;
+    width: 18%;
+    min-width: 90px;
+    height: 40px;
+    float: right;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    z-index: 10;
+    outline: none;
 }
 
+
+
 @media (max-width: 450px) {
-	
+	.p2s-job{
+		.jobBox{
+			.jobRight{
+				.pic{
+					display:none;
+				}
+				
+			}
+		}
+	}
 }
 
 @media (max-width: 767px) {
 	
 }
 @media (min-width: 768px) {
-	#p2s-company{
+	.p2s-company{
 		.company{
 			max-width:360px;
 		}
@@ -129,11 +401,29 @@
 @media (min-width: 768px) and (max-width: 992px) {
 	
 }
-@media (max-width: 992px) {
-	
+@media (max-width: 991px) {
+	.p2s-job{
+		.jobBox{
+			.jobLeft{
+				margin-top:0;
+			}
+			.jobRight{
+				margin-top:0;
+				border-left:none;
+				padding-left:15px;
+			}
+		}
+	}
+	.p2s-mes{
+		.mes{
+			.col-md-8{
+				border-right:none;
+	}}}
 }
 @media (min-width: 992px) {
-	
+	.p2s-job{
+		.jobBox{
+			height:134px;}}
 }
 @media (min-width: 1200px) {
 	

@@ -500,13 +500,13 @@ var $playPrompt;
 var $dayMes;
 	
 var identityBoxHtml;
-var gameState = false;
-var aJournalBlack = ['','','','','',''];
-var aJournalWhite = ['','','','','',''];
-var aDayMes = [0,0,0,0,0,0];
-var dayNow = 0;
-var num0,num1;
-var canKill = false;
+var gameState = false;//游戏状态
+var aJournalBlack = ['','','','','',''];//夜晚日志
+var aJournalWhite = ['','','','','',''];//白天日志
+var aDayMes = [0,0,0,0,0,0];//第几天，和第几天进行到第几步
+var dayNow = 0;//当前进行天数
+var num0,num1;//杀手，平民人数
+var canKill = false;//可以杀人
 
 
 gameChange.onclick = function(){

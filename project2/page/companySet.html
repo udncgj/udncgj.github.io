@@ -1,0 +1,244 @@
+
+<div id="companySet" ng-controller="companySet"><!--  nv-file-drop="" uploader="uploader" -->
+	
+			<button class="btn btn-success" ng-click="save()">保存</button>
+	<form class="newEdit" ng-model="comForm" name="comForm">
+		<div class="top">
+			<span>{{comSaveData.name}}</span>
+			<span>详细信息</span>
+			<select ng-model="comSaveData.approvedStatus">
+				<option value=0>未认证</option>
+				<option value=1>已认证</option>
+			</select>
+		</div>
+		<div class="row">
+			<div class="col-lg-6">
+				<span class="item"><span class="fcR">&emsp;*</span><span>公司名称</span></span>
+				<input type="text" name="comName" ng-model="comSaveData.name" required />
+				<!-- <span class="formError" ng-show="comForm.comName.$dirty && comForm.comName.$invalid">请输入内容<span> -->
+			</div>
+			<!-- <div class="list2-list">
+			  <span class="list2-project"><b>姓名：</b></span>
+			  <input type="text" class="list2-text" name="text" ng-model="comSaveData.name" placeholder="姓名" ng-pattern="/^[\u4e00-\u9fa5]{2,6}$/" />
+			  <span style="color:red" ng-show="comForm.text.$dirty && comForm.text.$invalid">请输入2-6位中文字符
+			  </span>
+			</div> -->
+			<div class="col-lg-6">
+				<span class="item"><span class="fcR">*</span><span>公司slogan</span></span>
+				<input type="text" name="comSolgan" ng-model="comSaveData.slogan" required />
+				<!-- <span class="formError" ng-show="comForm.comSolgan.$dirty && comForm.comSolgan.$invalid">请输入内容<span> -->
+			</div>
+			<div class="col-lg-6">
+				<span class="item"><span class="fcR">&emsp;*</span><span>公司人数</span></span>
+				<input type="text" name="comTotalNum" ng-model="comSaveData.totalNum" required ng-pattern="/^[0-9]+$/" />
+				<span class="formError" ng-show="comForm.comTotalNum.$dirty && comForm.comTotalNum.$invalid">请输入数字<span>
+			</div>
+			<div class="col-lg-6">
+				<span class="item">融资规模</span>
+				<select ng-model="comSaveData.financing"">
+					<option ng-repeat="x in financing" value="{{$index}}">{{x.name}}</option>
+				</select>
+			</div>
+			<div class="col-lg-6">
+				<span class="item">地区</span>
+				<select style="width:155px;" ng-model="comSaveData.province" ng-click="comProvince(comSaveData.province)">
+					<option value="">全部</option>
+					<option ng-repeat="x in province" value="{{$index+1}}">{{x.ProName}}</option>
+				</select>
+				-
+				<select style="margin-left:0;width:155px;" ng-model="comSaveData.city">
+					<option value="">全部</option>
+					<option ng-repeat="x in city" value="{{x.CityID}}">{{x.CityName}}</option>
+				</select>
+			</div>
+			<div class="col-lg-6">
+				<span class="item">行业</span>
+				<select ng-model="comSaveData.industry">
+					<option ng-repeat="x in industry" value="{{$index}}">{{x.name}}</option>
+				</select>
+			</div>
+			<div class="col-lg-12">
+				<span class="item"><span class="fcR">&emsp;*</span><span>公司logo</span></span>
+				<div>
+					<input type="file" nv-file-select="" uploader="uploader" ng-click="uploader.queue[0].remove()" />
+					<div class="box-center">
+						<div class="pic">
+							<div ng-repeat="item in uploader.queue" ng-show="uploader.isHTML5" ng-thumb="{ file: item._file, height: 130 ,width:298}"></div>
+						</div>
+						<div class="pic" style="margin-left:20px;">
+							<div><img ng-src="{{comSaveData.logo}}" height="130px" width="298px"></div>
+						</div>
+					</div>
+					<table class="tablestyle" style="BORDER-COLLAPSE: collapse" borderColor=#999 cellSpacing=0 align=center bgColor=#ffffff border=1 width="660px">
+
+						<tr>
+							<td width="20%">图片名</td>
+							<td width="15%">文件大小</td>
+							<td width="27%">进度</td>
+							<td width="10%">操作</td>
+							<td width="28%">操作</td>
+						</tr>
+						<tr>
+							<td>{{ uploader.queue[0].file.name }}</td>
+							<td ng-show="uploader.isHTML5" nowrap>{{ uploader.queue[0].file.size/1024|number:0 }} KB</td>
+							<td style="padding:0 10px;">
+								<div class="progress" style="margin-bottom:8px;width:70%;float:left;">
+									<div class="progress-bar" style="margin-top:0;" role="progressbar" ng-style="{ 'width': uploader.queue[0].progress + '%' }"></div>
+								</div>
+								<div style="">{{uploader.queue[0].progress + '%'}}</div>
+							</td>
+							<td><span ng-show="uploader.queue[0].isSuccess">&radic;</span></td>
+							<!-- 这里有个logo验证 --><input type="text" ng-model="comSaveData.logo" ng-hide="true" required />
+							<td nowrap>
+								<button type="button" class="btn btn-success btn-sm" ng-click="uploader.queue[0].upload()" ng-disabled="uploader.queue[0].isReady || uploader.queue[0].isUploading || uploader.queue[0].isSuccess">
+                                        <span class="glyphicon glyphicon-upload"></span>上传
+                                    </button>
+								<button type="button" class="btn btn-danger btn-sm" ng-click="uploader.queue[0].remove();picRemove('first')">
+									<span class="glyphicon glyphicon-trash"></span>删除
+								</button>
+							</td>
+						</tr>
+
+					</table>
+				</div>
+			</div>
+			
+			<div class="col-lg-12 textStyle">
+				<span class="item"><span class="fcR">&emsp;*</span><span>公司介绍</span></span>
+				<textarea rows="5" cols="80" name="comSummary" ng-model="comSaveData.summary" required></textarea>
+				<span class="formError" ng-show="comForm.comSummary.$dirty && comForm.comSummary.$invalid">请输入内容<span>
+			</div>
+			<div class="col-lg-12">
+				<span class="item"><span>公司标签</span></span>
+				<div>
+					<div class="tagsAdd"><input type="text" ng-model="comTags" /><span class="h3 b cur" ng-click="tagsAdd(comTags)">+</span></div>
+					<div class="tags"><span class="bg-primary" ng-repeat="x in comSaveData.tags">{{x.tag}}<span class="cur" ng-click="tagsDel($index)">&times;</span></span></div>
+				</div>
+			</div>
+		</div>
+		<div class="formBox">
+			<div class="top">公司产品（选填）</div>
+			<div class="row">
+				<div class="col-lg-6"><span class="item"><span>产品名称</span></span><input type="text" ng-model="comSaveData.productList.name" /></div>
+				<div class="col-lg-6"><span class="item"><span>产品slogan</span></span><input type="text" ng-model="comSaveData.productList.slogan" /></div>
+				<div class="col-lg-12">
+					<span class="item"><span>产品logo</span></span>
+					<div>
+						<input type="file" nv-file-select="" uploader="uploader1" ng-click="uploader1.queue[0].remove()" />
+						<div class="box-center">
+							<div class="pic">
+								<div ng-repeat="item in uploader1.queue" ng-show="uploader1.isHTML5" ng-thumb="{ file: item._file, height: 130 ,width:298}"></div>
+							</div>
+							<div class="pic" style="margin-left:20px;">
+								<div><img ng-src="{{comSaveData.productList.logo}}" height="130px" width="298px"></div>
+							</div>
+						</div>
+						<table class="tablestyle" style="BORDER-COLLAPSE: collapse" borderColor=#999 cellSpacing=0 align=center bgColor=#ffffff border=1 width="660px">
+
+							<tr>
+								<td width="20%">图片名</td>
+								<td width="15%">文件大小</td>
+								<td width="27%">进度</td>
+								<td width="10%">操作</td>
+								<td width="28%">操作</td>
+							</tr>
+							<tr>
+								<td>{{ uploader1.queue[0].file.name }}</td>
+								<td ng-show="uploader1.isHTML5" nowrap>{{ uploader1.queue[0].file.size/1024|number:0 }} KB</td>
+								<td style="padding:0 10px;">
+									<div class="progress" style="margin-bottom:8px;width:70%;float:left;">
+										<div class="progress-bar" style="margin-top:0;" role="progressbar" ng-style="{ 'width': uploader1.queue[0].progress + '%' }"></div>
+									</div>
+									<div style="">{{uploader1.queue[0].progress + '%'}}</div>
+								</td>
+								<td><span ng-if="uploader1.queue[0].isSuccess">&radic;</span></td>
+								<td nowrap>
+									<button type="button" class="btn btn-success btn-sm" ng-click="uploader1.queue[0].upload()" ng-disabled="uploader1.queue[0].isReady || uploader1.queue[0].isUploading || uploader1.queue[0].isSuccess">
+											<span class="glyphicon glyphicon-upload"></span>上传
+										</button>
+									<button type="button" class="btn btn-danger btn-sm" ng-click="uploader1.queue[0].remove();picRemove('second')">
+										<span class="glyphicon glyphicon-trash"></span>删除
+									</button>
+								</td>
+							</tr>
+
+						</table>
+					</div>
+				</div>
+				
+				<div class="col-lg-12 textStyle">
+					<span class="item"><span>产品介绍</span></span>
+					<textarea rows="5" cols="79" ng-model="comSaveData.productList.summary"></textarea>
+				</div>
+			</div>
+		</div>
+		<div class="formBox">
+			<div class="top">招聘公司相关信息</div>
+			<div class="row">
+				<div class="col-lg-6">
+					<span class="item"><span>手机</span></span>
+					<input type="text" name="comPhone" ng-model="comSaveData.phone" ng-pattern="/^[0-9]{11}$/" />
+					<span class="formError" ng-show="comForm.comPhone.$dirty && comForm.comPhone.$invalid">限11位数字<span>
+				</div>
+				<div class="col-lg-6">
+					<span class="item"><span>邮箱</span></span>
+					<input type="text" name="comMail" ng-model="comSaveData.mail" ng-pattern="/^(?=\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$).{0,30}$/" />
+					<span class="formError" ng-show="comForm.comMail.$dirty && comForm.comMail.$invalid">限30字邮箱<span>
+				</div>
+				<div class="col-lg-12">
+					<span class="item"><span>详细地址</span></span>
+					<input type="text" style="width:600px;" ng-model="comSaveData.address" />
+				</div>
+				<div class="col-lg-12">
+					<span class="item"><span>地图</span></span>
+					<div>
+						<input type="file" nv-file-select="" uploader="uploader2" ng-click="uploader2.queue[0].remove()" />
+						<div class="box-center">
+							<div class="pic">
+								<div ng-repeat="item in uploader2.queue" ng-show="uploader2.isHTML5" ng-thumb="{ file: item._file, height: 130 ,width:298}"></div>
+							</div>
+							<div class="pic" style="margin-left:20px;">
+								<div><img ng-src="{{comSaveData.map}}" height="130px" width="298px"></div>
+							</div>
+						</div>
+						<table class="tablestyle" style="BORDER-COLLAPSE: collapse" borderColor=#999 cellSpacing=0 align=center bgColor=#ffffff border=1 width="660px">
+
+							<tr>
+								<td width="20%">图片名</td>
+								<td width="15%">文件大小</td>
+								<td width="27%">进度</td>
+								<td width="10%">操作</td>
+								<td width="28%">操作</td>
+							</tr>
+							<tr>
+								<td>{{ uploader2.queue[0].file.name }}</td>
+								<td ng-show="uploader2.isHTML5" nowrap>{{ uploader2.queue[0].file.size/1024|number:0 }} KB</td>
+								<td style="padding:0 10px;">
+									<div class="progress" style="margin-bottom:8px;width:70%;float:left;">
+										<div class="progress-bar" style="margin-top:0;" role="progressbar" ng-style="{ 'width': uploader2.queue[0].progress + '%' }"></div>
+									</div>
+									<div style="">{{uploader2.queue[0].progress + '%'}}</div>
+								</td>
+								<td><span ng-if="uploader2.queue[0].isSuccess">&radic;</span></td>
+								<td nowrap>
+									<button type="button" class="btn btn-success btn-sm" ng-click="uploader2.queue[0].upload()" ng-disabled="uploader2.queue[0].isReady || uploader2.queue[0].isUploading || uploader2.queue[0].isSuccess">
+											<span class="glyphicon glyphicon-upload"></span>上传
+										</button>
+									<button type="button" class="btn btn-danger btn-sm" ng-click="uploader2.queue[0].remove();picRemove('third')">
+										<span class="glyphicon glyphicon-trash"></span>删除
+									</button>
+								</td>
+							</tr>
+
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="newEditBtn"><!--  ng-disabled="comForm.$invalid" -->
+			<button class="btn btn-success" ng-click="save()">保存</button>
+			<button class="btn btn-danger">取消</button>
+		</div>
+	</form>
+	<d-companyset></d-companyset>
+</div>
