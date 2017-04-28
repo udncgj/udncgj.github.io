@@ -1,14 +1,11 @@
 
-
 	<div class="search">
 		<div class="formSearch" style="position:relative;">
 			<div>
 				<span>角色</span>
-				<select>
-					<option>— —请选择— —</option>
-					<option>超级管理员</option>
-					<option>管理员</option>
-					<option>运营</option>
+				<select ng-model="data.roleID">
+					<option value="">— —请选择— —</option>
+					<option ng-repeat="x in roleList" value="{{x.id}}">{{x.name}}</option>
 				</select>
 			</div>
 			<div>
@@ -16,7 +13,7 @@
 				<input type="text" />
 			</div>
 			<div class="searchBtn" style="position:absolute;right:0;">
-				<button class="btn btn-default" ng-click="companyClear()">重置</button>
+				<!-- <button class="btn btn-default" ng-click="companyClear()">重置</button> -->
 				<button class="btn btn-danger" ng-click="searchGo()">查询</button>
 			</div>
 		</div>
@@ -24,7 +21,7 @@
 	
 	<div class="search-list">
 	
-		<div class="search" style="margin:20px;">
+		<!-- <div class="search" style="margin:20px;">
 			<div class="formSearch" style="position:relative;">
 				<div>
 					<span>角色</span>
@@ -43,11 +40,11 @@
 					<button class="btn btn-danger" ng-click="searchGo()">搜索</button>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	<div class="search-list" style="margin:20px;">
 		<div class="top">
 			<span class="f16">账号列表</span>
-			<button class="btn btn-primary btn-xs" ng-click="companySetGo()">+ 新增账户</button>
+			<button class="btn btn-primary btn-xs" ng-click="operate('new')">+ 新增账户</button>
 		</div>
 		<div class="mes">
 			<ul style="border:1px solid #999;">
@@ -64,16 +61,16 @@
 					</ul>
 				</li>
 				<li>
-					<ul class="mes-list">
-						<li class="li1">001</li>
-						<li class="li2">科比</li>
-						<li class="li3">超级管理员</li>
-						<li class="li4">admin</li>
-						<li class="li5">2015/08/31</br>14:30:27</li>
-						<li class="li6">admin</li>
-						<li class="li7">2015/08/31 14:30</li>
+					<ul class="mes-list" ng-repeat="x in showData">
+						<li class="li1">{{$index+1}}</li>
+						<li class="li2">{{x.name}}</li>
+						<li class="li3">{{x.roleID|fMes:'roleList':'id':'val'}}</li>
+						<li class="li4">{{x.createBy}}</li>
+						<li class="li5">{{x.createAt|date:"yyyy-MM-dd"}}</br>{{x.createAt|date:"hh:mm:ss"}}</li>
+						<li class="li6">{{x.updateBy}}</li>
+						<li class="li7">{{x.updateAt|date:"yyyy-MM-dd"}}</br>{{x.updateAt|date:"hh:mm:ss"}}</li>
 						<li class="li8">
-							<span ng-click="operate('id',comData[$index])">编辑</span><span class="fcR" ng-click="operate('del',comData[$index])">删除</span>
+							<span ng-click="operate('id',x)">编辑</span><span class="fcR" ng-click="operate('del',x)">删除</span>
 						</li>
 					</ul>
 				</li>
@@ -91,7 +88,9 @@
 </div>
 			
 			
-		</div></div>
+		</div>
+    </div>
+    <d-accountnum></d-accountnum>
 	</div>
 	
 

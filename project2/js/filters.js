@@ -17,20 +17,37 @@ angular.module('myApp')
 		return aRet;
 	}
 })
-.filter('fMes',function(con){
-	return function(input,field,str){
-		if(input >= 0){//input != undefined && 
-			var name;
-			var aMes = con[field];
-			angular.forEach(aMes,function(data){
-				if(data[str] == input){
-					name = data.name;
-				}
-			})
-			return name;
-		}else{
-			//console.log('false');
-		}
+.filter('fMes',function(con,val){
+	return function(input,field,str,str2){
+        var name;
+        if(str2==='val'){
+            if(input >= 0){//input != undefined && 
+                //var name;
+                var aMes = val[field];
+                angular.forEach(aMes,function(data){
+                    if(data[str] == input){
+                        name = data.name;
+                    }
+                })
+                //return name;
+            }else{
+                //console.log('false');
+            }
+        }else{
+            if(input >= 0){//input != undefined && 
+                //var name;
+                var aMes = con[field];
+                angular.forEach(aMes,function(data){
+                    if(data[str] == input){
+                        name = data.name;
+                    }
+                })
+                //return name;
+            }else{
+                //console.log('false');
+            }
+        }
+        return name;
 	}
 })
 

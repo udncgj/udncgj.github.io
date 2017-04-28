@@ -3,6 +3,8 @@
 */
 angular.module("myApp")
 .value('val',{
+    roleList:'',
+    moduleList:'',
 	jobState:'',
 	comSet:'',
 	jobSet:'',
@@ -31,8 +33,8 @@ angular.module("myApp")
 	],
 	articleStatus:[
 		{type: 0, name: '草稿'},
-		{type: 1, name: '上线'},
-		{type: 2, name: '下线'}
+		{type: 1, name: '草稿'},
+		{type: 2, name: '上线'}
 	],
 	//公司人数
 	companyPop: [

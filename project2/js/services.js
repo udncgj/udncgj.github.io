@@ -1,5 +1,5 @@
 angular.module('myApp')
-.factory('myFac',function($location,$http,$q,val,CITY){
+.factory('myFac',function($location,$http,$q,val,CITY,COUNTY){
 	var service = [];
 	service.area = function(str){
 		var arr = [];
@@ -10,6 +10,21 @@ angular.module('myApp')
 			console.log(num);
 			angular.forEach(CITY, function (data) {
 				if (data.ProID == num) {
+					arr.push(data);
+				}
+			});
+		}
+		return arr;
+	}
+    service.county = function(str){
+		var arr = [];
+		if(str ===''){
+			arr='';
+		}else{
+			var num = parseInt(str);
+			console.log(num);
+			angular.forEach(COUNTY, function (data) {
+				if (data.CityID == num) {
 					arr.push(data);
 				}
 			});

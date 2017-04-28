@@ -25,7 +25,7 @@
 					</h5>
 					<h5 class="fc5">
 						<div>公司福利：</div>
-						<div>{{}}</div>
+						<div>{{jobMes.boon}}</div>
 					</h5>
 				</div>
 			</div>
@@ -33,7 +33,7 @@
 			<div class="col-md-4">
 				<div class="companyTitle">
 					<div class="pic"><img ng-src="{{jobMes.logo}}"></div>
-					<h5 class="b box-center"><span>{{jobMes.companyName}}</span><img src="img/2-29.png"></h5>
+					<h5 class="b box-center"><span class="cur" ng-click="jobComMes(jobMes)">{{jobMes.companyName}}</span><img src="img/2-29.png"></h5>
 				</div>
 				<div class="box-center">
 					<h5 class="fc5 b" style="padding-right:15px;margin:0;">公司信息</h5>
@@ -49,9 +49,33 @@
 				<div style="width:100%;border-top:1px solid #e8e8e8;"></div>
 				<div class="box-between interest">
 					<div class="box-center"><img src="img/2-25.png"><span style="margin-right:15px;">分享</span><img src="img/2-26.png"><img src="img/2-27.png"><img src="img/2-28.png"></div>
-					<button class="modal-btn-style">我感兴趣</button>
-				</div>
+					<button class="modal-btn-style" data-toggle="modal" data-target="#jobModal">我感兴趣</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="jobModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header" style="background:#fc2a48;color:#fff;text-align:center;border-radius:5px 5px 0 0;">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel" style="">我感兴趣</h4>
+                                </div>
+                                <div class="modal-body" style="width:70%;margin:0 auto;">
+                                    <div class="f16">模式介绍：萝卜多先技术面试-再推荐给用人单位</div>
+                                    <div class="h5 fc5">萝卜多是一个知根知底的社群招聘。萝卜多的合作企业和候选人，都是萝卜多精心筛选，认证，陪伴多年的伙伴。在萝卜多找工作快，工作有保障。值得您信任的招聘网站。</div>
+                                    <div class="h5 fc5">您将感兴趣的职位、公司名称以及您的个人信息发送到我们的邮箱，我们会尽快帮您安排。</div>
+                                    <div class="h5">邮箱地址：hr@ptteng.com</div>
+                                </div>
+                                <!-- <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="operateOk()">确定</button>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
 			</div>
 		</div>
 	</div>
 </div>
+
+	
+	

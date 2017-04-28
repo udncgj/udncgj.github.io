@@ -9,7 +9,12 @@ angular.module('myApp')
 	$scope.carRight = function(id){
 		myFac.carRight(id);
 	}
-	
+	$scope.sliderPrev = function(id){
+		$('.autoplay').slickPrev();
+	}
+    $scope.sliderNext = function(id){
+		$('.autoplay').slickNext();
+	}
 	myFac.http('get','/carrots-ajax/a/article/search',{}).then(function(res){
 		$scope.data = res;
 		$scope.pic = $scope.data.data.articleList;

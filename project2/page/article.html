@@ -61,7 +61,7 @@
 						<li class="li7">{{articleData[$index].updateAt|date:"yyyy-MM-dd"}}</br>{{articleData[$index].updateAt|date:"hh:mm:ss"}}</li>
 						<li class="li8">{{articleData[$index].status|fMes:'articleStatus':'type'}}</li>
 						<li class="li9">
-							<span ng-click="operate('status',articleData[$index])">{{{0:'？？',1:'下线',2:'上线'}[articleData[$index].status]}}</span><span ng-click="operate('id',articleData[$index])">{{{true:'编辑'}[articleData[$index]!=null]}}</span><span class="fcR" ng-click="operate('del',articleData[$index])">{{{true:'删除'}[articleData[$index]!=null]}}</span>
+							<span ng-click="operate('status',articleData[$index])">{{{0:'草稿',1:'上线',2:'下线'}[articleData[$index].status]}}</span><span ng-click="operate('id',articleData[$index])">{{{true:'编辑'}[articleData[$index]!=null]}}</span><span class="fcR" ng-click="operate('del',articleData[$index])">{{{true:'删除'}[articleData[$index]!=null]}}</span>
 						</li>
 					</ul>
 				</li>

@@ -52,6 +52,7 @@
   display: flex;
   align-items: center;
   background: #fff;
+  margin: 0 auto;
 }
 #p3-case .row .col-sm-6 .pic img {
   width: 100%;

@@ -1,12 +1,12 @@
 
 <div id="companySet" ng-controller="companySet"><!--  nv-file-drop="" uploader="uploader" -->
 	
-			<button class="btn btn-success" ng-click="save()">保存</button>
+			<!-- <button class="btn btn-success" ng-click="save()">保存</button> -->
 	<form class="newEdit" ng-model="comForm" name="comForm">
 		<div class="top">
-			<span>{{comSaveData.name}}</span>
+			<span>{{comSaveData.company.name}}</span>
 			<span>详细信息</span>
-			<select ng-model="comSaveData.approvedStatus">
+			<select ng-model="comSaveData.company.approved">
 				<option value=0>未认证</option>
 				<option value=1>已认证</option>
 			</select>
@@ -14,7 +14,7 @@
 		<div class="row">
 			<div class="col-lg-6">
 				<span class="item"><span class="fcR">&emsp;*</span><span>公司名称</span></span>
-				<input type="text" name="comName" ng-model="comSaveData.name" required />
+				<input type="text" name="comName" ng-model="comSaveData.company.name" required />
 				<!-- <span class="formError" ng-show="comForm.comName.$dirty && comForm.comName.$invalid">请输入内容<span> -->
 			</div>
 			<!-- <div class="list2-list">
@@ -25,36 +25,45 @@
 			</div> -->
 			<div class="col-lg-6">
 				<span class="item"><span class="fcR">*</span><span>公司slogan</span></span>
-				<input type="text" name="comSolgan" ng-model="comSaveData.slogan" required />
+				<input type="text" name="comSolgan" ng-model="comSaveData.company.slogan" required />
 				<!-- <span class="formError" ng-show="comForm.comSolgan.$dirty && comForm.comSolgan.$invalid">请输入内容<span> -->
 			</div>
 			<div class="col-lg-6">
 				<span class="item"><span class="fcR">&emsp;*</span><span>公司人数</span></span>
-				<input type="text" name="comTotalNum" ng-model="comSaveData.totalNum" required ng-pattern="/^[0-9]+$/" />
+				<input type="text" name="comTotalNum" ng-model="comSaveData.company.totalNum" required ng-pattern="/^[0-9]+$/" />
 				<span class="formError" ng-show="comForm.comTotalNum.$dirty && comForm.comTotalNum.$invalid">请输入数字<span>
 			</div>
 			<div class="col-lg-6">
-				<span class="item">融资规模</span>
-				<select ng-model="comSaveData.financing"">
+				<span class="item"><span class="fcR">&emsp;*</span>融资规模</span>
+				<select ng-model="comSaveData.company.financing"">
 					<option ng-repeat="x in financing" value="{{$index}}">{{x.name}}</option>
 				</select>
 			</div>
-			<div class="col-lg-6">
-				<span class="item">地区</span>
-				<select style="width:155px;" ng-model="comSaveData.province" ng-click="comProvince(comSaveData.province)">
-					<option value="">全部</option>
+			<div class="col-lg-12">
+				<span class="item"><span class="fcR">&emsp;&emsp;&emsp;*</span>行业</span>
+				<select ng-model="industrys" ng-click="industryAdd(industrys)">
+                    <option value=''>--请选择--</option>
+					<option ng-repeat="x in industry" value="{{$index}}">{{x.name}}</option>
+				</select>
+                <span class="alert alert-info" role="alert">
+                    <span ng-repeat="x in comSaveData.industryList track by $index">{{x.industry|fMes:'industry':'id'}}<span class="cur" ng-click="industryDel($index)" style="margin-right:8px;">&times;</span></span>
+                </span>
+			</div>
+			<div class="col-lg-12">
+				<span class="item"><span class="fcR">&emsp;&emsp;&emsp;*</span>地区</span>
+				<select style="width:155px;" ng-model="comSaveData.company.province" ng-click="comProvince(comSaveData.company.province)" required>
+					<option value=''>--请选择--</option>
 					<option ng-repeat="x in province" value="{{$index+1}}">{{x.ProName}}</option>
 				</select>
 				-
-				<select style="margin-left:0;width:155px;" ng-model="comSaveData.city">
-					<option value="">全部</option>
+				<select style="margin-left:0;width:155px;" ng-model="comSaveData.company.city" ng-click="comCity(comSaveData.company.city)" required>
+					<option value=''>--请选择--</option>
 					<option ng-repeat="x in city" value="{{x.CityID}}">{{x.CityName}}</option>
 				</select>
-			</div>
-			<div class="col-lg-6">
-				<span class="item">行业</span>
-				<select ng-model="comSaveData.industry">
-					<option ng-repeat="x in industry" value="{{$index}}">{{x.name}}</option>
+                -
+                <select style="margin-left:0;width:155px;" ng-model="comSaveData.company.county" required>
+					<option value=''>--请选择--</option>
+					<option ng-repeat="x in county" value="{{x.Id}}">{{x.countyName}}</option>
 				</select>
 			</div>
 			<div class="col-lg-12">
@@ -66,7 +75,7 @@
 							<div ng-repeat="item in uploader.queue" ng-show="uploader.isHTML5" ng-thumb="{ file: item._file, height: 130 ,width:298}"></div>
 						</div>
 						<div class="pic" style="margin-left:20px;">
-							<div><img ng-src="{{comSaveData.logo}}" height="130px" width="298px"></div>
+							<div><img ng-src="{{comSaveData.company.logo}}" height="130px" width="298px"></div>
 						</div>
 					</div>
 					<table class="tablestyle" style="BORDER-COLLAPSE: collapse" borderColor=#999 cellSpacing=0 align=center bgColor=#ffffff border=1 width="660px">
@@ -88,7 +97,7 @@
 								<div style="">{{uploader.queue[0].progress + '%'}}</div>
 							</td>
 							<td><span ng-show="uploader.queue[0].isSuccess">&radic;</span></td>
-							<!-- 这里有个logo验证 --><input type="text" ng-model="comSaveData.logo" ng-hide="true" required />
+							<!-- 这里有个logo验证 --><input type="text" ng-model="comSaveData.company.logo" ng-hide="true" required />
 							<td nowrap>
 								<button type="button" class="btn btn-success btn-sm" ng-click="uploader.queue[0].upload()" ng-disabled="uploader.queue[0].isReady || uploader.queue[0].isUploading || uploader.queue[0].isSuccess">
                                         <span class="glyphicon glyphicon-upload"></span>上传
@@ -105,22 +114,22 @@
 			
 			<div class="col-lg-12 textStyle">
 				<span class="item"><span class="fcR">&emsp;*</span><span>公司介绍</span></span>
-				<textarea rows="5" cols="80" name="comSummary" ng-model="comSaveData.summary" required></textarea>
+				<textarea rows="5" cols="80" name="comSummary" ng-model="comSaveData.company.summary" required></textarea>
 				<span class="formError" ng-show="comForm.comSummary.$dirty && comForm.comSummary.$invalid">请输入内容<span>
 			</div>
 			<div class="col-lg-12">
 				<span class="item"><span>公司标签</span></span>
 				<div>
 					<div class="tagsAdd"><input type="text" ng-model="comTags" /><span class="h3 b cur" ng-click="tagsAdd(comTags)">+</span></div>
-					<div class="tags"><span class="bg-primary" ng-repeat="x in comSaveData.tags">{{x.tag}}<span class="cur" ng-click="tagsDel($index)">&times;</span></span></div>
+					<div class="tags"><span class="bg-primary" ng-repeat="x in comSaveData.tagList track by $index">{{x.tag}}<span class="cur" ng-click="tagsDel($index)">&times;</span></span></div>
 				</div>
 			</div>
 		</div>
 		<div class="formBox">
 			<div class="top">公司产品（选填）</div>
 			<div class="row">
-				<div class="col-lg-6"><span class="item"><span>产品名称</span></span><input type="text" ng-model="comSaveData.productList.name" /></div>
-				<div class="col-lg-6"><span class="item"><span>产品slogan</span></span><input type="text" ng-model="comSaveData.productList.slogan" /></div>
+				<div class="col-lg-6"><span class="item"><span>产品名称</span></span><input type="text" ng-model="comSaveData.productList[0].name" /></div>
+				<div class="col-lg-6"><span class="item"><span>产品slogan</span></span><input type="text" ng-model="comSaveData.productList[0].slogan" /></div>
 				<div class="col-lg-12">
 					<span class="item"><span>产品logo</span></span>
 					<div>
@@ -130,7 +139,7 @@
 								<div ng-repeat="item in uploader1.queue" ng-show="uploader1.isHTML5" ng-thumb="{ file: item._file, height: 130 ,width:298}"></div>
 							</div>
 							<div class="pic" style="margin-left:20px;">
-								<div><img ng-src="{{comSaveData.productList.logo}}" height="130px" width="298px"></div>
+								<div><img ng-src="{{comSaveData.productList[0].logo}}" height="130px" width="298px"></div>
 							</div>
 						</div>
 						<table class="tablestyle" style="BORDER-COLLAPSE: collapse" borderColor=#999 cellSpacing=0 align=center bgColor=#ffffff border=1 width="660px">
@@ -168,7 +177,7 @@
 				
 				<div class="col-lg-12 textStyle">
 					<span class="item"><span>产品介绍</span></span>
-					<textarea rows="5" cols="79" ng-model="comSaveData.productList.summary"></textarea>
+					<textarea rows="5" cols="79" ng-model="comSaveData.productList[0].summary"></textarea>
 				</div>
 			</div>
 		</div>
@@ -177,17 +186,17 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<span class="item"><span>手机</span></span>
-					<input type="text" name="comPhone" ng-model="comSaveData.phone" ng-pattern="/^[0-9]{11}$/" />
+					<input type="text" name="comPhone" ng-model="comSaveData.company.phone" ng-pattern="/^[0-9]{11}$/" />
 					<span class="formError" ng-show="comForm.comPhone.$dirty && comForm.comPhone.$invalid">限11位数字<span>
 				</div>
 				<div class="col-lg-6">
 					<span class="item"><span>邮箱</span></span>
-					<input type="text" name="comMail" ng-model="comSaveData.mail" ng-pattern="/^(?=\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$).{0,30}$/" />
+					<input type="text" name="comMail" ng-model="comSaveData.company.mail" ng-pattern="/^(?=\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$).{0,30}$/" />
 					<span class="formError" ng-show="comForm.comMail.$dirty && comForm.comMail.$invalid">限30字邮箱<span>
 				</div>
 				<div class="col-lg-12">
 					<span class="item"><span>详细地址</span></span>
-					<input type="text" style="width:600px;" ng-model="comSaveData.address" />
+					<input type="text" style="width:600px;" ng-model="comSaveData.company.address" />
 				</div>
 				<div class="col-lg-12">
 					<span class="item"><span>地图</span></span>
@@ -198,7 +207,7 @@
 								<div ng-repeat="item in uploader2.queue" ng-show="uploader2.isHTML5" ng-thumb="{ file: item._file, height: 130 ,width:298}"></div>
 							</div>
 							<div class="pic" style="margin-left:20px;">
-								<div><img ng-src="{{comSaveData.map}}" height="130px" width="298px"></div>
+								<div><img ng-src="{{comSaveData.company.map}}" height="130px" width="298px"></div>
 							</div>
 						</div>
 						<table class="tablestyle" style="BORDER-COLLAPSE: collapse" borderColor=#999 cellSpacing=0 align=center bgColor=#ffffff border=1 width="660px">
@@ -236,8 +245,8 @@
 			</div>
 		</div>
 		<div class="newEditBtn"><!--  ng-disabled="comForm.$invalid" -->
-			<button class="btn btn-success" ng-click="save()">保存</button>
-			<button class="btn btn-danger">取消</button>
+			<button class="btn btn-success" ng-click="save()" ng-disabled="comForm.$invalid || comSaveData.industryList.length==0">保存</button>
+			<button class="btn btn-danger" onclick="window.history.back()">取消</button>
 		</div>
 	</form>
 	<d-companyset></d-companyset>

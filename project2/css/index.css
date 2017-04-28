@@ -159,7 +159,7 @@ input:-webkit-autofill {
   height: 80px;
   padding: 0 5%;
   margin-bottom: 20px;
-  min-width: 950px;
+  min-width: 1125px;
 }
 #mes {
   margin: 0 5px;
@@ -173,37 +173,37 @@ input:-webkit-autofill {
   border-right: none;
   border-radius: 3px;
 }
-#mes .list div,
-#mes .list li {
+#mes .list > div div,
+#mes .list > div li {
   height: 40px;
   line-height: 40px;
   border-bottom: 1px solid #fff;
   cursor: pointer;
 }
-#mes .list div {
+#mes .list > div div {
   background: #31B0D5;
   color: #fff;
 }
-#mes .list ul {
+#mes .list > div ul {
   background: #fff;
   cursor: pointer;
   padding: 0;
 }
-#mes .list ul li:hover {
+#mes .list > div ul li:hover {
   background: #d9edf7;
 }
-#mes .list ul li a {
+#mes .list > div ul li a {
   color: #2d3e50;
   display: inline-block;
   width: 100%;
 }
-#mes .list > div,
-#mes .list > ul {
+#mes .list > div > div,
+#mes .list > div > ul {
   border-bottom: 1px solid #fff;
   margin: 0;
 }
-#mes .list > div,
-#mes .list > ul > li > a {
+#mes .list > div > div,
+#mes .list > div > ul > li > a {
   padding-left: 25%;
 }
 #mes .view {
@@ -307,14 +307,27 @@ input:-webkit-autofill {
   margin: 20px auto;
   text-align: center;
   font-size: 16px;
+  position: relative;
 }
-.search-list .mes-check div input {
+.search-list .mes-check div input,
+.search-list .mes-check div select {
   height: 40px;
   width: 550px;
   margin-left: 15px;
+  padding-left: 10px;
 }
 .search-list .mes-check div button {
   height: 40px;
+}
+.search-list .mes-check div .formError {
+  position: absolute;
+  color: #fc2a48;
+  word-break: keep-all;
+  /* 不换行 */
+  white-space: nowrap;
+  /* 不换行 */
+  line-height: 30px;
+  line-height: 40px;
 }
 .search-list .mes-check .check {
   display: flex;
@@ -572,6 +585,7 @@ input:-webkit-autofill {
 }
 .newEdit .row > div select {
   width: 325px;
+  height: 30px;
 }
 .newEdit .row > div .formError {
   position: absolute;
@@ -584,6 +598,16 @@ input:-webkit-autofill {
 }
 .newEdit .row .col-lg-6 {
   height: 30px;
+}
+.newEdit .row .col-lg-12 {
+  position: relative;
+}
+.newEdit .row .col-lg-12 .alert {
+  position: absolute;
+  margin-bottom: 0;
+  margin-left: 10px;
+  padding: 5px 0 5px 8px;
+  min-height: 30px;
 }
 .newEdit .row .col-lg-12 > div {
   display: inline-block;

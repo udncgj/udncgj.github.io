@@ -1,4 +1,4 @@
-
+<div id="p2s-pic" ng-if="global.topList == 2"><img src="img/2-51.png" style="width:100%"></div>
 <div id="p2s-top" class="width-all p2s-top">
 	<div class="box-center sel">
 		<div class="f16" ng-class="{true:'active',false:''}[pro.p2sTop]" ng-click="company(true)">公司</div>
@@ -14,7 +14,7 @@
 			<div style="float:left;height:26px;line-height:26px;width:75px;"><span class="b">{{x.name}}</span></div>
 			<div>
 				<div class="box-center" style="flex-wrap:wrap;"><span ng-class="{true:'active'}[pro.searchData[x.title] === '']" class="spanlist" ng-click="listSelect(x.title,'')">不限</span>
-				<span ng-repeat="y in professionMes[$index]" ng-class="{true:'active'}[(pro.searchData[x.title]|fSearchData:$index)]" class="spanlist" ng-click="listSelect(x.title,$index)">{{y.name}}</span></div>
+				<span ng-repeat="y in professionMes[$index]" ng-class="{true:'active'}[(pro.searchData[x.title]|fSearchData:$index:x.title)]" class="spanlist" ng-click="listSelect(x.title,$index)">{{y.name}}</span></div>
 				<!-- <div style="margin-left:70px;"><span class="spanlist" ng-repeat="z in subCategory" ng-if="$index == 1">{{z.name}}</span></div> -->
 			</div>
 		</div>

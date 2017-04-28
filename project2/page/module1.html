@@ -3,7 +3,7 @@
 	
 		<div class="top">
 			<span class="f16">角色管理</span>
-			<button class="btn btn-primary btn-xs" ng-click="companySetGo()">+ 新增</button>
+			<button class="btn btn-primary btn-xs" ng-click="operate('new')">+ 新增</button>
 		</div>
 		<div class="mes">
 			<ul style="border:1px solid #999;">
@@ -22,18 +22,18 @@
 					</ul>
 				</li>
 				<li>
-					<ul class="mes-list">
-						<li class="li1">1</li>
-						<li class="li2">模块管理</li>
-						<li class="li3">web/c/password</li>
-						<li class="li4">0</li>
-						<li class="li5">web</li>
-						<li class="li6"></li>
-						<li class="li7">2</li>
-						<li class="li8">0</li>
-						<li class="li9">2</li>
+					<ul class="mes-list" ng-repeat="x in showData">
+						<li class="li1">{{x.id}}</li>
+						<li class="li2">{{x.name}}</li>
+						<li class="li3">{{x.url}}</li>
+						<li class="li4">{{x.parentID}}</li>
+						<li class="li5">{{x.type}}web</li>
+						<li class="li6">{{x.updateAt|date:"yyyy-MM-dd"}}</br>{{x.updateAt|date:"hh:mm:ss"}}</li>
+						<li class="li7">{{x.updateBy}}</li>
+						<li class="li8">{{x.createAt|date:"yyyy-MM-dd"}}</br>{{x.createAt|date:"hh:mm:ss"}}</li>
+						<li class="li9">{{x.createBy}}</li>
 						<li class="li10">
-							<span ng-click="operate('id',comData[$index])">编辑</span><span class="fcR" ng-click="operate('del',comData[$index])">删除</span>
+							<span ng-click="operate('id',x)">编辑</span><span class="fcR" ng-click="operate('del',x)">删除</span>
 						</li>
 					</ul>
 				</li>

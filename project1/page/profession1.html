@@ -105,20 +105,20 @@
 	<div class="list box-between"><div class="f16"><b>推荐公司</b></div><div class="cur" style="float:right;" ng-click="comMore()">查看更多 ></div></div>
 	<div class="row row-company">
 		<div class="col-lg-4">
-			<div>
+			<div class="cur" ng-click="proComMes(pro.commendCompany[0])">
 				<div class="pic"><img src="img/212.png"></div>
 				<div class="picMes">
-					<div class="f16">北京葡萄藤信息技术有限公司</div>
-					<h5>携程在手 说走就走</h5>
-					<h5 class="box-center"><img src="img/226.png"><span>移动互联网</span><img src="img/227.png"><span>上市</span><img src="img/228.png"><span style="margin-right:0;">北京</span></h5>
+					<div class="f16">{{pro.commendCompany[0].name}}</div>
+					<h5>{{pro.commendCompany[0].slogan}}</h5>
+					<h5 class="box-center"><img src="img/226.png"><span class="ellipsis"><span ng-repeat="x in pro.commendCompany[0].industryList">{{'/' | fSymbol:$index}}{{x | fMes:'industry':'id'}}</span></span><img src="img/227.png"><span>{{pro.commendCompany[0].financing|fMes:'financing':'id'}}</span><img src="img/228.png"><span style="margin-right:0;">{{pro.commendCompany[0].province|provinceFilter}}</span></h5>
 				</div>
 			</div>
 		</div>
 		<div class="col-lg-8 row">
-			<div class="col-xs-6 col-sm-3">
-				<div><img src="img/213.png"></div>
+			<div class="col-xs-6 col-sm-3" ng-repeat="x in pro.commendCompany|limitTo:8:1">
+				<div class='cur-hover' ng-click="proComMes(x)"><img ng-src="{{x.logo}}"></div>
 			</div>
-			<div class="col-xs-6 col-sm-3">
+			<!-- <div class="col-xs-6 col-sm-3">
 				<div><img src="img/214.png"></div>
 			</div>
 			<div class="col-xs-6 col-sm-3">
@@ -138,39 +138,16 @@
 			</div>
 			<div class="col-xs-6 col-sm-3">
 				<div><img src="img/220.png"></div>
-			</div>
+			</div> -->
 			
 		</div>
-		
-		<!-- <div class="box-center width-carousel"  data-ride="carousel">
-			<img src="img/120.png" ng-click="carLeft('p1-carPos')">
-			<div id="p1-carPos" class="carousel slide" data-ride="carousel" style="width:100%;" d-Carousel>
-				<div class="carousel-inner" role="listbox">
-					
-					<div class="item row" ng-repeat="x in pos" ng-class="{active:$first}">
-						<div class="col-sm-3" ng-repeat="y in x">
-							<div class="box" ng-click="hJob(y,$index,$parent.$index)">
-								<div class="pic"><img ng-src="{{y.logo}}"></div>
-								<div class="f16"><b>{{y.name}}</b></div>
-								<div style="border-bottom:1px solid #f1706b;width:20px;margin:-8px auto 0;"></div>
-								<h6>{{y.companyName}}</h6>
-							</div>
-						</div>
-					</div>
-					
-				</div>
-			</div>
-			<img src="img/121.png" ng-click="carRight('p1-carPos')">
-		</div> -->
-		
-		
 		
 		
 		<div id="p2-carCompany" class="carousel slide col-lg-12 row" data-ride="carousel" style="width:100%;" d-Carousel><!--  d-Carousel -->
 			<div class="carousel-inner" role="listbox" style="float:left;">
 					
-				<div class="item row box-center cur" ng-repeat="x in pro.commendCompany" ng-class="{active:$first}" ng-click="proComMes(x)">
-					<div class="box-center col-xs-7">
+				<div class="item row box-center cur" ng-repeat="x in pro.commendCompany|limitTo:4" ng-class="{active:$first}" ng-click="proComMes(x)">
+					<div class="col-xs-7">
 						<div class="logo"><img ng-src="{{x.logo}}"></div>
 						<div class="mes">
 							<h4 class="ellipsis"><b>{{x.name}}</b></h4>
@@ -189,27 +166,9 @@
 			</div>
 			<div class="" style="float:right;height:155px;width:5%;">
 				<ol class="carousel-indicators">
-					<li ng-repeat="x in pro.commendCompany" data-target="#p2-carCompany" data-slide-to="{{$index}}" ng-class="{'active':$first}"></li>
+					<li ng-repeat="x in pro.commendCompany|limitTo:4" data-target="#p2-carCompany" data-slide-to="{{$index}}" ng-class="{'active':$first}"></li>
 				</ol>
 			</div>
-			<!-- <div class="col-xs-11">
-				<div class="box-center row">
-					<div class="box-center col-xs-7">
-						<div class="logo"><img src="img/28.png"></div>
-						<div class="mes">
-							<h4 class="ellipsis"><b>携程旅游</b></h4>
-							<h5 class="ellipsis">加入萝卜多俱乐部</h5>
-							<h5 class="lab ellipsis"><span style="margin-left:0;">上市公司</span><span>独角兽</span><span>O2O</span></h5>
-						</div>
-					</div>
-					<div class="box-center col-xs-5">
-						<div>
-							<h4 class="ellipsis"><b>正在热招</b></h4>
-							<h5 class="ellipsis"><span style="padding-left:0;border-left:none;">产品经理</span><span>产品总监</span><span>移动产品经理</span></h5>
-						</div>
-					</div>
-				</div>
-			</div> -->
 		
 	</div>
 	

@@ -43,7 +43,7 @@ app.controller('personCtrl',function($scope,$http){
 		.success(function(data){
 			if(data.message == 'success'){
 				$('.warning:first').html(data.message);
-				location.href = 'page/list.html';
+				//location.href = 'page/list.html';
 			}else{
 				$('.warning:first').html(data.message);
 				//location.href = 'page/list.html';

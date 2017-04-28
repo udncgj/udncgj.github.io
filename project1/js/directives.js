@@ -6,10 +6,22 @@ angular.module('myApp')
 		});
 	}
 })
+.directive('dSlider',function(){
+	return function(scope,ele,attrs){
+		$('.autoplay').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            arrows:false
+        });
+	}
+})
 //公司详情
 .directive('dCommes',function($location,myFac,val){
 	return function(scope,ele,attrs){
 		scope.search = $location.search();//{id:val.jobMes.id}
+        scope.pro.p2sMesList = true;
 		if(!scope.search.id){
 			$location.search({id:val.comMes.id})
 		}
@@ -18,7 +30,7 @@ angular.module('myApp')
 			console.log('comMes');
 			console.log(scope.pro.comMes);
 		});
-		myFac.http('get','/carrots-ajax/a/profession/search',{recommend:0,id:$location.search().id,page:1,size:9}).then(function(res){
+        myFac.http('get','/carrots-ajax/a/profession/search',{recommend:0,companyId:$location.search().id,page:1,size:9}).then(function(res){
 			scope.pro.comJobMes = res.data;
 			scope.pro.comJobNum = res.total;
 			console.log('comJobMes');
@@ -33,6 +45,21 @@ angular.module('myApp')
 			for(var i=0; i<comMesPage; i++){scope.pro.comMesPage[i] = {'comMesPage':i+1};}
 			scope.pro.comMesPageNum = 1;
 		});
+		/* myFac.http('get','/carrots-ajax/a/profession/search',{recommend:0,id:$location.search().id,page:1,size:9}).then(function(res){
+			scope.pro.comJobMes = res.data;
+			scope.pro.comJobNum = res.total;
+			console.log('comJobMes');
+			console.log(scope.pro.comJobMes);
+			if(scope.pro.comJobMes == 0){
+				myFac.showHide('proComJobMes2','proComJobMes1');
+			}else{myFac.showHide('proComJobMes1','proComJobMes2');}
+			//分页
+			scope.pro.comMesAllPage = Math.ceil(res.total/res.size);
+			var comMesPage = scope.pro.comMesAllPage;
+			scope.pro.comMesPage = new Array(comMesPage);
+			for(var i=0; i<comMesPage; i++){scope.pro.comMesPage[i] = {'comMesPage':i+1};}
+			scope.pro.comMesPageNum = 1;
+		}); */
 	}
 })
 //职位详情
@@ -62,7 +89,7 @@ angular.module('myApp')
 //公司搜索列表页初始化
 .directive('dSearchcom',function($location,myFac,val,$state){
 	return function(scope){
-		
+		sessionStorage.setItem('comPageChange',JSON.stringify(scope.pro.comSearchData));
 		var searchTop = val.searchTop == ''?$location.search().n : val.searchTop;
 	 	switch(searchTop){
 			case 'proSeaCom':
@@ -75,7 +102,7 @@ angular.module('myApp')
 				break;
 			case 'eliteCom':
 				$('.sel').eq(0).css('display','none');
-				$scope.global.topList = 2;
+				scope.global.topList = 2;
 				break;
 			default:
 				$('.sel').eq(0).css('display','flex');
@@ -126,6 +153,7 @@ angular.module('myApp')
 .directive('dSearchjob',function($location,myFac,val,$state){
 	return function(scope){
 		//搜索页顶部隐藏和显示
+        sessionStorage.setItem('jobPageChange',JSON.stringify(scope.pro.jobSearchData));
 		var searchTop = val.searchTop == ''?$location.search().n : val.searchTop;
 	 	switch(searchTop){
 			case 'hNewJob':

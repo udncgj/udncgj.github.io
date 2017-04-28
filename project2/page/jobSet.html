@@ -1,51 +1,57 @@
 
-<div id="jobSet" ng-controller='jobSet'>
+<div id="jobSet" ng-controller='jobSet as jSet'>
 
-	<form class="newEdit">
+	<form class="newEdit" name="jobForm">
 		<div class="top">
-			<span>{{}}公司名</span>
+			<span>{{jobSaveData.profession.companyName}}</span>
 			<span>职位详情</span>
-			<select ng-model="jobSaveData.recommend">
+			<select ng-model="jobSaveData.profession.recommend" style="width:60px;">
 				<option value=0>普通</option>
 				<option value=1>推荐</option>
 			</select>
 		</div>
 		<div class="row">
-			<div class="col-lg-6"><span class="item"><span class="fcR">&emsp;*</span><span>职位名称</span></span><input type="text" ng-model="jobSaveData.name" /></div>
-			<div class="col-lg-6"><span class="item"><span>公司名称</span></span><input type="text" ng-model="jobSaveData.companyName" /></div>
+			<div class="col-lg-6"><span class="item"><span>职位名称</span></span><input type="text" ng-model="jobSaveData.profession.name" required /></div>
+			<div class="col-lg-6"><span class="item"><span>公司名称</span></span><input type="text" ng-model="jobSaveData.profession.companyName" disabled="true" /></div>
 			
 			<div class="col-lg-6">
 				<span class="item">工作经验</span>
-				<select ng-model="jobSaveData.experience">
+              
+				<select ng-model="jobSaveData.profession.experience" required>
+                    <option value="">--请选择--</option>
 					<option ng-repeat="x in experience" value="{{$index}}">{{x.name}}</option>
 				</select>
 			</div>
 			<div class="col-lg-6">
 				<span class="item">学历要求</span>
-				<select ng-model="jobSaveData.education">
+				<select ng-model="jobSaveData.profession.education" required>
+                    <option value="">--请选择--</option>
 					<option ng-repeat="x in education" value="{{$index}}">{{x.name}}</option>
 				</select>
 			</div>
 			<div class="col-lg-6">
 				<span class="item">薪资</span>
-				<select ng-model="jobSaveData.compensation">
+				<select ng-model="jobSaveData.profession.compensation" required>
+                    <option value="">--请选择--</option>
 					<option ng-repeat="x in compensation" value="{{$index}}">{{x.name}}</option>
 				</select>
 			</div>
 			<div class="col-lg-6">
 				<span class="item">职业类别</span>
-				<select ng-model="jobSaveData.category">
+				<select ng-model="jobSaveData.profession.category" style="width:160px;" ng-click="jobCateChange(jobSaveData.profession.category)" required>
+                    <option value="">--请选择--</option>
 					<option ng-repeat="x in category" value="{{$index}}">{{x.name}}</option>
+				</select>
+                -
+                <select ng-model="jobSaveData.profession.subCategory" style="width:160px;" required>
+                    <option value="">--请选择--</option>
+					<option ng-repeat="x in subCategory" value="{{$index}}">{{x.name}}</option>
 				</select>
 			</div>
 			
 			<div class="col-lg-12" style="align-items:center;">
-				<span class="item"><span>公司标签</span></span>
-				<div class="checkbox"><input type="checkbox" value="" /><span>五险一金</span></div>
-				<div class="checkbox"><input type="checkbox" value="" /><span>带薪休假</span></div>
-				<div class="checkbox"><input type="checkbox" value="" /><span>国企背景</span></div>
-				<div class="checkbox"><input type="checkbox" value="" /><span>健康体检</span></div>
-				<div class="checkbox"><input type="checkbox" value="" /><span>年度旅游</span></div>
+				<span class="item"><span>职位标签</span></span>
+				<div class="checkbox" ng-repeat="x in tagList track by $index"><input type="checkbox" ng-model="tagState[$index]" ng-click="test()" /><span>{{x.tag}}</span></div>
 			</div>
 		</div>
 		<div class="formBox">
@@ -53,22 +59,22 @@
 			<div class="row">
 				<div class="col-lg-12 textStyle">
 					<span class="item"><span>岗位职责</span></span>
-					<textarea rows="5" cols="78"></textarea>
+					<textarea rows="5" cols="78" ng-model="jobSaveData.profession.responsibility" required></textarea>
 				</div>
 				<div class="col-lg-12 textStyle">
 					<span class="item"><span>必备条件</span></span>
-					<textarea rows="5" cols="78"></textarea>
+					<textarea rows="5" cols="78" ng-model="jobSaveData.profession.requisite" required></textarea>
 				</div>
 				<div class="col-lg-12 textStyle">
 					<span class="item"><span>公司福利</span></span>
-					<textarea rows="5" cols="78"></textarea>
+					<textarea rows="5" cols="78" ng-model="jobSaveData.profession.boon" required></textarea>
 				</div>
 			</div>
 		</div>
 		<div class="newEditBtn">
-			<button class="btn btn-success">保存</button>
-			<button class="btn btn-danger">取消</button>
+			<button class="btn btn-success" ng-disabled="jobForm.$invalid" ng-click="save()">保存</button>
+			<button class="btn btn-danger" onclick="window.history.back()">取消</button>
 		</div>
 	</form>
-
+    <d-jobset></d-jobset>
 </div>

@@ -4,7 +4,7 @@
 		<div>
 			<div class="box-center" style="margin-bottom:20px;flex-wrap:wrap;"><span class="h4 b" style="padding-right:10px;">{{pro.comMes.company.name}}</span><img src="img/2-11.png"></div>
 			<h5 class="fc5">{{pro.comMes.company.slogan}}</h5>
-			<div class="f12 fc5">{{pro.comMes.company.summary}}</div>
+			<div class="f12 fc5"></div>
 		</div>
 	</div>
 	<div class="width-all">
@@ -81,7 +81,8 @@
 				</div>
 				<div class="label-list">
 					<div class="f12 fc5">
-						<span>五险一金</span><span>带薪年假</span><span>年14薪</span><span>健康体检</span><span>年度旅游</span><span>节日礼金</span><span>独栋办公</span>
+                        <span ng-repeat="x in pro.comMes.tagList">{{x.tag}}</span>
+						<!-- <span>五险一金</span><span>带薪年假</span><span>年14薪</span><span>健康体检</span><span>年度旅游</span><span>节日礼金</span><span>独栋办公</span> -->
 					</div>
 				</div>
 			</div>

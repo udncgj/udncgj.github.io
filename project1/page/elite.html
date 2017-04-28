@@ -120,11 +120,11 @@
 	</div> 
 	<div class="row width-all">
 		<div class="col-sm-6 col-md-3" ng-repeat="x in commendCompany">
-			<div class="pic cur-hover"><img ng-src="{{x.logo}}" class=""></div>
+			<div class="pic cur-hover" ng-click="companyGo(x)"><img ng-src="{{x.logo}}"></div>
 		</div>
 		
 	</div>
-	<div style="text-align:center;margin-top:10px;"><button type="button" class="btn btn-danger" style="padding:10px 30px;">更多合作公司</button></div>
+	<div style="text-align:center;margin-top:10px;"><button type="button" class="btn btn-danger" style="padding:10px 30px;" ng-click="companyMore()">更多合作公司</button></div>
 </div>
 
 

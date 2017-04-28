@@ -309,6 +309,7 @@ angular.module('myApp',['ui.bootstrap', 'ngAnimate'])
 		else{myFac.showHide('proComJobMes','proComMes');}
 	}
 	console.log('b');
+    
 })
 
 

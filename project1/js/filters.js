@@ -50,7 +50,9 @@ angular.module('myApp')
 	}
 })
 .filter('fSearchData',function(myFac){
-	return function(input,num){
+	return function(input,num,str){
+        //console.log(input,num,str);
+        if(str == 'province' || str == 'category' || str == 'subCategory')num = num === '' ?'':num+1;;
 		return myFac.indexSelect(input,num,false);
 	}
 })

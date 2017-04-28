@@ -1,75 +1,86 @@
-<!DOCTYPE>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>萝卜多后台</title>
-<link href="frame/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
-<link href="css/index.css" rel="stylesheet" type="text/css" />
-
-
-<script src="http://nervgh.github.io/js/es5-shim.min.js"></script>
-<script src="http://nervgh.github.io/js/es5-sham.min.js"></script>
+<title>无标题文档</title>
+<link href="index.css" rel="stylesheet" type="text/css" />
 <script src="js/开发jquery-3.1.1.js"></script>
-<script src="frame/laydate/laydate.js"></script>
-<script src="frame/angular-upload/console-sham.js"></script>
 <script src="http://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
-<script src="http://cdn.bootcss.com/angular-ui-router/1.0.0-rc.1/angular-ui-router.js"></script>
-<script src="http://cdn.bootcss.com/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js"></script>
-
-<script src="frame/angular-upload/dist/angular-file-upload.min.js"></script>
-
-<script src="js/app.js"></script>
-<script src="constant.js"></script>
-<script src="js/controllers.js"></script>
-<script src="js/controllers2.js"></script>
-<script src="js/directives.js"></script>
-<script src="js/filters.js"></script>
-<script src="js/services.js"></script>
-<script src="js/ocLazyLoad.js"></script>
-
-
 </head>
 
-<body ng-app='myApp' ng-controller='personCtrl as ctrl'>
-
-<div id="top" class="box-between">
-	<div class="f20 b"><img src="">萝卜多后台管理系统</div>
-	<div class="box-center f16">
-		<div>管理员</div>
-		<div><img src=""></div>
-		<div>刘德华</div>
-		<div>退出</div>
-	</div>
+<body>
+<div style="position:absolute; left:0; top:0; width:100%; height:100%;z-index:-1"><img src="img/背景.png" width="100%" height="100%" /></div>
+<!--<div class="box-under box"></div>-->
+<div class="box" ng-app="myApp" ng-controller="personCtrl">
+  <h1>后台登录</h1>
+  <div class="box-mes">
+    <form class="box-form">
+      <input type="button" class="img1-input" readonly="readonly" />
+      <input id="user-input" class="box-input" type="text" placeholder="用户名" ng-model="user" />
+    </form>
+  </div>
+  <div class="box-mes">
+    <form class="box-form">
+      <input type="button" class="img2-input" readonly="readonly" />
+      <input id="password-input" class="box-input" type="password" placeholder="密码" ng-model="password" />
+    </form>
+  </div>
+  <div class="warning"></div>
+  <div class="logon" ng-click="logon()">登录</div>
 </div>
 
-<div id="mes" class="f16">
-	<div class="list">
-		<div>欢迎页</div>
-		<div>信息管理</div>
-		<ul>
-			<li><a href="#/company">公司信息</a></li>
-			<li style="border-bottom:none;"><a ui-sref="job({id:null})" ui-sref-opts="{reload: true}">职位信息</a></li><!--  -->
-		</ul>
-		<div>内容管理</div>
-		<ul>
-			<li style="border-bottom:none;"><a href="#/article">Article管理</a></li>
-		</ul>
-		<div>后台管理</div>
-		<ul style="border-bottom:none;">
-			<li><a href="#/accountNum/">账号管理</a></li>
-			<li><a href="#/role/">角色管理</a></li>
-			<li><a href="#/password">修改密码</a></li>
-			<li style="border-bottom:none;"><a href="#/module/">模块管理</a></li>
-		</ul>
-	</div>
-	<div class="view" ui-view></div> 
-</div>
-<button class="btn btn-danger" style="position:fixed;top:10vh;left:10px;" onclick="interfaceTest()">接口测试</button>
+<script>
+$(window).on('load',function(){
+})
+function getCookie(str){
+	var aStr = document.cookie.split(';');
+	for(var i=0; i<aStr.length; i++){
+		while(aStr[i].indexOf(' ')!=-1){
+			aStr[i] = aStr[i].replace(' ','');
+		}
+		var arr = aStr[i].split('=');
+		if(arr[0] == str){
+			return arr[1];
+		}
+	}
+}
+function addCookie(str,value){
+	var date = new Date();
+	var delDay = 7;//保存7天时间
+	date.setTime(date.getTime()+delDay*24*3600*1000);
+	document.cookie = str+"="+value+";"+"expires="+date.toGMTString();
+}
+function delCookie(str){
+	var date = new Date();
+	date.setTime(date.getTime()-10000);
+	document.cookie = str+"="+";"+"expires="+date.toGMTString();
+}
 
 
-
-
-<script src="frame/bootstrap/js/bootstrap.js"></script>
+var app = angular.module('myApp',[]);
+app.controller('personCtrl',function($scope,$http){
+	$scope.user = getCookie('testname');
+	$scope.password = getCookie('testpwd');
+	$scope.logon = function(){
+		var promise = $http({
+			method:'post',
+			url:"/carrots-admin-ajax/a/login/",
+			params:{"name":$scope.user,"pwd":$scope.password},
+		})
+		.success(function(data){
+			if(data.message == 'success'){
+				$('.warning:first').html(data.message);
+				addCookie('testname',$scope.user);
+				addCookie('testpwd',$scope.password);
+				location.href = 'list.html';
+			}else{
+				$('.warning:first').html(data.message);
+			}
+		})
+		.error(function(data){$('.warning:first').html(data.message);})
+	}
+});
+</script>
 </body>
 </html>

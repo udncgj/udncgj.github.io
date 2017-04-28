@@ -10,7 +10,7 @@
 <body>
 <div ng-controller='homeCtrl as home'>
 <div id="home-banner" class="carousel slide" data-ride="carousel">
-	<img ng-src="{{pic[0].img}}" style="width:100%;">
+	<img ng-src="{{pic[0].img}}">
 </div>
 
 
@@ -83,18 +83,10 @@
 		<h5 style="color:#536a82;font-size:16px;margin-top:5px;">SERVICE FLOW</h5>
 	</div>
 	<div class="list width-style">
-		<div class="pic"><img src="img/16.png"></div>
-		<div class="plane"><img src="img/115.png"></div>
-		<div class="pic"><img src="img/17.png"></div>
-		<div class="plane"><img src="img/115.png"></div>
-		<div class="pic"><img src="img/18.png"></div>
+		<div class="pic"><img src="img/16.png"></div><div class="plane"><img src="img/115.png"></div><div class="pic"><img src="img/17.png"></div><div class="plane"><img src="img/115.png"></div><div class="pic"><img src="img/18.png"></div>
 	</div>
 	<div class="list width-style">
-		<div class="pic"><img src="img/19.png"></div>
-		<div class="plane"><img src="img/115.png"></div>
-		<div class="pic"><img src="img/110.png"></div>
-		<div class="plane"><img src="img/115.png"></div>
-		<div class="pic"><img src="img/111.png"></div>
+		<div class="pic"><img src="img/19.png"></div><div class="plane"><img src="img/115.png"></div><div class="pic"><img src="img/110.png"></div><div class="plane"><img src="img/115.png"></div><div class="pic"><img src="img/111.png"></div>
 	</div>
 </div>
 
@@ -104,44 +96,130 @@
 		<div style="border-bottom:2px solid #f1706b;width:25px;margin:-5px auto 0;"></div>
 		<h5 style="color:#536a82;font-size:16px;margin-top:5px;">PARTNER ADVICE</h5>
 	</div>
-	<div class="box-center width-carousel width-advice">
-		<img src="img/120.png">
-		<div class="row">
-			<div class="col-sm-6 col-md-3">
-				<div class="box">
-					<div class="pic"><img src="img/113.png"></div>
-					<div class="f16"><b>王思聪</b></div>
-					<h5>拓尔思集团创始人</h5>
-					<p>作为在萝卜多已经招募了50人的leader萝卜多除了是我成功的基石，也是我的社交入口。</p>
-				</div>
-			</div>
-			<div class="col-sm-6 col-md-3">
-				<div class="box">
-					<div class="pic"><img src="img/113.png"></div>
-					<div class="f16"><b>王思聪</b></div>
-					<h5>拓尔思集团创始人</h5>
-					<p>作为在萝卜多已经招募了50人的leader萝卜多除了是我成功的基石，也是我的社交入口。</p>
-				</div>
-			</div>
-			<div class="col-sm-6 col-md-3">
-				<div class="box">
-					<div class="pic"><img src="img/113.png"></div>
-					<div class="f16"><b>王思聪</b></div>
-					<h5>拓尔思集团创始人</h5>
-					<p>作为在萝卜多已经招募了50人的leader萝卜多除了是我成功的基石，也是我的社交入口。</p>
-				</div>
-			</div>
-			<div class="col-sm-6 col-md-3">
-				<div class="box">
-					<div class="pic"><img src="img/113.png"></div>
-					<div class="f16"><b>王思聪</b></div>
-					<h5>拓尔思集团创始人</h5>
-					<p>作为在萝卜多已经招募了50人的leader萝卜多除了是我成功的基石，也是我的社交入口。</p>
-				</div>
-			</div>
-		</div>
-		<img src="img/121.png">
+	<div class="box-between width-carousel width-advice">
+		<img src="img/120.png" ng-click="carLeft('p1-carAdvice')">
+        <div id="p1-carAdvice" class="carousel slide" data-ride="carousel" d-Carousel>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item row active">
+                    <div class="col-sm-6 col-md-3">
+                        <div class="box">
+                            <div class="pic"><img src="img/113.png"></div>
+                            <div class="f16"><b>王思聪1</b></div>
+                            <h5>拓尔思集团创始人</h5>
+                            <p>作为在萝卜多已经招募了50人的leader萝卜多除了是我成功的基石，也是我的社交入口。</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="box">
+                            <div class="pic"><img src="img/113.png"></div>
+                            <div class="f16"><b>王思聪2</b></div>
+                            <h5>拓尔思集团创始人</h5>
+                            <p>作为在萝卜多已经招募了50人的leader萝卜多除了是我成功的基石，也是我的社交入口。</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="box">
+                            <div class="pic"><img src="img/113.png"></div>
+                            <div class="f16"><b>王思聪3</b></div>
+                            <h5>拓尔思集团创始人</h5>
+                            <p>作为在萝卜多已经招募了50人的leader萝卜多除了是我成功的基石，也是我的社交入口。</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="box">
+                            <div class="pic"><img src="img/113.png"></div>
+                            <div class="f16"><b>王思聪4</b></div>
+                            <h5>拓尔思集团创始人</h5>
+                            <p>作为在萝卜多已经招募了50人的leader萝卜多除了是我成功的基石，也是我的社交入口。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item row">
+                    <div class="col-sm-6 col-md-3">
+                        <div class="box">
+                            <div class="pic"><img src="img/113.png"></div>
+                            <div class="f16"><b>王思聪5</b></div>
+                            <h5>拓尔思集团创始人</h5>
+                            <p>作为在萝卜多已经招募了50人的leader萝卜多除了是我成功的基石，也是我的社交入口。</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="box">
+                            <div class="pic"><img src="img/113.png"></div>
+                            <div class="f16"><b>王思聪6</b></div>
+                            <h5>拓尔思集团创始人</h5>
+                            <p>作为在萝卜多已经招募了50人的leader萝卜多除了是我成功的基石，也是我的社交入口。</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="box">
+                            <div class="pic"><img src="img/113.png"></div>
+                            <div class="f16"><b>王思聪7</b></div>
+                            <h5>拓尔思集团创始人</h5>
+                            <p>作为在萝卜多已经招募了50人的leader萝卜多除了是我成功的基石，也是我的社交入口。</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="box">
+                            <div class="pic"><img src="img/113.png"></div>
+                            <div class="f16"><b>王思聪8</b></div>
+                            <h5>拓尔思集团创始人</h5>
+                            <p>作为在萝卜多已经招募了50人的leader萝卜多除了是我成功的基石，也是我的社交入口。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<img src="img/121.png" ng-click="carRight('p1-carAdvice')">
 	</div>
+    
+	<!-- <div class="box-center width-carousel width-advice">
+		<img src="img/120.png" ng-click="sliderPrev()">
+		<div class="slider autoplay" d-slider>
+			<div><div class="boxParent">
+                    <div class="box">
+                        <div class="pic"><img src="img/113.png"></div>
+                        <div class="f16"><b>王思聪</b></div>
+                        <h5>拓尔思集团创始人</h5>
+                        <p>作为在萝卜多已经招募了50人的leader萝卜多除了是我成功的基石，也是我的社交入口。</p>
+                    </div>
+			</div></div>
+			<div><div class="boxParent">
+                    <div class="box">
+                        <div class="pic"><img src="img/113.png"></div>
+                        <div class="f16"><b>王思聪</b></div>
+                        <h5>拓尔思集团创始人</h5>
+                        <p>作为在萝卜多已经招募了50人的leader萝卜多除了是我成功的基石，也是我的社交入口。</p>
+                    </div>
+			</div></div>
+			<div><div class="boxParent">
+                    <div class="box">
+                        <div class="pic"><img src="img/113.png"></div>
+                        <div class="f16"><b>王思聪</b></div>
+                        <h5>拓尔思集团创始人</h5>
+                        <p>作为在萝卜多已经招募了50人的leader萝卜多除了是我成功的基石，也是我的社交入口。</p>
+                    </div>
+			</div></div>
+			<div><div class="boxParent">
+                    <div class="box">
+                        <div class="pic"><img src="img/113.png"></div>
+                        <div class="f16"><b>王思聪</b></div>
+                        <h5>拓尔思集团创始人</h5>
+                        <p>作为在萝卜多已经招募了50人的leader萝卜多除了是我成功的基石，也是我的社交入口。</p>
+                    </div>
+			</div></div>
+			<div><div class="boxParent">
+                    <div class="box">
+                        <div class="pic"><img src="img/113.png"></div>
+                        <div class="f16"><b>王思聪</b></div>
+                        <h5>拓尔思集团创始人</h5>
+                        <p>作为在萝卜多已经招募了50人的leader萝卜多除了是我成功的基石，也是我的社交入口。</p>
+                    </div>
+			</div></div>
+		</div>
+		<img src="img/121.png" ng-click="sliderNext()">
+	</div> -->
 </div>
 
 

@@ -1,34 +1,34 @@
 
 	<div class="search-list">
-	
+        <d-moduleset></d-moduleset>
 		<div class="top">
 			<span class="f16">模块编辑</span>
 		</div>
-		<div class="mes mes-check">
+		<form class="mes mes-check" name="moduleForm">
 			
 			<div>
 				<span>名&emsp;称 *</span>
-				<input type="text" />
+				<input type="text" ng-model="saveData.manager.name" required />
 			</div>
 			<div>
 				<span>Menuld </span>
-				<input type="text" />
+				<input type="text" ng-model="saveData.manager.menuID" required />
 			</div>
 			<div>
 				<span>URL地址</span>
-				<input type="password" />
+				<input type="text" ng-model="saveData.manager.url" required />
 			</div>
 			<div>
 				<span>父模块ID</span>
-				<input type="password" />
+				<input type="text" ng-model="saveData.manager.parentID" required />
 			</div>
 			<div>
 				<span>模块类别</span>
-				<input type="password" />
+				<input type="text" ng-model="saveData.manager.type" required />
 			</div>
 			<div>
-				<button class="btn btn-success">保 存</button>
-				<button class="btn btn-default" style="margin-left:30px;">取 消</button>
+				<button class="btn btn-success" ng-click="save()" ng-disabled="moduleForm.$invalid">保 存</button>
+				<button class="btn btn-default" style="margin-left:30px;" ng-click="cancel()">取 消</button>
 			</div>
-		</div>
+		</form>
 	</div>

@@ -32,14 +32,14 @@
 			</div>
 			<div>
 				<span>认证状态</span>
-				<select ng-model="comSearchData.approvedStatus">
+				<select ng-model="comSearchData.approved">
 					<option value="">全部</option>
 					<option ng-repeat="x in approvedStatus" value="{{$index}}">{{x}}</option>
 				</select>
 			</div>
 			<div>
 				<span>冻结状态</span>
-				<select ng-model="comSearchData.freezedStatus">
+				<select ng-model="comSearchData.freezed">
 					<option value="">全部</option>
 					<option ng-repeat="x in freezedStatus" value="{{$index}}">{{x}}</option>
 				</select>

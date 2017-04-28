@@ -5,10 +5,10 @@
 }
 
 #home-banner{
-	.carousel-inner>.item>img{
-		height:300px;
-		margin:0 auto;
-	}
+	img{
+        width:100%;
+        max-height:350px;
+    }
 }
 
 
@@ -65,7 +65,8 @@
 	.width-carousel{
 		margin:0 auto;
 		.row{
-			width:93%;
+			width:100%;
+            padding:0 3%;
 			max-width:1050px;
 			margin:0 auto;
 			.col-sm-3{
@@ -123,25 +124,30 @@
 				margin:20px 0;
 			}
 		}
-		.plane{
-			width:25%;
-			position:relative;
-			background:rgba(255,255,255,0);
-			img{
-				position:absolute;
-				z-index:1;
-				top:-20px;
-				left:35%;
-			}
-		}
 		.plane::after{
 			content: ""; 
 			display:block;
 			position:absolute;
-			top:-8px;
+			top:11px;
 			width:100%;
 			height:0;
 			border:1px dashed #ffd8d9;
+            z-index:0;
+		}
+		.plane{
+			width:25%;
+			position:relative;
+			//background:rgba(255,255,255,0);
+            text-align:center;
+            //border-bottom:1px dashed #ffd8d9;
+			img{
+				//position:absolute;
+				//z-index:1;
+				//top:-20px;
+				//left:35%;
+                //right:35%;
+                z-index:1;
+			}
 		}
 	}
 }
@@ -152,9 +158,12 @@
 		cursor:pointer;
 	}
 	.width-carousel{
+        
+        
 		margin:0 auto;
 		.row{
-			width:93%;
+			width:100%;
+            padding:0 3%;
 			max-width:1050px;
 			margin:0 auto;
 			.col-md-3{

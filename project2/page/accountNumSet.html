@@ -1,30 +1,40 @@
 	<div class="search-list">
-	
+        
+        <d-accountnumset></d-accountnumset>
 		<div class="top">
 			<span class="f16">账户编辑</span>
-			<button class="btn btn-primary btn-xs" ng-click="companySetGo()">新增</button>
 		</div>
-		<div class="mes mes-check">
+		<form class="mes mes-check" name="accForm" ng-model="accForm">
 			
 			<div>
 				<span>登&ensp;录&ensp;名</span>
-				<input type="text" />
+				<input type="text" ng-model="saveData.manager.name" required />
 			</div>
 			<div>
 				<span>手&ensp;机&ensp;号</span>
-				<input type="text" />
+				<input type="text" name="accPhone" ng-model="saveData.manager.mobile" ng-required="saveData.manager.id =='' " ng-pattern="/^[0-9]{11}$/" ng-disabled="saveData.manager.id !='' " />
+                <span class="formError" ng-show="accForm.accPhone.$dirty && accForm.accPhone.$invalid">限11位数字<span>
 			</div>
 			<div>
 				<span>密&emsp;&emsp;码</span>
-				<input type="password" />
+				<input type="password" name="accPwd" ng-model="saveData.manager.pwd" required ng-pattern="/^[0-9]{6,12}$/" />
+			    <span class="formError" ng-show="accForm.accPwd.$dirty && accForm.accPwd.$invalid">限6~12位数字<span>
 			</div>
 			<div>
 				<span>密码确认</span>
-				<input type="password" />
+				<input type="password" ng-model="saveData.manager.newPwd" />
+                <span class="formError" ng-show="saveData.manager.newPwd != saveData.manager.pwd">两个密码不一致<span>
+			</div>
+            <div>
+				<span>角&emsp;&emsp;色</span>
+				<select ng-model="saveData.manager.roleID" required>
+					<option value="">— —请选择— —</option>
+					<option ng-repeat="x in roleList" value="{{x.id}}">{{x.name}}</option>
+				</select>
 			</div>
 			<div>
-				<button class="btn btn-success">保 存</button>
-				<button class="btn btn-default" style="margin-left:30px;">取 消</button>
+				<button class="btn btn-success" ng-click="save()" ng-disabled="accForm.$invalid || saveData.manager.newPwd != saveData.manager.pwd">保 存</button>
+				<button class="btn btn-default" style="margin-left:30px;" ng-click="cancel()">取 消</button>
 			</div>
-		</div>
+		</form>
 	</div>

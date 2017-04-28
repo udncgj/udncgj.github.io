@@ -12,9 +12,9 @@ angular.module('myApp')
 			scope.comSearchData.province = comSearch.province==null?'':comSearch.province;
 			scope.comSearchData.city = comSearch.city==null?'':comSearch.city;
 			scope.comSearchData.financing = comSearch.financing==null?'':comSearch.financing;
-			scope.comSearchData.approvedStatus = comSearch.approvedStatus==null?'':comSearch.approvedStatus;
-			scope.comSearchData.freezedStatus = comSearch.freezedStatus==null?'':comSearch.freezedStatus;
-			//scope.comSearchData.page = comSearch.page==null?1:comSearch.page;
+			scope.comSearchData.approved = comSearch.approvedStatus==null?'':comSearch.approvedStatus;
+			scope.comSearchData.freezed = comSearch.freezedStatus==null?'':comSearch.freezedStatus;
+			scope.comSearchData.page = comSearch.page==null?1:comSearch.page;
 		}
 		scope.comDataList = [1,2,3,4,5,6,7,8,9,10];
 		myFac.http('get','/carrots-admin-ajax/a/company/search',scope.comSearchData).then(function(res){
@@ -47,11 +47,13 @@ angular.module('myApp')
             scope.jobSearchData.subCategory = jobSearch.subCategory==null?'':jobSearch.subCategory;
             scope.jobSearchData.education = jobSearch.education==null?'':jobSearch.education;
             scope.jobSearchData.experience = jobSearch.experience==null?'':jobSearch.experience;
-            scope.jobSearchData.startAt = jobSearch.startAt==null?'':jobSearch.startAt;
-            scope.jobSearchData.endAt = jobSearch.endAt==null?'':jobSearch.endAt;
+            //scope.jobSearchData.startAt = jobSearch.startAt==null?'':jobSearch.startAt;
+            
+            //scope.jobSearchData.endAt = jobSearch.endAt==null?'':jobSearch.endAt;
+            
             scope.jobSearchData.compensation = jobSearch.compensation==null?'':jobSearch.compensation;
             scope.jobSearchData.status = jobSearch.status==null?'':jobSearch.status;
-            //scope.jobSearchData.page = jobSearch.page==null?1:jobSearch.page;
+            scope.jobSearchData.page = jobSearch.page==null?1:jobSearch.page;
         }
         console.log($location.search());
         
@@ -95,11 +97,11 @@ angular.module('myApp')
         else{
             scope.articleSearchData.title = articleSearch.title==null?'':articleSearch.title;
             scope.articleSearchData.author = articleSearch.author==null?'':articleSearch.author;
-            scope.articleSearchData.startAt = articleSearch.startAt==null?'':articleSearch.startAt;
-            scope.articleSearchData.endAt = articleSearch.endAt==null?'':articleSearch.endAt;
+            //scope.articleSearchData.startAt = articleSearch.startAt==null?'':articleSearch.startAt;
+            //scope.articleSearchData.endAt = articleSearch.endAt==null?'':articleSearch.endAt;
             scope.articleSearchData.status = articleSearch.status==null?'':articleSearch.status;
             scope.articleSearchData.type = articleSearch.type==null?'':articleSearch.type;
-            //scope.articleSearchData.page = articleSearch.page==null?1:articleSearch.page;
+            scope.articleSearchData.page = articleSearch.page==null?1:articleSearch.page;
         }
         scope.articleDataList = [1,2,3,4,5,6,7,8,9,10];
         myFac.http('get','/carrots-admin-ajax/a/article/search',scope.articleSearchData).then(function(res){
@@ -124,65 +126,285 @@ angular.module('myApp')
 		
 		var companyId = val.comSet == ''?$location.search().id:val.comSet.id;
 		$location.search('id',companyId);
+        val.comSet = '';
 		if(companyId !=null){
 			myFac.http('get','/carrots-admin-ajax/a/company/'+companyId,{}).then(function(res){
 				console.log(res);
-				scope.comSaveData.id = res.data.company.id;
-				scope.comSaveData.name = res.data.company.name;
-				scope.comSaveData.slogan = res.data.company.slogan;
-				scope.comSaveData.totalNum = res.data.company.totalNum;
-				scope.comSaveData.financing = res.data.company.financing.toString();
-				scope.comSaveData.industry = res.data.industryList[0].industry.toString();
-				scope.comSaveData.province = res.data.company.province.toString();
-				scope.city = myFac.area(scope.comSaveData.province);
-				scope.comSaveData.city = res.data.company.city.toString();
-				scope.comSaveData.logo = res.data.company.logo;
-				scope.comSaveData.summary = res.data.company.summary;
-				scope.comSaveData.approvedStatus = res.data.company.approvedStatus;
-				scope.comSaveData.freezedStatus = res.data.company.freezedStatus;
-				scope.comSaveData.phone = res.data.company.phone;
-				scope.comSaveData.mail = res.data.company.mail;
-				scope.comSaveData.address = res.data.company.address;
-				scope.comSaveData.tags = res.data.tagList;
-				scope.comSaveData.productList.id = res.data.productList.id;
-				scope.comSaveData.productList.name = res.data.productList.name;
-				scope.comSaveData.productList.slogan = res.data.productList.slogan;
-				scope.comSaveData.productList.summary = res.data.productList.summary;
-				scope.comSaveData.productList.logo = res.data.productList.logo;
+				scope.comSaveData.company.id = res.data.company.id;
+				scope.comSaveData.company.name = res.data.company.name;
+				scope.comSaveData.company.slogan = res.data.company.slogan;
+				scope.comSaveData.company.totalNum = res.data.company.totalNum;
+				scope.comSaveData.company.financing = res.data.company.financing.toString();
+				scope.comSaveData.industryList = res.data.industryList;
+				
+                scope.comSaveData.company.province = res.data.company.province.toString();
+				scope.city = myFac.area(scope.comSaveData.company.province);
+                scope.comSaveData.company.city = res.data.company.city.toString();
+				scope.county = myFac.county(scope.comSaveData.company.city);
+                scope.comSaveData.company.county = res.data.company.county.toString();
+                
+                scope.comSaveData.company.logo = res.data.company.logo;
+				scope.comSaveData.company.summary = res.data.company.summary;
+				scope.comSaveData.company.approved = res.data.company.approved.toString();
+				scope.comSaveData.company.freezed = res.data.company.freezed.toString();
+				scope.comSaveData.company.phone = res.data.company.phone;
+				scope.comSaveData.company.mail = res.data.company.mail;
+				scope.comSaveData.company.address = res.data.company.address;
+                scope.comSaveData.company.map = res.data.company.map;
+				scope.comSaveData.tagList = res.data.tagList;
+				scope.comSaveData.productList = res.data.productList;
 				console.log(scope.comSaveData);
 			});
 		}
-/* 	$scope.comSaveData = {
-		id:'',	//公司ID	Number	是	 
-		name:'',	//公司名称	String	是	 
-		solgan:'',	//公司标语	String	是	 
-		totalNum:'',	//公司人数	Number	是	 
-		industry:'',	//行业	Number	是	见约定
-		province:'',	//省	Number	是	例：province：340000
-		city:'',	//市	Number	是	例：city：340001
-		county:'',	//县	Number	是	例：county：340002
-		financing:'',	//融资规模	Number	是	见约定
-		approvedStatus:'',	//认证状态	Number	是	见约定
-		freezedStatus:'',	//冻结状态	Number	是	见约定
-		logo:'',	//公司LOGO	String	是	 
-		summary:'',	//公司介绍	String	是	 
-		phone:'',	//手机	String	是	 
-		mail:'',	//邮箱	String	是	 
-		address:'',	//详细地址	String	是	 
-		map:'',	//地图	String	是	 
-		tags:['五险一金','点点滴滴'],	//公司标签列表	Array	 	 
-		productList:'',	//产品列表	Array	 	 
-		//tags
-		tag:'',	//公司标签	String	否	 
-		productList:{
-			id:'',	//产品ID	Number	是	如果productList仅有产品ID，则为删除此产品。如果存在其他字段则为修改此产品。 
-			name:'',	//产品名称	String	否	 
-			solgan:'',	//产品标语	String	否	 
-			summary:'',	//产品介绍	String	否	 
-			logo:''	//产品LOGO	String	否	 
+    }
+})
+.directive('dJobset',function($location,myFac,val,con){
+	return function(scope,ele,attrs){
+		
+		var companyId = val.jobSet == ''?$location.search().companyId:val.jobSet.companyId;
+        var id = val.jobSet == ''?$location.search().id:val.jobSet.id;
+		$location.search('companyId',companyId);
+        $location.search('id',id);
+        val.jobSet = '';
+        //console.log(companyId,id);
+        scope.tagState = [];
+        
+        myFac.http('get','/carrots-admin-ajax/a/company/'+companyId).then(function(res){
+            //console.log('公司',res);
+            scope.jobSaveData.profession.companyName = res.data.company.name;
+            scope.jobSaveData.profession.companyId = $location.search().companyId;
+            scope.tagList = res.data.tagList;
+            for(var i in scope.tagList){
+                scope.tagState[i] = false;
+            }
+            console.log('scope.tagList',scope.tagList);
+            
+            if(id !=null){
+                myFac.http('get','/carrots-admin-ajax/a/profession/'+id,{}).then(function(res){
+                    //console.log('职位',res);
+                    scope.jobSaveData.tags = res.data.tags;
+                    for(var i in scope.tagList){
+                        for(var j in scope.jobSaveData.tags){
+                            if(scope.tagList[i].tag == scope.jobSaveData.tags[j].tag){
+                                scope.tagState[i] = true;
+                            }
+                        }
+                        
+                    }
+                    console.log('scope.tagState',scope.tagState);
+                    
+                    scope.jobSaveData.profession.boon = res.data.boon;
+                    scope.jobSaveData.profession.companyName = res.data.companyName;
+                    scope.jobSaveData.profession.name = res.data.name;
+                    scope.jobSaveData.profession.requisite = res.data.requisite;
+                    scope.jobSaveData.profession.responsibility = res.data.responsibility;
+                    scope.jobSaveData.profession.compensation = res.data.compensation.toString();
+                    scope.jobSaveData.profession.education = res.data.education.toString();
+                    scope.jobSaveData.profession.experience = res.data.experience.toString();
+                    scope.jobSaveData.profession.recommend = res.data.recommend.toString();
+                    scope.jobSaveData.profession.category = res.data.category.toString();
+                    scope.subCategory = con.categoryData[scope.jobSaveData.profession.category].subCategory;
+                    scope.jobSaveData.profession.subCategory = res.data.subCategory.toString();
+                    scope.jobSaveData.profession.companyId = res.data.companyId.toString();
+                    scope.jobSaveData.profession.id = res.data.id.toString();
+                    
+                    //console.log(scope.jobSaveData);
+                });
+            }
+        });
+        
+        
+    }
+})
+.directive('dArticleset',function($location,myFac,val,con){
+	return function(scope,ele,attrs){
+		
+		var id = val.articleSet == ''?$location.search().id:val.articleSet.id;
+        $location.search('id',id);
+        val.articleSet = '';
+        console.log(id);
+        if(id !=null){
+			myFac.http('GET','/carrots-admin-ajax/a/article/'+id,{}).then(function(res){
+				console.log('图片',res);
+                scope.articleSaveData = res.data.article;
+                scope.articleSaveData.type = scope.articleSaveData.type.toString();
+			});
 		}
-	}
- */	}
+    }
+})
+/* .directive('dAccountnum',function($location,myFac,val,con){
+	return function(scope,ele,attrs){
+        myFac.http('get','/carrots-admin-ajax/a/u/manager/',scope.data).then(function(res){
+			
+			console.log(res);
+            var s = (function(){
+                var list = res.data.ids;
+                var arr;
+                for(var i in list){
+                    if(i==0){
+                        arr = 'ids='+list[i];
+                    }else{
+                        arr += '&ids='+list[i];
+                    }
+                }
+                return arr;
+            })();
+            //console.log(s);
+			//分页
+			scope.allPage = Math.ceil(res.data.total/res.data.size);
+			var page = scope.allPage;
+			scope.page = new Array(page);
+			for(var i=0; i<page; i++){scope.page[i] = {'page':i+1};}
+			scope.pageNum = scope.data.page;
+            
+            
+            myFac.http('get','/carrots-admin-ajax/a/u/multi/manager?'+s).then(function(data){
+                //scope.showData = res.data.ids;
+                //console.log('data',data);
+                scope.showData = data.data.managerList;
+                console.log(scope.showData);
+            });
+		});
+    }
+}) */
+.directive('dAccountnumset',function($location,myFac,val,con){
+	return function(scope,ele,attrs){
+        
+        
+		scope.id = scope.dataSet == ''||scope.dataSet == undefined?$location.search().id:scope.dataSet.id;
+        $location.search('id',scope.id);
+        scope.dataSet = '';
+        console.log(scope.id);
+        
+        if(scope.id!=null){
+            myFac.http('get','/carrots-admin-ajax/a/u/multi/manager?ids='+scope.id).then(function(res){
+                console.log(res);
+                scope.saveData.manager = res.data.managerList[0];
+                scope.saveData.manager.roleID = scope.saveData.manager.roleID.toString();
+                console.log('scope.accSaveData.manager',scope.saveData.manager);
+            });
+        }
+    }
+})
+.directive('dModuleset',function($location,myFac,val,con){
+	return function(scope,ele,attrs){
+        
+        
+		scope.id = scope.dataSet == ''||scope.dataSet == undefined?$location.search().id:scope.dataSet.id;
+        $location.search('id',scope.id);
+        scope.dataSet = '';
+        console.log(scope.id);
+        
+        if(scope.id!=null){
+            myFac.http('get','/carrots-admin-ajax/a/u/multi/module?ids='+scope.id).then(function(res){
+                console.log(res);
+                scope.saveData.manager = res.data.moduleList[0];
+                console.log('scope.accSaveData.manager',scope.saveData.manager);
+            });
+        }
+    }
+})
+.directive('dRoleset',function($location,myFac,val,con){
+	return function(scope,ele,attrs){
+        
+		scope.id = scope.dataSet == ''||scope.dataSet == undefined?$location.search().id:scope.dataSet.id;
+        $location.search('id',scope.id);
+        scope.dataSet = '';
+        console.log(scope.id);
+        
+        
+        scope.vm.setList = [];
+        scope.childList = [];
+        scope.parentList = {};
+        myFac.http('get','/carrots-admin-ajax/a/u/module/',{page:1,size:100}).then(function(res){
+			
+            console.log(res);
+            var s = (function(){
+                var list = res.data.ids;
+                var arr;
+                for(var i in list){
+                    if(i==0){
+                        arr = 'ids='+list[i];
+                    }else{
+                        arr += '&ids='+list[i];
+                    }
+                }
+                return arr;
+            })();
+            //console.log('s',s);
+            if(scope.id!=null){
+                myFac.http('get','/carrots-admin-ajax/a/u/role/'+scope.id).then(function(res){
+                    //console.log(res);
+                    scope.saveData.role = res.data.role;
+                    for(var i in scope.saveData.role.permissionsSet){
+                        var arr = scope.saveData.role.permissionsSet[i];
+                        var state = [];
+                        for(var j in arr){
+                            switch(arr[j]){
+                                case 'create':
+                                    state[0] = true;
+                                    break;
+                                case 'update':
+                                    state[1] = true;
+                                    break;
+                                case 'delete':
+                                    state[2] = true;
+                                    break;
+                                case 'sort':
+                                    state[3] = true;
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        scope.saveData.role.permissionsSet[i] = state;
+                    }
+                    console.log('scope.saveData.role',scope.saveData.role);
+                });
+            }
+            
+            myFac.http('get','/carrots-admin-ajax/a/u/multi/module?'+s).then(function(data){
+                scope.moduleList = data.data.moduleList;
+                for(var i in scope.moduleList){
+                    //console.log(scope.moduleList[i].parentID,scope.moduleList[i].id);
+                    if(scope.moduleList[i].parentID == 0 || scope.moduleList[i].parentID == ''){
+                        scope.vm.setList.push({parent:scope.moduleList[i],state:false,list:[]});
+                        //scope.moduleList.splice(i,1);
+                    }/* else{
+                        scope.childList.push(scope.moduleList[i]);
+                    } */
+                }
+                //console.log(scope.vm.setList,scope.childList);
+                for(var i in scope.moduleList){
+                    var parentID = scope.moduleList[i].parentID;
+                    var id = scope.moduleList[i].id;
+                    //console.log(id);
+                    //scope.permission.push({id:[]});
+                    for(var j in scope.vm.setList){
+                        if(scope.vm.setList[j].parent.id == parentID){
+                            scope.moduleList[i].state = false;
+                            scope.vm.setList[j].list.push(scope.moduleList[i]);
+                        }
+                    }
+                }
+                console.log('scope.vm.setList',scope.vm.setList,'scope.saveData.role.permissionsSet',scope.saveData.role.permissionsSet);
+                
+                
+                /* if((function(){
+                    var b = false;
+                    for(var i in bool){
+                        b = bool[i] == true?true:b;
+                    }
+                    return b;
+                })()){
+                    scope.vm.setList[num2].list[num].state = true;
+                    scope.vm.setList[num2].state = true;
+                    scope.checkAll = true;
+                } */
+                
+            });
+        });
+    }
 })
 
 

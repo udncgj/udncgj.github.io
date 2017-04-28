@@ -9,7 +9,7 @@ angular.module('myApp',['ui.bootstrap', 'ngAnimate'])
 		industry:'',
 		page:1,
 		province:'',
-		size:6
+		size:9
 	}
 	pro.jobSearchData = {
 		recommend:0,
@@ -23,7 +23,7 @@ angular.module('myApp',['ui.bootstrap', 'ngAnimate'])
 		page:1,
 		province:'',
 		returnTags:'',
-		size:6,
+		size:10,
 		subCategory:'',
 		updateAt:''
 	}
@@ -43,8 +43,8 @@ angular.module('myApp',['ui.bootstrap', 'ngAnimate'])
 	$scope.professionGo = function(id1,id2){
 		val.searchTop = 'proSeaJob';
 		$scope.jobMes[2] = con.categoryData[id1-1].subCategory;
-		pro.jobSearchData.category = id1 >= 1? id1-1:'';
-		pro.jobSearchData.subCategory = id2 >= 1? id2-1:'';
+		pro.jobSearchData.category = id1 >= 1? id1:'';
+		pro.jobSearchData.subCategory = id2 >= 1? id2:'';
 		pro.jobSearchData.recommend = 1;
 		$scope.job(true);
 	}
@@ -86,8 +86,9 @@ angular.module('myApp',['ui.bootstrap', 'ngAnimate'])
 		$state.go("profession.companyMes");
 	}
 	//公司列表
-	myFac.http('get','/carrots-ajax/a/company/search',{size:4}).then(function(res){
+	myFac.http('get','/carrots-ajax/a/company/search',{size:10}).then(function(res){
 		pro.commendCompany = res.data;
+        //console.log('pro.commendCompany',pro.commendCompany);
 		//pro.companyNone = res.data.substr(0,3);//公司搜索没有时候展示
 	});
 	$scope.comMore = function(){//公司更多执行函数
@@ -111,7 +112,7 @@ angular.module('myApp',['ui.bootstrap', 'ngAnimate'])
 		{title:'financing',name:'融资规模：'}
 	];
 	$scope.companyMes = [
-		[{name:'北京'}],//province
+		[{type:1,name:'北京'}],//province
 		con.industry,//industry
 		con.financing//financing
 	];
@@ -126,7 +127,7 @@ angular.module('myApp',['ui.bootstrap', 'ngAnimate'])
 		{title:'updateAt',name:'发布时间：'}
 	];
 	$scope.jobMes = [
-		[{name:'北京'}],//province
+		[{type:1,name:'北京'}],//province
 		con.categoryData,//category//compensation
 		con.categoryData[0].subCategory,
 		con.industry,//industry
@@ -179,7 +180,7 @@ angular.module('myApp',['ui.bootstrap', 'ngAnimate'])
 				pro.jList = res.data;
 				console.log(pro.jList);
 				pro.jPageNum = num;
-				$location.search('jPage',num);
+				$location.search('page',num);
 			});
 		}
 	}
@@ -193,7 +194,7 @@ angular.module('myApp',['ui.bootstrap', 'ngAnimate'])
 				pro.cList = res.data;
 				console.log(pro.cList);
 				pro.cPageNum = num;
-				$location.search('cPage',num);
+				$location.search('page',num);
 			});
 		}
 	}
@@ -201,13 +202,18 @@ angular.module('myApp',['ui.bootstrap', 'ngAnimate'])
 	
 	$scope.listSelect = function(str,num){
 		console.log(str);
+        if(str == 'province' || str == 'category' || str == 'subCategory')num = num === '' ?'':num+1;
 		if(pro.p2sTop){
 			pro.comSearchData[str] = myFac.indexSelect(pro.comSearchData[str],num,true,str);
 		}else{
 			pro.jobSearchData[str] = myFac.indexSelect(pro.jobSearchData[str],num,true,str);
 		}
 		if(str == 'category'){
-			$scope.jobMes[2] = con.categoryData[num].subCategory;
+            if(pro.jobSearchData.category.length ==1 || pro.jobSearchData.category.length ==2){
+                $scope.jobMes[2] = con.categoryData[pro.jobSearchData.category-1].subCategory;
+            }else{
+                pro.jobSearchData.subCategory = '';
+            }
 		}
 	}
 	//清除
@@ -232,6 +238,8 @@ angular.module('myApp',['ui.bootstrap', 'ngAnimate'])
 	//列表页搜索按钮
 	$scope.searchGo = function(){
 		if(pro.p2sTop){
+            pro.comSearchData.page = 1;
+            console.log('pro.comSearchData',pro.comSearchData);
 			myFac.http('get','/carrots-ajax/a/company/search',pro.comSearchData).then(function(res){
 				pro.cList = res.data;
 				console.log(pro.cList);
@@ -259,6 +267,8 @@ angular.module('myApp',['ui.bootstrap', 'ngAnimate'])
 				sessionStorage.setItem('comPageChange',JSON.stringify(pro.comSearchData));
 			});
 		}else{
+            pro.jobSearchData.page = 1;
+            console.log('pro.jobSearchData',pro.jobSearchData);
 			myFac.http('get','/carrots-ajax/a/profession/search',pro.jobSearchData).then(function(res){
 				pro.jList = res.data;
 				console.log(pro.jList.length);
@@ -309,6 +319,15 @@ angular.module('myApp',['ui.bootstrap', 'ngAnimate'])
 		else{myFac.showHide('proComJobMes','proComMes');}
 	}
 	console.log('b');
+    
+    
+    
+    //职位信息页
+    $scope.jobComMes = function(arr){
+		console.log(arr);
+		val.comMes.id = arr.companyId;
+		$state.go("profession.companyMes");
+	}
 })
 
 

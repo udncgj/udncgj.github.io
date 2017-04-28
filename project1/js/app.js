@@ -1,22 +1,3 @@
-//$(document).ready(function(){
-	function interfaceTest(){
-		$.ajax({ 
-		    type: "get",
-			url:"/carrots-ajax/a/profession/search",//
-			dataType: "json",
-			data:{id:127},
-			success: function(data) {
-				console.log(data);
-			},
-			error: function(){
-			   console.log('error');
-			},
-		});
-	}
-//})
-
-
-
 var app = angular.module('myApp',['ui.router','oc.lazyLoad','ui.bootstrap', 'ngAnimate']);
 app.config(function ($stateProvider, $urlRouterProvider) {
      $urlRouterProvider.when("", "/home");
